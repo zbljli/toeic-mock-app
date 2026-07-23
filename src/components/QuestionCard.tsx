@@ -2,6 +2,7 @@ import React from 'react';
 import { View, Text, StyleSheet, Image, Dimensions } from 'react-native';
 
 const SCREEN_WIDTH = Dimensions.get('window').width;
+const CARD_WIDTH = SCREEN_WIDTH - 32;
 
 interface Props {
   part: number;
@@ -11,6 +12,8 @@ interface Props {
   imageUrl?: string;
   questionNumber: number;
   totalQuestions: number;
+  /** 'photo' = Part 1 只显示图片不显示题干 / 'text' = 正常显示 */
+  displayMode?: 'photo' | 'text';
 }
 
 export default function QuestionCard({
@@ -21,7 +24,10 @@ export default function QuestionCard({
   imageUrl,
   questionNumber,
   totalQuestions,
+  displayMode = 'text',
 }: Props) {
+  const isPhotoMode = displayMode === 'photo' && imageUrl;
+
   return (
     <View style={styles.container}>
       {/* 题号 & Part 信息 */}
@@ -35,31 +41,46 @@ export default function QuestionCard({
         </Text>
       </View>
 
-      {/* Part 1 图片 */}
-      {imageUrl && (
-        <View style={styles.imageContainer}>
+      {/* Part 1 大图模式: 图片占主体，不显示题干 */}
+      {isPhotoMode ? (
+        <View style={styles.photoContainer}>
           <Image
             source={{ uri: imageUrl }}
-            style={styles.image}
+            style={styles.photoImage}
             resizeMode="cover"
           />
-          <Text style={styles.imageHint}>📷 观察图片，听音频选择正确答案</Text>
+          <View style={styles.photoOverlay}>
+            <Text style={styles.photoLabel}>📷 观察图片，聆听音频选择正确答案</Text>
+          </View>
         </View>
-      )}
+      ) : (
+        <>
+          {/* 普通图片（非 Part 1 也可能有图） */}
+          {imageUrl && (
+            <View style={styles.imageContainer}>
+              <Image
+                source={{ uri: imageUrl }}
+                style={styles.image}
+                resizeMode="cover"
+              />
+            </View>
+          )}
 
-      {/* 阅读材料 */}
-      {passage && (
-        <View style={styles.passageContainer}>
-          <Text style={styles.passageLabel}>📄 参考材料</Text>
-          <Text style={styles.passageText}>{passage}</Text>
-        </View>
-      )}
+          {/* 阅读材料 */}
+          {passage && (
+            <View style={styles.passageContainer}>
+              <Text style={styles.passageLabel}>📄 参考材料</Text>
+              <Text style={styles.passageText}>{passage}</Text>
+            </View>
+          )}
 
-      {/* 题干 */}
-      <View style={styles.promptContainer}>
-        <Text style={styles.promptLabel}>📝 题目</Text>
-        <Text style={styles.promptText}>{prompt}</Text>
-      </View>
+          {/* 题干 */}
+          <View style={styles.promptContainer}>
+            <Text style={styles.promptLabel}>📝 题目</Text>
+            <Text style={styles.promptText}>{prompt}</Text>
+          </View>
+        </>
+      )}
     </View>
   );
 }
@@ -67,26 +88,26 @@ export default function QuestionCard({
 const styles = StyleSheet.create({
   container: {
     backgroundColor: '#FFFFFF',
-    borderRadius: 16,
-    padding: 20,
+    borderRadius: 12,
+    padding: 16,
     marginHorizontal: 16,
-    marginTop: 12,
+    marginTop: 10,
     shadowColor: '#000',
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.06,
-    shadowRadius: 8,
-    elevation: 2,
+    shadowOffset: { width: 0, height: 1 },
+    shadowOpacity: 0.04,
+    shadowRadius: 4,
+    elevation: 1,
   },
   header: {
     flexDirection: 'row',
     alignItems: 'center',
-    marginBottom: 16,
+    marginBottom: 12,
   },
   partBadge: {
-    backgroundColor: '#1976D2',
+    backgroundColor: '#1565C0',
     paddingHorizontal: 10,
     paddingVertical: 4,
-    borderRadius: 8,
+    borderRadius: 6,
   },
   partBadgeText: {
     color: '#FFFFFF',
@@ -98,61 +119,82 @@ const styles = StyleSheet.create({
     fontSize: 14,
     color: '#757575',
     marginLeft: 10,
+    fontWeight: '500',
   },
   questionCount: {
-    fontSize: 14,
+    fontSize: 13,
     color: '#9E9E9E',
     fontWeight: '600',
   },
+  // === Photo Mode (Part 1) ===
+  photoContainer: {
+    borderRadius: 10,
+    overflow: 'hidden',
+    backgroundColor: '#F5F5F5',
+    marginBottom: 4,
+  },
+  photoImage: {
+    width: '100%',
+    height: 300,
+  },
+  photoOverlay: {
+    backgroundColor: 'rgba(0,0,0,0.04)',
+    paddingVertical: 10,
+    paddingHorizontal: 16,
+    borderTopWidth: 1,
+    borderTopColor: '#EEEEEE',
+  },
+  photoLabel: {
+    fontSize: 12,
+    color: '#757575',
+    textAlign: 'center',
+    fontWeight: '500',
+  },
+  // === Regular Image ===
   imageContainer: {
-    marginBottom: 16,
-    borderRadius: 12,
+    marginBottom: 14,
+    borderRadius: 10,
     overflow: 'hidden',
     backgroundColor: '#F5F5F5',
   },
   image: {
     width: '100%',
-    height: 200,
-    borderRadius: 12,
+    height: 220,
   },
-  imageHint: {
-    fontSize: 11,
-    color: '#9E9E9E',
-    textAlign: 'center',
-    marginTop: 8,
-  },
+  // === Passage ===
   passageContainer: {
     backgroundColor: '#FFF8E1',
-    borderRadius: 10,
-    padding: 14,
-    marginBottom: 14,
-    borderLeftWidth: 4,
+    borderRadius: 8,
+    padding: 12,
+    marginBottom: 12,
+    borderLeftWidth: 3,
     borderLeftColor: '#FFC107',
   },
   passageLabel: {
-    fontSize: 12,
+    fontSize: 11,
     color: '#F57F17',
     fontWeight: '600',
-    marginBottom: 6,
+    marginBottom: 4,
   },
   passageText: {
     fontSize: 14,
     color: '#424242',
-    lineHeight: 22,
+    lineHeight: 21,
   },
+  // === Prompt ===
   promptContainer: {
-    marginBottom: 4,
+    marginBottom: 2,
   },
   promptLabel: {
-    fontSize: 12,
-    color: '#1976D2',
+    fontSize: 11,
+    color: '#1565C0',
     fontWeight: '600',
-    marginBottom: 6,
+    marginBottom: 4,
   },
   promptText: {
-    fontSize: 16,
+    fontSize: 15,
     color: '#212121',
-    lineHeight: 24,
+    lineHeight: 23,
     fontWeight: '500',
   },
 });

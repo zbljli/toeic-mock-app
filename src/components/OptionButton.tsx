@@ -3,11 +3,11 @@ import { TouchableOpacity, Text, StyleSheet } from 'react-native';
 
 interface Props {
   optionId: string;
-  label: string; // A, B, C, D
+  label: string;
   text: string;
   isSelected: boolean;
   isCorrect?: boolean;
-  isRevealed?: boolean; // 是否已经显示答案
+  isRevealed?: boolean;
   onSelect: (optionId: string) => void;
   disabled?: boolean;
 }
@@ -45,7 +45,7 @@ export default function OptionButton({
       style={[styles.container, containerStyle]}
       onPress={() => onSelect(optionId)}
       disabled={disabled || isRevealed}
-      activeOpacity={0.7}
+      activeOpacity={0.6}
     >
       <Text style={[styles.label, labelStyle]}>{label}</Text>
       <Text style={[styles.text, textStyle]}>{text}</Text>
@@ -57,71 +57,73 @@ const styles = StyleSheet.create({
   container: {
     flexDirection: 'row',
     alignItems: 'center',
-    paddingVertical: 14,
+    paddingVertical: 16,
     paddingHorizontal: 16,
-    borderRadius: 12,
-    borderWidth: 2,
-    marginBottom: 10,
+    borderRadius: 10,
+    borderWidth: 1.5,
+    marginBottom: 8,
   },
   default: {
     backgroundColor: '#FFFFFF',
     borderColor: '#E0E0E0',
   },
   selected: {
-    backgroundColor: '#E3F2FD',
-    borderColor: '#1976D2',
+    backgroundColor: '#E8F0FE',
+    borderColor: '#1A73E8',
   },
   correct: {
-    backgroundColor: '#E8F5E9',
-    borderColor: '#4CAF50',
+    backgroundColor: '#E6F4EA',
+    borderColor: '#34A853',
   },
   wrong: {
-    backgroundColor: '#FFEBEE',
-    borderColor: '#F44336',
+    backgroundColor: '#FCE8E6',
+    borderColor: '#EA4335',
   },
   label: {
-    width: 32,
-    height: 32,
-    borderRadius: 16,
+    width: 36,
+    height: 36,
+    borderRadius: 6,
     textAlign: 'center',
-    lineHeight: 32,
+    lineHeight: 36,
     fontSize: 15,
     fontWeight: '700',
-    marginRight: 12,
+    marginRight: 14,
     overflow: 'hidden',
   },
   labelDefault: {
     backgroundColor: '#F5F5F5',
-    color: '#757575',
+    color: '#5F6368',
   },
   labelSelected: {
-    backgroundColor: '#1976D2',
+    backgroundColor: '#1A73E8',
     color: '#FFFFFF',
   },
   labelCorrect: {
-    backgroundColor: '#4CAF50',
+    backgroundColor: '#34A853',
     color: '#FFFFFF',
   },
   labelWrong: {
-    backgroundColor: '#F44336',
+    backgroundColor: '#EA4335',
     color: '#FFFFFF',
   },
   text: {
     flex: 1,
     fontSize: 15,
-    lineHeight: 22,
+    lineHeight: 21,
   },
   textDefault: {
-    color: '#212121',
+    color: '#202124',
   },
   textSelected: {
-    color: '#1976D2',
+    color: '#1A73E8',
     fontWeight: '600',
   },
   textCorrect: {
-    color: '#2E7D32',
+    color: '#137333',
+    fontWeight: '600',
   },
   textWrong: {
-    color: '#C62828',
+    color: '#C5221F',
+    fontWeight: '600',
   },
 });

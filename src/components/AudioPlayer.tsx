@@ -1,60 +1,179 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect, useCallback, useRef } from 'react';
 import { View, Text, TouchableOpacity, StyleSheet, Platform } from 'react-native';
 import * as Speech from 'expo-speech';
 
+type Speed = 0.75 | 1.0 | 1.25 | 1.5;
+
 interface Props {
-  /** 要朗读的文本内容 */
   speechText?: string;
-  /** 题号标签 */
   label?: string;
+  autoPlay?: boolean;
+}
+
+interface DialogueLine {
+  role: 'male' | 'female' | 'neutral';
+  text: string;
+}
+
+const SPEEDS: { value: Speed; label: string }[] = [
+  { value: 0.75, label: '0.75x' },
+  { value: 1.0, label: '1x' },
+  { value: 1.25, label: '1.25x' },
+  { value: 1.5, label: '1.5x' },
+];
+
+/**
+ * 解析听力文本，去除角色标签 (Man:, Woman: 等)，标记男女声
+ *
+ * Part 3/4 对话格式示例:
+ *   "Man: Hello, I'd like to make a reservation..."
+ *   "Woman: Certainly. How many people..."
+ *
+ * → 提取为 DialogueLine[]:
+ *   [{ role: 'male', text: "Hello, I'd like to..." },
+ *    { role: 'female', text: "Certainly. How many..." }]
+ */
+function parseDialogue(text: string): DialogueLine[] {
+  // 检测是否包含角色标记
+  const rolePattern = /^(Man|Woman|Man\s*\d*|Woman\s*\d*|M|W)\s*:\s*/gim;
+
+  // 按角色标记分割
+  const lines: DialogueLine[] = [];
+  const parts = text.split(/(?:^|\n)(Man|Woman|Man\s*\d*|Woman\s*\d*|M|W)\s*:\s*/gim);
+
+  // 跳过第一个空的部分
+  let currentRole: 'male' | 'female' | 'neutral' = 'neutral';
+
+  for (let i = 0; i < parts.length; i++) {
+    const part = parts[i]?.trim();
+    if (!part) continue;
+
+    if (/^(Man|M)\d*\s*$/i.test(part)) {
+      currentRole = 'male';
+    } else if (/^(Woman|W)\d*\s*$/i.test(part)) {
+      currentRole = 'female';
+    } else {
+      lines.push({ role: currentRole, text: part });
+      currentRole = 'neutral';
+    }
+  }
+
+  // 如果没有检测到角色标记，整体作为 neutral 处理
+  if (lines.length === 0 && text.trim()) {
+    lines.push({ role: 'neutral', text: text.trim() });
+  }
+
+  return lines;
+}
+
+/** 获取最佳可用语音 */
+async function getBestVoice(): Promise<Speech.Voice | undefined> {
+  const voices = await Speech.getAvailableVoicesAsync();
+
+  // 优先级：Google 英语 > 系统英语 > 任意英语
+  const prefs = [
+    'Google US English',
+    'Google UK English Female',
+    'Google UK English Male',
+    'en-US',
+    'en-GB',
+    'Samantha',
+    'Daniel',
+    'Microsoft David',
+    'Microsoft Zira',
+    'Karen',
+  ];
+
+  for (const pref of prefs) {
+    const voice = voices.find(
+      (v) =>
+        v.identifier.toLowerCase().includes(pref.toLowerCase()) ||
+        v.name.toLowerCase().includes(pref.toLowerCase()),
+    );
+    if (voice) return voice;
+  }
+
+  // fallback: any English voice
+  return voices.find((v) => v.language.startsWith('en'));
 }
 
 /**
- * 音频播放器 — 使用 TTS 文字转语音朗读题目
+ * 音频播放器 — 真人感 TTS
  *
- * Part 1: 朗读 transcript（四句描述）
- * Part 2: 朗读 prompt（问题 + 选项）
- * Part 3: 朗读 passage（对话）+ prompt（问题）
- * Part 4: 朗读 passage（独白）+ prompt（问题）
+ * 对话文本自动去除 Man:/Woman: 等角色标签
+ * 男声用低 pitch (0.9)，女声用高 pitch (1.1)，营造真实对话感
  */
-export default function AudioPlayer({ speechText, label = '听力音频' }: Props) {
+export default function AudioPlayer({ speechText, label = '听力音频', autoPlay = false }: Props) {
   const [isPlaying, setIsPlaying] = useState(false);
   const [hasPlayed, setHasPlayed] = useState(false);
+  const [playCount, setPlayCount] = useState(0);
+  const [speed, setSpeed] = useState<Speed>(1.0);
+  const [voice, setVoice] = useState<Speech.Voice | undefined>();
+  const linesRef = useRef<DialogueLine[]>([]);
+  const stoppedRef = useRef(false);
 
-  // 切题时自动停止
+  // 初始化语音
   useEffect(() => {
-    return () => {
-      Speech.stop();
-      setIsPlaying(false);
-    };
+    getBestVoice().then(setVoice);
+  }, []);
+
+  // 切题时重置 + 解析对话
+  useEffect(() => {
+    Speech.stop();
+    setIsPlaying(false);
+    setHasPlayed(false);
+    setPlayCount(0);
+    stoppedRef.current = false;
+
+    if (speechText) {
+      linesRef.current = parseDialogue(speechText);
+    } else {
+      linesRef.current = [];
+    }
   }, [speechText]);
 
-  const handlePlay = useCallback(async () => {
-    if (!speechText) return;
-
-    if (isPlaying) {
-      // 暂停
-      Speech.stop();
-      setIsPlaying(false);
-      return;
+  // 自动播放
+  useEffect(() => {
+    if (autoPlay && speechText && !hasPlayed) {
+      const timer = setTimeout(() => handlePlay(), 600);
+      return () => clearTimeout(timer);
     }
+  }, [autoPlay, speechText, hasPlayed]);
 
-    try {
+  const speakLines = useCallback(
+    async (fromIndex: number) => {
+      const lines = linesRef.current;
+      if (lines.length === 0) return;
+
+      stoppedRef.current = false;
       setIsPlaying(true);
-      setHasPlayed(true);
 
-      // 将听力文本拆分为句子，逐句朗读（模拟真实 TOEIC 音频节奏）
-      const sentences = speechText
-        .split(/[.?!]\s+/)
-        .map((s) => s.trim())
-        .filter((s) => s.length > 0);
+      for (let i = fromIndex; i < lines.length; i++) {
+        if (stoppedRef.current) break;
+        const line = lines[i];
+        if (!line || !line.text) continue;
 
-      for (let i = 0; i < sentences.length; i++) {
+        // 根据角色设定 pitch：男声低沉，女声略高
+        let pitch: number;
+        if (line.role === 'male') {
+          pitch = 0.88; // 低沉男声
+        } else if (line.role === 'female') {
+          pitch = 1.12; // 较高女声
+        } else {
+          pitch = 1.0; // 中性（Part 1/2 描述/问题）
+        }
+
+        // 句子间停顿：对话切换时稍微停顿
+        if (i > 0 && lines[i - 1]?.role !== line.role && line.role !== 'neutral') {
+          await new Promise((r) => setTimeout(r, 300));
+        }
+
         await new Promise<void>((resolve) => {
-          Speech.speak(sentences[i], {
+          Speech.speak(line.text, {
             language: 'en-US',
-            pitch: 1.0,
-            rate: 0.85, // 稍慢，模仿 TOEIC 语速
+            pitch,
+            rate: speed,
+            voice: voice?.identifier,
             onDone: () => resolve(),
             onStopped: () => resolve(),
             onError: () => resolve(),
@@ -62,20 +181,37 @@ export default function AudioPlayer({ speechText, label = '听力音频' }: Prop
         });
       }
 
+      if (!stoppedRef.current) {
+        setIsPlaying(false);
+      }
+    },
+    [speed, voice],
+  );
+
+  const handlePlay = useCallback(() => {
+    if (!speechText) return;
+
+    if (isPlaying) {
+      stoppedRef.current = true;
+      Speech.stop();
       setIsPlaying(false);
-    } catch (e) {
-      setIsPlaying(false);
+      return;
     }
-  }, [speechText, isPlaying]);
+
+    if (!hasPlayed) {
+      setHasPlayed(true);
+      setPlayCount(1);
+    } else {
+      setPlayCount((c) => c + 1);
+    }
+    speakLines(0);
+  }, [speechText, isPlaying, hasPlayed, speakLines]);
 
   if (!speechText) {
     return (
       <View style={styles.container}>
         <View style={styles.placeholderRow}>
-          <Text style={styles.icon}>🎧</Text>
-          <Text style={styles.placeholderText}>
-            暂无音频文本，请检查题目数据
-          </Text>
+          <Text style={styles.placeholderText}>暂无音频文本</Text>
         </View>
       </View>
     );
@@ -83,162 +219,151 @@ export default function AudioPlayer({ speechText, label = '听力音频' }: Prop
 
   return (
     <View style={styles.container}>
-      {/* 标题行 */}
-      <View style={styles.headerRow}>
-        <Text style={styles.icon}>🎧</Text>
-        <View style={styles.textArea}>
-          <Text style={styles.title}>{label}</Text>
-          <Text style={styles.hint}>
-            {hasPlayed
-              ? isPlaying
-                ? '正在播放...'
-                : '播放完毕，可重新播放'
-              : '点击播放，聆听题目内容'}
+      {/* 主控制行 */}
+      <View style={styles.mainRow}>
+        <TouchableOpacity
+          style={[styles.playBtn, isPlaying && styles.playBtnActive]}
+          onPress={handlePlay}
+          activeOpacity={0.7}
+        >
+          <Text style={styles.playIcon}>{isPlaying ? '⏸' : '▶'}</Text>
+        </TouchableOpacity>
+
+        <View style={styles.infoArea}>
+          <Text style={styles.label} numberOfLines={1}>
+            {label}
           </Text>
+          <Text style={styles.status}>
+            {isPlaying
+              ? `🔊 播放中 · 第 ${playCount} 遍`
+              : hasPlayed
+                ? `✅ 播放完毕 · 第 ${playCount} 遍`
+                : '点击播放聆听题目'}
+          </Text>
+          {voice && (
+            <Text style={styles.voiceInfo}>
+              🎙 {voice.name}
+            </Text>
+          )}
         </View>
       </View>
 
-      {/* 播放按钮 */}
-      <TouchableOpacity
-        style={[styles.playBtn, isPlaying && styles.playBtnActive]}
-        onPress={handlePlay}
-        activeOpacity={0.7}
-      >
-        <Text style={styles.playBtnIcon}>{isPlaying ? '⏸' : '▶'}</Text>
-        <Text style={styles.playBtnText}>
-          {isPlaying ? '暂停播放' : hasPlayed ? '重新播放' : '播放音频'}
-        </Text>
-      </TouchableOpacity>
-
-      {/* 进度指示 */}
-      {isPlaying && (
-        <View style={styles.waveContainer}>
-          <View style={[styles.waveBar, styles.waveBar1]} />
-          <View style={[styles.waveBar, styles.waveBar2]} />
-          <View style={[styles.waveBar, styles.waveBar3]} />
-          <View style={[styles.waveBar, styles.waveBar4]} />
-          <View style={[styles.waveBar, styles.waveBar5]} />
-        </View>
-      )}
-
-      {/* 文本预览 */}
-      <View style={styles.transcriptPreview}>
-        <Text style={styles.transcriptLabel}>📝 内容预览</Text>
-        <Text style={styles.transcriptText} numberOfLines={3}>
-          {speechText}
-        </Text>
+      {/* 语速选择 */}
+      <View style={styles.speedRow}>
+        <Text style={styles.speedLabel}>语速：</Text>
+        {SPEEDS.map((s) => (
+          <TouchableOpacity
+            key={s.label}
+            style={[styles.speedBtn, speed === s.value && styles.speedBtnActive]}
+            onPress={() => {
+              setSpeed(s.value);
+              if (isPlaying) {
+                stoppedRef.current = true;
+                Speech.stop();
+                setIsPlaying(false);
+                setTimeout(() => {
+                  stoppedRef.current = false;
+                  speakLines(0);
+                }, 150);
+              }
+            }}
+            activeOpacity={0.7}
+          >
+            <Text style={[styles.speedBtnText, speed === s.value && styles.speedBtnTextActive]}>
+              {s.label}
+            </Text>
+          </TouchableOpacity>
+        ))}
       </View>
-
-      {Platform.OS === 'web' && (
-        <Text style={styles.browserNote}>
-          ℹ️ 使用浏览器内置语音引擎朗读
-        </Text>
-      )}
     </View>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: '#FFF8E1',
+    backgroundColor: '#FAFAFA',
     marginHorizontal: 16,
     marginTop: 12,
-    padding: 16,
-    borderRadius: 12,
-    borderLeftWidth: 4,
-    borderLeftColor: '#FF9800',
-  },
-  headerRow: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    marginBottom: 12,
-  },
-  icon: {
-    fontSize: 28,
-    marginRight: 12,
-  },
-  textArea: {
-    flex: 1,
-  },
-  title: {
-    fontSize: 15,
-    fontWeight: '700',
-    color: '#E65100',
-  },
-  hint: {
-    fontSize: 12,
-    color: '#BF360C',
-    marginTop: 2,
+    padding: 14,
+    borderRadius: 10,
+    borderWidth: 1,
+    borderColor: '#E8E8E8',
   },
   placeholderRow: {
-    flexDirection: 'row',
     alignItems: 'center',
+    paddingVertical: 4,
   },
   placeholderText: {
     fontSize: 13,
-    color: '#BF360C',
-    marginLeft: 8,
+    color: '#9E9E9E',
   },
-  playBtn: {
+  mainRow: {
     flexDirection: 'row',
     alignItems: 'center',
+  },
+  playBtn: {
+    width: 48,
+    height: 48,
+    borderRadius: 24,
+    backgroundColor: '#1A73E8',
     justifyContent: 'center',
-    backgroundColor: '#FF9800',
-    paddingVertical: 12,
-    borderRadius: 10,
+    alignItems: 'center',
+    marginRight: 14,
   },
   playBtnActive: {
-    backgroundColor: '#E65100',
+    backgroundColor: '#EA4335',
   },
-  playBtnIcon: {
+  playIcon: {
+    fontSize: 18,
+    color: '#FFFFFF',
+  },
+  infoArea: {
+    flex: 1,
+  },
+  label: {
     fontSize: 14,
-    color: '#FFFFFF',
-    marginRight: 8,
-  },
-  playBtnText: {
-    color: '#FFFFFF',
-    fontSize: 15,
-    fontWeight: '700',
-  },
-  waveContainer: {
-    flexDirection: 'row',
-    justifyContent: 'center',
-    alignItems: 'flex-end',
-    height: 32,
-    marginTop: 12,
-    gap: 4,
-  },
-  waveBar: {
-    width: 6,
-    backgroundColor: '#FF9800',
-    borderRadius: 3,
-  },
-  waveBar1: { height: 12 },
-  waveBar2: { height: 24 },
-  waveBar3: { height: 20 },
-  waveBar4: { height: 28 },
-  waveBar5: { height: 16 },
-  transcriptPreview: {
-    backgroundColor: '#FFF3E0',
-    borderRadius: 8,
-    padding: 10,
-    marginTop: 12,
-  },
-  transcriptLabel: {
-    fontSize: 11,
-    color: '#E65100',
     fontWeight: '600',
-    marginBottom: 4,
+    color: '#202124',
+    marginBottom: 2,
   },
-  transcriptText: {
+  status: {
     fontSize: 12,
-    color: '#424242',
-    lineHeight: 18,
+    color: '#5F6368',
   },
-  browserNote: {
+  voiceInfo: {
     fontSize: 10,
     color: '#9E9E9E',
-    marginTop: 8,
-    textAlign: 'center',
+    marginTop: 2,
+  },
+  speedRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginTop: 12,
+    paddingTop: 10,
+    borderTopWidth: 1,
+    borderTopColor: '#F0F0F0',
+  },
+  speedLabel: {
+    fontSize: 12,
+    color: '#5F6368',
+    marginRight: 8,
+  },
+  speedBtn: {
+    paddingHorizontal: 12,
+    paddingVertical: 5,
+    borderRadius: 6,
+    backgroundColor: '#F1F3F4',
+    marginRight: 6,
+  },
+  speedBtnActive: {
+    backgroundColor: '#1A73E8',
+  },
+  speedBtnText: {
+    fontSize: 12,
+    color: '#5F6368',
+    fontWeight: '600',
+  },
+  speedBtnTextActive: {
+    color: '#FFFFFF',
   },
 });

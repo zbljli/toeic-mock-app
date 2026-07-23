@@ -57,12 +57,18 @@ export function generateQuestions(
 
 // ===== Part 1: Photographs (6 题) =====
 const PART1_IMAGES = [
-  'https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=600&h=400&fit=crop',
-  'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&h=400&fit=crop',
-  'https://images.unsplash.com/photo-1577412647305-991150c7d5e3?w=600&h=400&fit=crop',
-  'https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=600&h=400&fit=crop',
-  'https://images.unsplash.com/photo-1436491865332-7a61a109bb05?w=600&h=400&fit=crop',
-  'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=600&h=400&fit=crop',
+  // 办公室工作
+  'https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800&h=500&fit=crop',
+  // 零售购物
+  'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=500&fit=crop',
+  // 商务会议
+  'https://images.unsplash.com/photo-1577412647305-991150c7d5e3?w=800&h=500&fit=crop',
+  // 城市街景
+  'https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=800&h=500&fit=crop',
+  // 机场旅行
+  'https://images.unsplash.com/photo-1436491865332-7a61a109bb05?w=800&h=500&fit=crop',
+  // 餐厅场景
+  'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&h=500&fit=crop',
 ];
 
 function generatePart1(count: number): Question[] {
