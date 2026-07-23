@@ -1,13 +1,14 @@
 {
   "expo": {
-    "name": "toeic-mock-app",
+    "name": "TOEIC 模拟考",
     "slug": "toeic-mock-app",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.toeicmock.app"
     },
     "android": {
       "adaptiveIcon": {
@@ -16,7 +17,7 @@
         "backgroundImage": "./assets/android-icon-background.png",
         "monochromeImage": "./assets/android-icon-monochrome.png"
       },
-      "predictiveBackGestureEnabled": false
+      "package": "com.toeicmock.app"
     },
     "web": {
       "favicon": "./assets/favicon.png"
