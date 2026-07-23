@@ -8,12 +8,12 @@ import {
   SafeAreaView,
 } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
-import type { NativeStackNavigationProp } from '@react-navigation/native-stack';
+import type { StackNavigationProp } from '@react-navigation/stack';
 import { useTestContext } from '../context/TestContext';
 import OptionButton from '../components/OptionButton';
 import type { RootStackParamList } from '../navigation/AppNavigator';
 
-type Nav = NativeStackNavigationProp<RootStackParamList>;
+type Nav = StackNavigationProp<RootStackParamList>;
 
 const optionLabels = ['A', 'B', 'C', 'D'];
 

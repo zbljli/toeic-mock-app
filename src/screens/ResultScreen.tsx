@@ -8,14 +8,14 @@ import {
   SafeAreaView,
 } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
-import type { NativeStackNavigationProp } from '@react-navigation/native-stack';
+import type { StackNavigationProp } from '@react-navigation/stack';
 import { useTestContext } from '../context/TestContext';
 import { getScoreLevel } from '../utils/scoring';
 import { TOEIC_PARTS } from '../data/toeicStructure';
 import type { RootStackParamList } from '../navigation/AppNavigator';
 import type { ToeicPart } from '../types';
 
-type Nav = NativeStackNavigationProp<RootStackParamList>;
+type Nav = StackNavigationProp<RootStackParamList>;
 
 export default function ResultScreen() {
   const navigation = useNavigation<Nav>();

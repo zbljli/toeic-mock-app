@@ -56,12 +56,22 @@ export function generateQuestions(
 }
 
 // ===== Part 1: Photographs (6 题) =====
+const PART1_IMAGES = [
+  'https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=600&h=400&fit=crop',
+  'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&h=400&fit=crop',
+  'https://images.unsplash.com/photo-1577412647305-991150c7d5e3?w=600&h=400&fit=crop',
+  'https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=600&h=400&fit=crop',
+  'https://images.unsplash.com/photo-1436491865332-7a61a109bb05?w=600&h=400&fit=crop',
+  'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=600&h=400&fit=crop',
+];
+
 function generatePart1(count: number): Question[] {
   const templates: Omit<Question, 'id'>[] = [
     {
       part: 1,
       type: 'listening',
       prompt: 'Look at the picture and listen to the four statements. Which statement best describes the picture?',
+      imageUrl: PART1_IMAGES[0],
       options: [
         { id: 'A', text: 'A man is reading a book at his desk.' },
         { id: 'B', text: 'A man is writing on a whiteboard.' },
@@ -75,6 +85,7 @@ function generatePart1(count: number): Question[] {
       part: 1,
       type: 'listening',
       prompt: 'Look at the picture and listen to the four statements. Which statement best describes the picture?',
+      imageUrl: PART1_IMAGES[1],
       options: [
         { id: 'A', text: 'The customers are waiting in line.' },
         { id: 'B', text: 'The shelves are being restocked.' },
@@ -88,6 +99,7 @@ function generatePart1(count: number): Question[] {
       part: 1,
       type: 'listening',
       prompt: 'Look at the picture and listen to the four statements. Which statement best describes the picture?',
+      imageUrl: PART1_IMAGES[2],
       options: [
         { id: 'A', text: 'The meeting room is empty.' },
         { id: 'B', text: 'People are seated around a conference table.' },
@@ -101,6 +113,7 @@ function generatePart1(count: number): Question[] {
       part: 1,
       type: 'listening',
       prompt: 'Look at the picture and listen to the four statements. Which statement best describes the picture?',
+      imageUrl: PART1_IMAGES[3],
       options: [
         { id: 'A', text: 'A boat is docked at the pier.' },
         { id: 'B', text: 'People are swimming in the water.' },
@@ -114,6 +127,7 @@ function generatePart1(count: number): Question[] {
       part: 1,
       type: 'listening',
       prompt: 'Look at the picture and listen to the four statements. Which statement best describes the picture?',
+      imageUrl: PART1_IMAGES[4],
       options: [
         { id: 'A', text: 'The passengers are boarding the plane.' },
         { id: 'B', text: 'The plane is taking off.' },
@@ -127,6 +141,7 @@ function generatePart1(count: number): Question[] {
       part: 1,
       type: 'listening',
       prompt: 'Look at the picture and listen to the four statements. Which statement best describes the picture?',
+      imageUrl: PART1_IMAGES[5],
       options: [
         { id: 'A', text: 'The waiter is taking an order.' },
         { id: 'B', text: 'The diners are looking at the menu.' },

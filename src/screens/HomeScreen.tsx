@@ -8,12 +8,12 @@ import {
   SafeAreaView,
 } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
-import type { NativeStackNavigationProp } from '@react-navigation/native-stack';
+import type { StackNavigationProp } from '@react-navigation/stack';
 import { TEST_MODES, getPartPracticeConfigs, TOEIC_PARTS } from '../data/toeicStructure';
 import type { RootStackParamList } from '../navigation/AppNavigator';
 import { TestModeConfig } from '../types';
 
-type Nav = NativeStackNavigationProp<RootStackParamList>;
+type Nav = StackNavigationProp<RootStackParamList>;
 
 export default function HomeScreen() {
   const navigation = useNavigation<Nav>();

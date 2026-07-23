@@ -1,11 +1,14 @@
 import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, Image, Dimensions } from 'react-native';
+
+const SCREEN_WIDTH = Dimensions.get('window').width;
 
 interface Props {
   part: number;
   partTitle: string;
   prompt: string;
   passage?: string;
+  imageUrl?: string;
   questionNumber: number;
   totalQuestions: number;
 }
@@ -15,6 +18,7 @@ export default function QuestionCard({
   partTitle,
   prompt,
   passage,
+  imageUrl,
   questionNumber,
   totalQuestions,
 }: Props) {
@@ -30,6 +34,18 @@ export default function QuestionCard({
           {questionNumber}/{totalQuestions}
         </Text>
       </View>
+
+      {/* Part 1 图片 */}
+      {imageUrl && (
+        <View style={styles.imageContainer}>
+          <Image
+            source={{ uri: imageUrl }}
+            style={styles.image}
+            resizeMode="cover"
+          />
+          <Text style={styles.imageHint}>📷 观察图片，听音频选择正确答案</Text>
+        </View>
+      )}
 
       {/* 阅读材料 */}
       {passage && (
@@ -87,6 +103,23 @@ const styles = StyleSheet.create({
     fontSize: 14,
     color: '#9E9E9E',
     fontWeight: '600',
+  },
+  imageContainer: {
+    marginBottom: 16,
+    borderRadius: 12,
+    overflow: 'hidden',
+    backgroundColor: '#F5F5F5',
+  },
+  image: {
+    width: '100%',
+    height: 200,
+    borderRadius: 12,
+  },
+  imageHint: {
+    fontSize: 11,
+    color: '#9E9E9E',
+    textAlign: 'center',
+    marginTop: 8,
   },
   passageContainer: {
     backgroundColor: '#FFF8E1',

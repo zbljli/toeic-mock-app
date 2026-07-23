@@ -8,12 +8,12 @@ import {
   SafeAreaView,
 } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
-import type { NativeStackNavigationProp } from '@react-navigation/native-stack';
+import type { StackNavigationProp } from '@react-navigation/stack';
 import { useTestContext } from '../context/TestContext';
 import { TEST_MODES } from '../data/toeicStructure';
 import type { RootStackParamList } from '../navigation/AppNavigator';
 
-type Nav = NativeStackNavigationProp<RootStackParamList>;
+type Nav = StackNavigationProp<RootStackParamList>;
 
 export default function HistoryScreen() {
   const navigation = useNavigation<Nav>();

@@ -9,19 +9,20 @@ import {
   Alert,
 } from 'react-native';
 import { useNavigation, useRoute, RouteProp } from '@react-navigation/native';
-import type { NativeStackNavigationProp } from '@react-navigation/native-stack';
+import type { StackNavigationProp } from '@react-navigation/stack';
 import { useTestContext, getCurrentQuestion, getAnswerForQuestion, getAnsweredCount } from '../context/TestContext';
 import QuestionCard from '../components/QuestionCard';
 import OptionButton from '../components/OptionButton';
 import Timer from '../components/Timer';
 import ProgressBar from '../components/ProgressBar';
+import AudioPlayer from '../components/AudioPlayer';
 import { TOEIC_PARTS } from '../data/toeicStructure';
 import { calculateScore } from '../utils/scoring';
 import { generateQuestions } from '../data/questions';
 import type { RootStackParamList } from '../navigation/AppNavigator';
 import type { Question, Answer, TestMode } from '../types';
 
-type Nav = NativeStackNavigationProp<RootStackParamList>;
+type Nav = StackNavigationProp<RootStackParamList>;
 type TestRoute = RouteProp<RootStackParamList, 'Test'>;
 
 export default function TestScreen() {
@@ -148,17 +149,14 @@ export default function TestScreen() {
           partTitle={partInfo?.titleZh ?? ''}
           prompt={currentQuestion.prompt}
           passage={currentQuestion.passage}
+          imageUrl={currentQuestion.imageUrl}
           questionNumber={state.session.currentQuestionIndex + 1}
           totalQuestions={totalQuestions}
         />
 
-        {/* 听力提示 */}
+        {/* 听力音频播放器 */}
         {currentQuestion.type === 'listening' && (
-          <View style={styles.audioNotice}>
-            <Text style={styles.audioText}>
-              🎧 请听音频，选择正确答案
-            </Text>
-          </View>
+          <AudioPlayer audioUrl={currentQuestion.audioUrl} />
         )}
 
         {/* 选项 */}
