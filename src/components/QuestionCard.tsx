@@ -47,10 +47,10 @@ export default function QuestionCard({
           <Image
             source={{ uri: imageUrl }}
             style={styles.photoImage}
-            resizeMode="cover"
+            resizeMode="contain"
           />
           <View style={styles.photoOverlay}>
-            <Text style={styles.photoLabel}>📷 观察图片，聆听音频选择正确答案</Text>
+            <Text style={styles.photoLabel}>📷 观察图片，聆听音频选择最合适的描述</Text>
           </View>
         </View>
       ) : (
@@ -130,12 +130,12 @@ const styles = StyleSheet.create({
   photoContainer: {
     borderRadius: 10,
     overflow: 'hidden',
-    backgroundColor: '#F5F5F5',
+    backgroundColor: '#1A1A2E',
     marginBottom: 4,
   },
   photoImage: {
     width: '100%',
-    height: 300,
+    height: 340,
   },
   photoOverlay: {
     backgroundColor: 'rgba(0,0,0,0.04)',
