@@ -155,9 +155,26 @@ export default function TestScreen() {
         />
 
         {/* 听力音频播放器 */}
-        {currentQuestion.type === 'listening' && (
-          <AudioPlayer audioUrl={currentQuestion.audioUrl} />
-        )}
+      {currentQuestion.type === 'listening' && (() => {
+        // 根据 Part 类型组合朗读文本
+        let speechText = '';
+        if (currentQuestion.transcript) {
+          // Part 1: 直接朗读 transcript（四句描述）
+          speechText = currentQuestion.transcript;
+        } else if (currentQuestion.passage) {
+          // Part 3, 4: 先朗读对话/独白，再朗读题目
+          speechText = currentQuestion.passage + '. ' + currentQuestion.prompt;
+        } else {
+          // Part 2: 朗读问句
+          speechText = currentQuestion.prompt;
+        }
+        return (
+          <AudioPlayer
+            speechText={speechText}
+            label={`Part ${currentQuestion.part} - 听力音频`}
+          />
+        );
+      })()}
 
         {/* 选项 */}
         <View style={styles.optionsContainer}>
