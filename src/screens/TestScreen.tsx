@@ -7,10 +7,12 @@ import {
   TouchableOpacity,
   SafeAreaView,
   Alert,
+  BackHandler,
 } from 'react-native';
 import { useNavigation, useRoute, RouteProp } from '@react-navigation/native';
 import type { StackNavigationProp } from '@react-navigation/stack';
 import { useTestContext, getCurrentQuestion, getAnswerForQuestion, getAnsweredCount } from '../context/TestContext';
+import { useCoach } from '../context/CoachContext';
 import QuestionCard from '../components/QuestionCard';
 import OptionButton from '../components/OptionButton';
 import Timer from '../components/Timer';
@@ -21,27 +23,37 @@ import PartTransition from '../components/PartTransition';
 import { TOEIC_PARTS } from '../data/toeicStructure';
 import { calculateScore } from '../utils/scoring';
 import { generateQuestions } from '../data/questions';
-import type { RootStackParamList } from '../navigation/AppNavigator';
+import { appendHistoryEntry, type PersistedHistoryEntry } from '../utils/storage';
+import type { HomeTabParamList } from '../navigation/AppNavigator';
 import type { Answer } from '../types';
 
-type Nav = StackNavigationProp<RootStackParamList>;
-type TestRoute = RouteProp<RootStackParamList, 'Test'>;
+type Nav = StackNavigationProp<HomeTabParamList>;
+type TestRoute = RouteProp<HomeTabParamList, 'Test'>;
 
 export default function TestScreen() {
   const navigation = useNavigation<Nav>();
   const route = useRoute<TestRoute>();
   const { config } = route.params;
   const { state, dispatch } = useTestContext();
+  const { isOnboarded } = useCoach();
 
   const [isTimerRunning, setIsTimerRunning] = useState(true);
   const [totalSeconds, setTotalSeconds] = useState(config.totalTimeMinutes * 60);
+
   const [showAnswerSheet, setShowAnswerSheet] = useState(false);
   const [showPartTransition, setShowPartTransition] = useState(false);
   const [transitionPart, setTransitionPart] = useState<number | null>(null);
   const prevPartRef = useRef<number | null>(null);
+  const initializedRef = useRef(false);
+  const submittingRef = useRef(false); // prevent double-submit
+  const alertRef = useRef(false); // prevent overlapping Alert dialogs
 
   // 初始化考试
   useEffect(() => {
+    // Prevent double initialization in React StrictMode / dev reloads
+    if (initializedRef.current) return;
+    initializedRef.current = true;
+
     const questions = generateQuestions(config.parts, config.totalQuestions);
     dispatch({ type: 'LOAD_QUESTIONS', questions });
     dispatch({
@@ -51,11 +63,43 @@ export default function TestScreen() {
     });
     setTotalSeconds(config.totalTimeMinutes * 60);
     setIsTimerRunning(true);
-  }, []);
+  }, [config, dispatch]);
 
   const currentQuestion = getCurrentQuestion(state);
   const answeredCount = getAnsweredCount(state);
   const totalQuestions = state.questions.length;
+
+  // Android 返回键拦截 — 考试中按返回键弹出确认对话框
+  useEffect(() => {
+    const subscription = BackHandler.addEventListener('hardwareBackPress', () => {
+      if (alertRef.current) return true;
+      if (answeredCount > 0) {
+        alertRef.current = true;
+        Alert.alert('Exit Test', 'Your progress will be lost. Are you sure?', [
+          {
+            text: 'Cancel',
+            style: 'cancel',
+            onPress: () => { alertRef.current = false; },
+          },
+          {
+            text: 'Exit',
+            style: 'destructive',
+            onPress: () => {
+              alertRef.current = false;
+              dispatch({ type: 'RESET' });
+              navigation.goBack();
+            },
+          },
+        ]);
+      } else {
+        dispatch({ type: 'RESET' });
+        navigation.goBack();
+      }
+      return true;
+    });
+
+    return () => subscription.remove();
+  }, [answeredCount, dispatch, navigation]);
 
   const currentAnswer = currentQuestion
     ? getAnswerForQuestion(state, currentQuestion.id)
@@ -92,19 +136,29 @@ export default function TestScreen() {
   );
 
   const handleNext = () => {
-    if (state.session && state.session.currentQuestionIndex >= totalQuestions - 1) {
+    if (!state.session) return;
+    if (state.session.currentQuestionIndex >= totalQuestions - 1) {
+      if (alertRef.current) return;
       const unanswered = totalQuestions - answeredCount;
+      alertRef.current = true;
       Alert.alert(
-        '交卷确认',
+        'Submit Test',
         unanswered > 0
-          ? `还有 ${unanswered} 题未作答，确定提交吗？`
-          : `已全部作答，确定提交吗？`,
+          ? `${unanswered} question(s) unanswered. Submit anyway?`
+          : 'All questions answered. Submit now?',
         [
-          { text: '继续做题', style: 'cancel' },
           {
-            text: '提交',
+            text: 'Continue',
+            style: 'cancel',
+            onPress: () => { alertRef.current = false; },
+          },
+          {
+            text: 'Submit',
             style: 'destructive',
-            onPress: handleSubmit,
+            onPress: () => {
+              alertRef.current = false;
+              handleSubmit();
+            },
           },
         ],
       );
@@ -122,26 +176,63 @@ export default function TestScreen() {
   };
 
   const handleSubmit = () => {
+    if (submittingRef.current) return; // prevent double submit
+    submittingRef.current = true;
     setIsTimerRunning(false);
     const result = calculateScore(state.session?.answers ?? [], state.questions);
     dispatch({ type: 'COMPLETE_TEST', result });
-    navigation.replace('Result');
+
+    // Persist to AsyncStorage
+    if (state.session) {
+      const answeredCount = state.session.answers.filter((a) => a.selectedOptionId !== null).length;
+      const modeLabels: Record<string, string> = {
+        'listening-only': 'Full Listening Test',
+        'part-practice': 'Part Practice',
+      };
+      const entry: PersistedHistoryEntry = {
+        sessionId: state.session.id,
+        mode: state.session.mode,
+        modeLabel: modeLabels[state.session.mode] ?? state.session.mode,
+        startedAt: state.session.startedAt,
+        isCompleted: true,
+        totalQuestions: state.questions.length,
+        answeredCount,
+        result,
+      };
+      appendHistoryEntry(entry);
+    }
+
+    // Navigate to the correct result route based on whether we're in onboarding or main app
+    (navigation as any).replace(isOnboarded ? 'Result' : 'OnboardingResult');
   };
 
   const handleTimeUp = () => {
-    Alert.alert('⏰ 时间到', '考试时间已结束，系统将自动交卷。', [
-      { text: '确认', onPress: handleSubmit },
-    ]);
+    if (alertRef.current || submittingRef.current) return;
+    alertRef.current = true;
+    Alert.alert('Time\'s Up', 'The test time has expired. Your answers will be submitted automatically.', [{
+      text: 'OK',
+      onPress: () => {
+        alertRef.current = false;
+        handleSubmit();
+      },
+    }]);
   };
 
   const handleExit = () => {
     if (answeredCount > 0) {
-      Alert.alert('确认退出', '退出后当前答题进度将丢失，确定退出吗？', [
-        { text: '取消', style: 'cancel' },
+      if (alertRef.current) return;
+      alertRef.current = true;
+      Alert.alert('Exit Test', 'Your progress will be lost. Are you sure?', [
         {
-          text: '退出',
+          text: 'Cancel',
+          style: 'cancel',
+          onPress: () => { alertRef.current = false; },
+        },
+        {
+          text: 'Exit',
           style: 'destructive',
           onPress: () => {
+            alertRef.current = false;
             dispatch({ type: 'RESET' });
             navigation.goBack();
           },
@@ -157,7 +248,7 @@ export default function TestScreen() {
     return (
       <SafeAreaView style={styles.safe}>
         <View style={styles.loadingContainer}>
-          <Text style={styles.loadingText}>加载题目中...</Text>
+          <Text style={styles.loadingText}>Loading...</Text>
         </View>
       </SafeAreaView>
     );
@@ -182,13 +273,15 @@ export default function TestScreen() {
         <TouchableOpacity onPress={handleExit} style={styles.exitBtn}>
           <Text style={styles.exitText}>✕</Text>
         </TouchableOpacity>
-        <Timer
-          seconds={totalSeconds}
-          isRunning={isTimerRunning}
-          onTimeUp={handleTimeUp}
-        />
+        <View style={styles.timerGroup}>
+          <Timer
+            seconds={totalSeconds}
+            isRunning={isTimerRunning}
+            onTimeUp={handleTimeUp}
+          />
+        </View>
         <TouchableOpacity onPress={handleSubmit} style={styles.submitBtn}>
-          <Text style={styles.submitText}>交卷</Text>
+          <Text style={styles.submitText}>Submit</Text>
         </TouchableOpacity>
       </View>
 
@@ -203,7 +296,7 @@ export default function TestScreen() {
       {showPartTransition && transitionPart && (
         <PartTransition
           part={transitionPart}
-          partTitle={TOEIC_PARTS.find((p) => p.part === transitionPart)?.titleZh ?? ''}
+          partTitle={TOEIC_PARTS.find((p) => p.part === transitionPart)?.title ?? ''}
           partType={TOEIC_PARTS.find((p) => p.part === transitionPart)?.type ?? 'reading'}
           onDismiss={() => setShowPartTransition(false)}
         />
@@ -213,27 +306,28 @@ export default function TestScreen() {
       <ScrollView style={styles.scroll} contentContainerStyle={styles.scrollContent}>
         <QuestionCard
           part={currentQuestion.part}
-          partTitle={partInfo?.titleZh ?? ''}
+          partTitle={partInfo?.title ?? ''}
           prompt={currentQuestion.prompt}
           passage={currentQuestion.passage}
           imageUrl={currentQuestion.imageUrl}
           displayMode={currentQuestion.part === 1 ? 'photo' : 'text'}
           questionNumber={state.session.currentQuestionIndex + 1}
           totalQuestions={totalQuestions}
+          hidePassage={config.mode === 'listening-only'}
         />
 
-        {/* 听力音频播放器 */}
+        {/* Audio Player */}
         {currentQuestion.type === 'listening' && (
           <AudioPlayer
+            audioScript={currentQuestion.audioScript}
             speechText={speechText}
-            label={`Part ${currentQuestion.part} · ${partInfo?.titleZh ?? ''}`}
             autoPlay
+            maxPlays={config.mode === 'listening-only' ? 1 : undefined}
           />
         )}
 
-        {/* 选项 */}
+        {/* Options */}
         <View style={styles.optionsContainer}>
-          <Text style={styles.optionsTitle}>选择答案</Text>
           {currentQuestion.options.map((opt, idx) => (
             <OptionButton
               key={opt.id}
@@ -260,25 +354,25 @@ export default function TestScreen() {
               state.session.currentQuestionIndex === 0 && styles.navBtnTextDisabled,
             ]}
           >
-            ← 上一题
+            ← Prev
           </Text>
         </TouchableOpacity>
 
-        {/* 答题卡按钮 */}
+        {/* Answer Sheet button */}
         <TouchableOpacity
           style={styles.answerSheetBtn}
           onPress={() => setShowAnswerSheet(true)}
         >
           <Text style={styles.answerSheetBtnText}>
-            📋 {answeredCount}/{totalQuestions}
+            {answeredCount}/{totalQuestions}
           </Text>
         </TouchableOpacity>
 
         <TouchableOpacity style={styles.nextBtn} onPress={handleNext}>
           <Text style={styles.navBtnText}>
             {state.session.currentQuestionIndex >= totalQuestions - 1
-              ? '提交 ✓'
-              : '下一题 →'}
+              ? 'Submit'
+              : 'Next →'}
           </Text>
         </TouchableOpacity>
       </View>
@@ -327,6 +421,21 @@ const styles = StyleSheet.create({
   exitText: {
     fontSize: 16,
     color: '#FFFFFF',
+    fontWeight: '600',
+  },
+  timerGroup: {
+    alignItems: 'center',
+  },
+  phaseBadge: {
+    backgroundColor: 'rgba(255,255,255,0.15)',
+    paddingHorizontal: 10,
+    paddingVertical: 2,
+    borderRadius: 4,
+    marginBottom: 2,
+  },
+  phaseBadgeText: {
+    fontSize: 11,
+    color: 'rgba(255,255,255,0.85)',
     fontWeight: '600',
   },
   submitBtn: {

@@ -1,16 +1,50 @@
-import { View, StyleSheet, Platform } from 'react-native';
-import { TestProvider } from './src/context/TestContext';
+import React, { useEffect, useState } from 'react';
+import { View, Text, StyleSheet, Platform } from 'react-native';
+import { TestProvider, useTestContext } from './src/context/TestContext';
+import { CoachProvider } from './src/context/CoachContext';
 import AppNavigator from './src/navigation/AppNavigator';
+import ErrorBoundary from './src/components/ErrorBoundary';
+import { loadHistory } from './src/utils/storage';
+
+/** Inner component that loads persisted data before rendering the app */
+function AppContent() {
+  const { dispatch } = useTestContext();
+  const [isReady, setIsReady] = useState(false);
+
+  useEffect(() => {
+    (async () => {
+      const history = await loadHistory();
+      dispatch({ type: 'LOAD_HISTORY', history });
+      setIsReady(true);
+    })();
+  }, [dispatch]);
+
+  if (!isReady) {
+    return (
+      <View style={styles.splash}>
+        <Text style={styles.splashText}>TOEIC Listening AI</Text>
+      </View>
+    );
+  }
+
+  return (
+    <View style={styles.wrapper}>
+      <View style={styles.container}>
+        <AppNavigator />
+      </View>
+    </View>
+  );
+}
 
 export default function App() {
   return (
-    <TestProvider>
-      <View style={styles.wrapper}>
-        <View style={styles.container}>
-          <AppNavigator />
-        </View>
-      </View>
-    </TestProvider>
+    <ErrorBoundary>
+      <CoachProvider>
+        <TestProvider>
+          <AppContent />
+        </TestProvider>
+      </CoachProvider>
+    </ErrorBoundary>
   );
 }
 
@@ -35,5 +69,16 @@ const styles = StyleSheet.create({
           height: '100%',
         }
       : {}),
+  },
+  splash: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#1976D2',
+  },
+  splashText: {
+    fontSize: 28,
+    fontWeight: '800',
+    color: '#FFFFFF',
   },
 });

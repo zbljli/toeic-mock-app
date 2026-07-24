@@ -10,10 +10,16 @@ import {
 import { useNavigation } from '@react-navigation/native';
 import type { StackNavigationProp } from '@react-navigation/stack';
 import { useTestContext } from '../context/TestContext';
-import { TEST_MODES } from '../data/toeicStructure';
-import type { RootStackParamList } from '../navigation/AppNavigator';
+import type { HomeTabParamList } from '../navigation/AppNavigator';
 
-type Nav = StackNavigationProp<RootStackParamList>;
+type Nav = StackNavigationProp<HomeTabParamList>;
+
+function getScoreColor(score: number): string {
+  if (score >= 785) return '#4CAF50';
+  if (score >= 605) return '#2196F3';
+  if (score >= 405) return '#FF9800';
+  return '#F44336';
+}
 
 export default function HistoryScreen() {
   const navigation = useNavigation<Nav>();
@@ -24,49 +30,79 @@ export default function HistoryScreen() {
     <SafeAreaView style={styles.safe}>
       <View style={styles.header}>
         <TouchableOpacity onPress={() => navigation.goBack()}>
-          <Text style={styles.backText}>← 返回</Text>
+          <Text style={styles.backText}>← Back</Text>
         </TouchableOpacity>
-        <Text style={styles.headerTitle}>历史成绩</Text>
+        <Text style={styles.headerTitle}>Test History</Text>
         <View style={{ width: 60 }} />
       </View>
 
       {history.length === 0 ? (
         <View style={styles.empty}>
           <Text style={styles.emptyIcon}>📭</Text>
-          <Text style={styles.emptyTitle}>暂无记录</Text>
-          <Text style={styles.emptyDesc}>完成一次模拟考试后{'\n'}成绩会自动保存在这里</Text>
+          <Text style={styles.emptyTitle}>No Records Yet</Text>
+          <Text style={styles.emptyDesc}>Complete a mock test and your{'\n'}score will be saved here.</Text>
         </View>
       ) : (
         <FlatList
           data={[...history].reverse()}
-          keyExtractor={(item) => item.id}
+          keyExtractor={(item) => item.sessionId}
           contentContainerStyle={styles.list}
           renderItem={({ item, index }) => {
-            const modeConfig = TEST_MODES.find((m) => m.mode === item.mode);
             const date = new Date(item.startedAt);
             const dateStr = `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}-${String(date.getDate()).padStart(2, '0')}`;
             const timeStr = `${String(date.getHours()).padStart(2, '0')}:${String(date.getMinutes()).padStart(2, '0')}`;
+            const hasScore = item.result !== null;
 
             return (
               <View style={styles.card}>
+                {/* Header: # + mode + status */}
                 <View style={styles.cardHeader}>
                   <Text style={styles.cardIdx}>#{history.length - index}</Text>
-                  <Text style={styles.cardMode}>
-                    {modeConfig?.label ?? item.mode}
-                  </Text>
+                  <Text style={styles.cardMode}>{item.modeLabel}</Text>
                   {item.isCompleted ? (
                     <View style={styles.badgeCompleted}>
-                      <Text style={styles.badgeText}>已完成</Text>
+                      <Text style={styles.badgeText}>Done</Text>
                     </View>
                   ) : (
                     <View style={styles.badgePending}>
-                      <Text style={styles.badgeText}>未完成</Text>
+                      <Text style={styles.badgeText}>Incomplete</Text>
                     </View>
                   )}
                 </View>
-                <Text style={styles.cardDate}>
-                  {dateStr} {timeStr}
-                </Text>
+
+                {/* Score row */}
+                {hasScore ? (
+                  <View style={styles.scoreRow}>
+                    <Text
+                      style={[
+                        styles.scoreValue,
+                        { color: getScoreColor(item.result!.totalScore) },
+                      ]}
+                    >
+                      {item.result!.totalScore}
+                    </Text>
+                    <View style={styles.scoreBreakdown}>
+                      <Text style={styles.sectionScore}>
+                        🎧 Listening: {item.result!.listeningScore}/495
+                      </Text>
+                      <Text style={styles.sectionScore}>
+                        📖 Reading: {item.result!.readingScore}/495
+                      </Text>
+                    </View>
+                  </View>
+                ) : null}
+
+                {/* Meta row */}
+                <View style={styles.metaRow}>
+                  <Text style={styles.cardDate}>
+                    {dateStr} {timeStr}
+                  </Text>
+                  {hasScore && (
+                    <Text style={styles.answeredInfo}>
+                      {item.answeredCount}/{item.totalQuestions} answered
+                    </Text>
+                  )}
+                </View>
               </View>
             );
           }}
@@ -173,6 +209,37 @@ const styles = StyleSheet.create({
   },
   cardDate: {
     fontSize: 13,
+    color: '#9E9E9E',
+  },
+  scoreRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginVertical: 10,
+    paddingVertical: 10,
+    paddingHorizontal: 12,
+    backgroundColor: '#F8F9FA',
+    borderRadius: 10,
+  },
+  scoreValue: {
+    fontSize: 32,
+    fontWeight: '800',
+    marginRight: 14,
+  },
+  scoreBreakdown: {
+    flex: 1,
+  },
+  sectionScore: {
+    fontSize: 13,
+    color: '#616161',
+    lineHeight: 20,
+  },
+  metaRow: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+  },
+  answeredInfo: {
+    fontSize: 12,
     color: '#9E9E9E',
   },
 });

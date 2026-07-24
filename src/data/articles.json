@@ -1,0 +1,1797 @@
+[
+  {
+    "id": "art_meeting_001",
+    "sceneId": "s_meeting",
+    "title": "Quarterly Strategy Review at Meridian Corp",
+    "type": "article",
+    "estimatedTime": 5,
+    "passage": "Meridian Corporation held its quarterly strategy meeting last Thursday in the main conference room. The meeting was scheduled to begin at 9 a.m., but was postponed by thirty minutes because several department heads were stuck in traffic.\n\nAt 9:30, the CEO, Ms. Patterson, opened the meeting by reviewing the agenda. The first item was a presentation by the marketing team, who proposed a new campaign targeting younger consumers. The proposal was backed by solid market research data, and after a brief discussion, the board gave its approval.\n\nHowever, not everyone was convinced. The finance director, Mr. Chen, expressed concern about the budget. He pointed out that the campaign would require a significant increase in spending, and he was not sure the expected revenue would justify the cost. 'We need to be realistic about our estimates,' he said.\n\nA lengthy negotiation followed. The marketing team argued that the investment was essential for long-term growth, while Mr. Chen insisted on a more conservative approach. Eventually, they reached a compromise: the campaign would proceed, but with a reduced initial budget, subject to a follow-up review in three months. The consensus was that this was the most practical solution.\n\nNext, the HR director gave a brief update on the recruitment drive. She announced that five new candidates had been shortlisted and that interviews would begin the following week. The CEO expressed her satisfaction with the progress and encouraged the team to move quickly to fill the vacancies.\n\nThe final item on the agenda was a proposal from the IT department. They requested an upgrade to the company's network infrastructure, stressing that the current system was outdated and unreliable. However, given the earlier budget debate, the board decided to postpone a decision until they could evaluate the proposal in more detail.\n\nBefore adjourning, Ms. Patterson reminded everyone to submit their quarterly reports by the Friday deadline. She also announced a breakthrough deal with an overseas client, which was met with applause. The meeting concluded at 11:45 a.m., and all attendees agreed it had been highly productive.\n\nIn summary, the meeting demonstrated the importance of open communication, careful planning, and the willingness to find common ground — all essential elements of effective business collaboration.",
+    "vocabWordIds": [
+      "w_0003",
+      "w_0004",
+      "w_0007",
+      "w_0036",
+      "w_0037",
+      "w_0039",
+      "w_0040",
+      "w_0091",
+      "w_0110",
+      "w_0112",
+      "w_0122",
+      "w_0142",
+      "w_0274",
+      "w_0281",
+      "w_0365",
+      "w_0380"
+    ],
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Why was the meeting postponed?",
+        "options": [
+          "The CEO was late",
+          "Department heads were stuck in traffic",
+          "The presentation wasn't ready",
+          "The conference room was double-booked"
+        ],
+        "correctIndex": 1
+      },
+      {
+        "id": "q2",
+        "text": "What was the outcome of the marketing campaign discussion?",
+        "options": [
+          "It was rejected outright",
+          "It was approved with full budget",
+          "It was approved with a reduced budget and a follow-up review",
+          "It was postponed indefinitely"
+        ],
+        "correctIndex": 2
+      },
+      {
+        "id": "q3",
+        "text": "What did the IT department request?",
+        "options": [
+          "New computers for all staff",
+          "A network infrastructure upgrade",
+          "Additional meeting rooms",
+          "A larger budget for software"
+        ],
+        "correctIndex": 1
+      }
+    ]
+  },
+  {
+    "id": "art_meeting_002",
+    "sceneId": "s_meeting",
+    "title": "Negotiating the Partnership Agreement",
+    "type": "dialogue",
+    "estimatedTime": 4,
+    "passage": "Man: Good morning, everyone. Thank you for attending this meeting on such short notice. As you know, we're here to discuss the proposed partnership with Asahi Industries. I've asked Ms. Tanaka to present the key points of the agreement.\n\nWoman: Thank you, Mr. Davis. Let me begin with the main terms. Asahi is offering a five-year contract with an initial investment of $2 million. In return, they want exclusive distribution rights in the Asia-Pacific region.\n\nMan 2: That's a significant commitment on both sides. But I have some concerns about the exclusivity clause. What if their sales performance falls short of expectations?\n\nWoman: That's a valid concern. The agreement includes a performance review at the end of the second year. If sales targets aren't met, either party can renegotiate or withdraw.\n\nMan: I think that's reasonable. However, I'd also like to see a more detailed breakdown of how the $2 million will be allocated. The current proposal is somewhat vague on that point.\n\nWoman: I agree. I'll ask Asahi to provide a revised budget breakdown by next Tuesday. In the meantime, can I get a preliminary consensus on whether we want to move forward?\n\nMan 2: Based on what I've seen, I'm cautiously optimistic. The partnership could open up significant new markets for us. But I'd like to review the revised budget before giving my final endorsement.\n\nMan: That sounds fair. Let's schedule a follow-up meeting for next Thursday at 2 p.m. Ms. Tanaka, please send the revised documents to everyone by Tuesday evening.\n\nWoman: Will do. I'll also prepare a summary of today's discussion for those who couldn't attend.\n\nMan: Excellent. Before we adjourn, does anyone have any other questions or comments? ... Alright, thank you all. This was a productive meeting.",
+    "vocabWordIds": [
+      "w_0003",
+      "w_0037",
+      "w_0097",
+      "w_0142",
+      "w_0173",
+      "w_0187",
+      "w_0380"
+    ],
+    "questions": [
+      {
+        "id": "q1",
+        "text": "What is the main topic of this meeting?",
+        "options": [
+          "Budget cuts for the Asia division",
+          "A proposed partnership with Asahi Industries",
+          "Annual performance reviews",
+          "The IT infrastructure upgrade"
+        ],
+        "correctIndex": 1
+      },
+      {
+        "id": "q2",
+        "text": "What concern does the second man raise about the agreement?",
+        "options": [
+          "The contract is too short",
+          "The investment amount is too low",
+          "The exclusivity clause and sales performance",
+          "The location of the headquarters"
+        ],
+        "correctIndex": 2
+      },
+      {
+        "id": "q3",
+        "text": "What will happen by the end of the second year under the agreement?",
+        "options": [
+          "The contract automatically renews",
+          "A performance review with option to renegotiate",
+          "Asahi must increase investment",
+          "Both parties must find new partners"
+        ],
+        "correctIndex": 1
+      }
+    ]
+  },
+  {
+    "id": "art_office_101",
+    "sceneId": "s_office",
+    "title": "Office Renovation Announcement",
+    "type": "article",
+    "estimatedTime": 2,
+    "passage": "To: All Staff\nFrom: Jenny Park, Facilities Manager\nSubject: Office Renovation on Third Floor\n\nDear colleagues,\n\nThe third-floor office space will undergo renovation starting Monday, November 10th. The project is expected to take approximately three weeks. During this period, the marketing department staff will be temporarily relocated to the fifth floor.\n\nPlease note the following arrangements:\n\nAll desks, cabinets, and filing systems on the third floor must be cleared by Friday, November 7th. Please remove all personal documents and stationery before you leave that day. Any items left behind will be placed in storage.\n\nThe receptionist desk on the third floor will be moved to the main lobby. Visitors should check in at the lobby receptionist starting Monday. The intercom system on the third floor will be out of service. If you need to reach a colleague, please use email or visit their temporary desk in person.\n\nStaplers, calculators, and other office supplies have already been restocked on the fifth floor. Additional supplies can be requested from the supply cabinet near the elevator. The photocopier and xerox machine, previously used for making carbon copies and duplicates of documents, will remain on the third floor but will be inaccessible. Please use the machines on the second floor instead.\n\nDuring renovation, employees on both floors may experience some noise. We recommend using headphones if you require quiet for focused work. The renovation is part of our ongoing effort to improve the workplace environment. We appreciate your patience and punctuality throughout this process.\n\nOvertime work is permitted during this period, but please notify your supervisor in advance. If you have any questions about the temporary assignment of workstations or the bulletin board updates, please contact me directly at extension 3755.\n\nThank you for your cooperation. The staff meeting about punctuality and attendance will continue as scheduled. Meeting memos and the latest directory are available near the front desk.",
+    "vocabWordIds": [
+      "w_0078",
+      "w_0123",
+      "w_0231",
+      "w_0236",
+      "w_0287",
+      "w_0292",
+      "w_0316",
+      "w_0483",
+      "w_0574",
+      "w_0592",
+      "w_0699",
+      "w_0751",
+      "w_0862",
+      "w_0888",
+      "w_0955",
+      "w_0980",
+      "w_1097",
+      "w_1239"
+    ],
+    "questions": [
+      {
+        "id": "q1",
+        "text": "What is being renovated on the third floor?",
+        "options": [
+          "The cafeteria",
+          "The marketing department office",
+          "The CEO office",
+          "The server room"
+        ],
+        "correctIndex": 1
+      },
+      {
+        "id": "q2",
+        "text": "Where should employees direct questions?",
+        "options": [
+          "To the CEO",
+          "To Jenny Park in Facilities via email",
+          "To HR",
+          "To IT helpdesk"
+        ],
+        "correctIndex": 1
+      },
+      {
+        "id": "q3",
+        "text": "What are employees asked NOT to do during renovation?",
+        "options": [
+          "Work overtime",
+          "Send emails",
+          "Come to the office on weekends",
+          "Wear casual clothes"
+        ],
+        "correctIndex": 2
+      }
+    ]
+  },
+  {
+    "id": "art_office_102",
+    "sceneId": "s_office",
+    "title": "Daily Office Conversation",
+    "type": "dialogue",
+    "estimatedTime": 2,
+    "passage": "Woman: Good morning. Did you finish the draft of the client contract? I need to proofread it before the meeting.\n\nMan: Almost. I am waiting for the legal department to confirm one clause. In the meantime, can you check the employee directory? I need the extension for the new secretary on the fourth floor.\n\nWoman: Sure. Her name is Sandra, right? I have the directory here. Yes, extension 4208. By the way, the postage for the printed matter we sent out yesterday came to forty-seven dollars. Should I file the receipt?\n\nMan: Yes, please put it in the filing cabinet under Shipping Expenses. Oh, and the bulletin board near the break room has been updated with the new shift schedule for next week.\n\nWoman: Thanks, I will check it. Also, a reminder: the staff meeting about punctuality is tomorrow at 9 a.m. The attendance records have not been great lately. Several clerks have been tardy three times this month.\n\nMan: I know. The supervisor asked me to prepare a memo about it. I left a carbon copy of the attendance report in your in-tray this morning.\n\nWoman: I saw it. Let us discuss after I finish proofreading. Were the duplicate forms for HR also in the out-tray?\n\nMan: Yes, I put them there yesterday. The receptionist called in sick today, by the way. Can someone cover the front desk during lunch?\n\nWoman: I will ask the typist from accounting. She is usually free between twelve and one.\n\nMan: Perfect. And the xerox machine on the second floor is jammed again. I have put in a maintenance request. I will use the one in the basement for now.\n\nWoman: Good idea. Let me grab those forms and start on the contract draft.\n\nMan: Sounds good. Let us catch up after lunch.",
+    "vocabWordIds": [
+      "w_0006",
+      "w_0010",
+      "w_0097",
+      "w_0236",
+      "w_0287",
+      "w_0292",
+      "w_0303",
+      "w_0316",
+      "w_0483",
+      "w_0508",
+      "w_0574",
+      "w_0592",
+      "w_0711",
+      "w_0786",
+      "w_0857",
+      "w_0915",
+      "w_0930",
+      "w_0955",
+      "w_0980",
+      "w_1056",
+      "w_1069",
+      "w_1097",
+      "w_1145",
+      "w_1182",
+      "w_1239"
+    ],
+    "questions": [
+      {
+        "id": "q1",
+        "text": "What document does the woman ask about?",
+        "options": [
+          "The budget report",
+          "The quarterly newsletter",
+          "The client contract draft",
+          "The employee directory"
+        ],
+        "correctIndex": 2
+      },
+      {
+        "id": "q2",
+        "text": "What happened to the receptionist today?",
+        "options": [
+          "She resigned",
+          "She called in sick",
+          "She is on vacation",
+          "She is in a meeting"
+        ],
+        "correctIndex": 1
+      },
+      {
+        "id": "q3",
+        "text": "Where is the document the woman needs?",
+        "options": [
+          "On her desk",
+          "In the filing cabinet",
+          "In her in-tray",
+          "Sent by email"
+        ],
+        "correctIndex": 1
+      }
+    ]
+  },
+  {
+    "id": "art_hr_201",
+    "sceneId": "s_hr",
+    "title": "New Employee Orientation Memo",
+    "type": "article",
+    "estimatedTime": 2,
+    "passage": "Welcome to Meridian Corporation! We are pleased to have you join our team. This memo outlines key information for new employees during your first month.\n\nEmployment Terms: Your employment contract specifies your salary, benefits, and working hours. Please review it carefully and contact HR if you have any questions. All new employees serve a three-month probationary period, after which your position becomes permanent.\n\nBenefits Enrollment: Full-time employees are eligible for health insurance, retirement pension contributions, and annual bonus programs. You must complete benefits enrollment within 30 days of your start date. Part-time staff receive a proportional benefits package.\n\nPerformance Evaluation: Your supervisor will conduct a formal evaluation after 90 days and annually thereafter. The evaluation assesses your capability, competence, and overall contribution to the team. Please keep a record of your achievements throughout the year.\n\nTraining and Development: We encourage all employees to pursue professional development. The company offers internal training programs and subsidies for external courses and certification programs. Your supervisor can recommend suitable training based on your career goals.\n\nCode of Conduct: All personnel are expected to maintain a professional and respectful workplace. Discrimination, harassment, or any form of misconduct will not be tolerated. Please review the employee handbook for the full policy.\n\nConfidentiality: As an employee, you will have access to confidential company information. You must sign the confidentiality agreement included in your onboarding package. Unauthorized disclosure is grounds for immediate termination.\n\nFor HR inquiries, please contact the personnel department at extension 2500 or email hr@meridian.com. Your supervisor is also available to discuss any concerns. We look forward to your contribution to our success.",
+    "vocabWordIds": [
+      "w_0022",
+      "w_0023",
+      "w_0084",
+      "w_0095",
+      "w_0300",
+      "w_0304",
+      "w_0519",
+      "w_0526",
+      "w_0549",
+      "w_0870",
+      "w_0884",
+      "w_0893"
+    ],
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Who should new employees contact about benefit enrollment?",
+        "options": [
+          "Their supervisor",
+          "HR department within 30 days",
+          "The CEO",
+          "IT helpdesk"
+        ],
+        "correctIndex": 1
+      },
+      {
+        "id": "q2",
+        "text": "When is the performance evaluation conducted?",
+        "options": [
+          "Monthly",
+          "At 90 days and annually",
+          "Weekly",
+          "Only on request"
+        ],
+        "correctIndex": 1
+      },
+      {
+        "id": "q3",
+        "text": "What must new hires sign?",
+        "options": [
+          "Non-compete agreement",
+          "Confidentiality agreement",
+          "Training certificate",
+          "Employment addendum"
+        ],
+        "correctIndex": 1
+      }
+    ]
+  },
+  {
+    "id": "art_hr_202",
+    "sceneId": "s_hr",
+    "title": "Job Interview Dialogue",
+    "type": "dialogue",
+    "estimatedTime": 2,
+    "passage": "Interviewer: Good afternoon. Thank you for coming in today. I have reviewed your resume, and your background in marketing is impressive. Can you tell me about your previous occupation?\n\nCandidate: Thank you. I worked as a marketing coordinator for two years at Sunrise Media. I was responsible for campaign coordination and client communication. I am now looking for a role with more responsibility.\n\nInterviewer: I see. Why did you resign from that position?\n\nCandidate: The company was going through restructuring, and I felt it was time for a new challenge. I am looking for a permanent role where I can grow. I left on good terms and my former employer would provide a strong recommendation.\n\nInterviewer: Good. What attracted you to this position? We are looking for someone with strong expertise in digital marketing and proven capability in campaign management.\n\nCandidate: Your company has an excellent reputation for innovation. I am particularly interested in the hands-on approach you take with clients. I believe my skills in collaboration and project coordination make me a strong candidate.\n\nInterviewer: And how do you handle tight deadlines? Our campaigns often require overtime during launch weeks.\n\nCandidate: I am very comfortable with that. At Sunrise, I frequently worked part-time during slow periods and full-time during campaigns. Flexibility is important.\n\nInterviewer: Good. This position offers a competitive salary plus an annual bonus based on performance. Benefits include health insurance and a pension plan after the first year.\n\nCandidate: That sounds excellent. May I ask about career development opportunities?\n\nInterviewer: Certainly. We offer a mentorship program, and high-performing employees are often promoted from within. Our most recent senior coordinator was a novice in the industry just three years ago.\n\nCandidate: That is very encouraging. I am definitely interested. I will send the references this afternoon.",
+    "vocabWordIds": [
+      "w_0021",
+      "w_0022",
+      "w_0023",
+      "w_0025",
+      "w_0076",
+      "w_0077",
+      "w_0084",
+      "w_0123",
+      "w_0148",
+      "w_0300",
+      "w_0304",
+      "w_0336",
+      "w_0568",
+      "w_0827",
+      "w_0870",
+      "w_0884",
+      "w_0982"
+    ],
+    "questions": [
+      {
+        "id": "q1",
+        "text": "What position is the candidate applying for?",
+        "options": [
+          "Accounting clerk",
+          "Marketing specialist",
+          "IT support",
+          "Sales representative"
+        ],
+        "correctIndex": 1
+      },
+      {
+        "id": "q2",
+        "text": "What does the interviewer ask for at the end?",
+        "options": [
+          "Passport copy",
+          "Reference letters from previous employers",
+          "Portfolio samples",
+          "Medical certificate"
+        ],
+        "correctIndex": 1
+      }
+    ]
+  },
+  {
+    "id": "art_biz_203",
+    "sceneId": "s_biz_dev",
+    "title": "Quarterly Business Review",
+    "type": "article",
+    "estimatedTime": 2,
+    "passage": "Meridian Corporation reported quarterly results yesterday showing a 12 percent increase in revenue compared to the same period last year. CEO Sarah Chen attributed the growth to successful client acquisitions and expanding into two new overseas markets.\n\n\"Our strategy to diversify revenue streams is paying off,\" Ms. Chen said. \"We have seen particularly strong performance from our Asia-Pacific division, where we carried out an aggressive market entry plan.\"\n\nThe company's gross profit margin improved to 34 percent, up from 31 percent a year ago. However, the CFO noted that expenditure on the expansion has been higher than anticipated, and the company's debt level has increased. The depreciation of certain overseas assets also affected the balance sheet. \"We must ensure we are not overextending ourselves,\" the CFO said. \"The deficit in our European operations is a concern.\"\n\nDespite these challenges, investors reacted positively. The company's stock price rose 8 percent in after-hours trading. One shareholder commented that the long-term growth potential justifies the current investment. The company also announced a new initiative to cut down on unnecessary spending.\n\nAnalysts remain optimistic. \"Meridian has a proven track record of thriving in competitive markets,\" one analyst said. \"Their willingness to integrate new technologies and adapt to changing conditions gives them an edge.\" Looking ahead, the company expects moderate inflation to impact costs but projects continued revenue growth of 8 to 10 percent. The board has approved a preliminary plan to explore further expansion into South America next year, pending a detailed market assessment.",
+    "vocabWordIds": [
+      "w_0051",
+      "w_0052",
+      "w_0055",
+      "w_0254",
+      "w_0429",
+      "w_0446",
+      "w_0459",
+      "w_0564",
+      "w_0637",
+      "w_0678",
+      "w_0695",
+      "w_0883",
+      "w_0922",
+      "w_1067",
+      "w_1109"
+    ],
+    "questions": [
+      {
+        "id": "q1",
+        "text": "What drove revenue growth this quarter?",
+        "options": [
+          "Cost reduction",
+          "Client acquisitions and overseas expansion",
+          "Higher prices",
+          "Reduced competition"
+        ],
+        "correctIndex": 1
+      },
+      {
+        "id": "q2",
+        "text": "What concern does the CFO raise?",
+        "options": [
+          "Product quality declining",
+          "Expenditure growing faster than revenue",
+          "CEO leaving",
+          "Staff turnover"
+        ],
+        "correctIndex": 1
+      },
+      {
+        "id": "q3",
+        "text": "What did they decide about expansion?",
+        "options": [
+          "Cancel it",
+          "Accelerate timeline",
+          "Carry out with tighter budget controls",
+          "Wait for government approval"
+        ],
+        "correctIndex": 2
+      }
+    ]
+  },
+  {
+    "id": "art_biz_204",
+    "sceneId": "s_biz_dev",
+    "title": "Investment Discussion",
+    "type": "dialogue",
+    "estimatedTime": 2,
+    "passage": "Investor: I have been reviewing the prospectus for the biotech startup. It looks promising, but I want your thoughts before committing any capital.\n\nFund Manager: The company is developing a treatment for early-stage Alzheimer's. They have made significant progress, and their preliminary trial results are encouraging. However, this is a high-risk investment.\n\nInvestor: I understand the risks. What about the financials? The prospectus shows a substantial accumulated deficit.\n\nFund Manager: That is typical for biotech startups. They burn through cash during the research phase. The key question is whether they can secure additional funding to carry out the next round of trials. They are currently in discussions with three venture capital firms.\n\nInvestor: What about the valuation? The current estimate seems high for a company with no product on the market yet.\n\nFund Manager: I agree. If you are interested, I would recommend negotiating for a lower entry price. You might also consider a convertible note rather than straight equity investment. That would give you more protection.\n\nInvestor: Good idea. How much do you think I should allocate? Ten percent of the portfolio?\n\nFund Manager: I would suggest starting with five percent. We can always increase later if the next trial results are positive. The benchmark is to see progress within 12 to 18 months.\n\nInvestor: Fair enough. Let us draw up the paperwork. I want protection if the company seeks additional capital at a lower valuation.\n\nFund Manager: Absolutely. With the right structure, this could yield significant returns.",
+    "vocabWordIds": [
+      "w_0098",
+      "w_0266",
+      "w_0302",
+      "w_0308",
+      "w_0446",
+      "w_0620",
+      "w_0717",
+      "w_0922",
+      "w_1242"
+    ],
+    "questions": [
+      {
+        "id": "q1",
+        "text": "What type of company interests the investor?",
+        "options": [
+          "Retail chain",
+          "Biotech startup with Alzheimer's treatment",
+          "Real estate developer",
+          "Manufacturing plant"
+        ],
+        "correctIndex": 1
+      },
+      {
+        "id": "q2",
+        "text": "What concerns the investor?",
+        "options": [
+          "Team lacks experience",
+          "The company has no product on market and valuation seems high",
+          "Technology does not work",
+          "Location is too remote"
+        ],
+        "correctIndex": 1
+      },
+      {
+        "id": "q3",
+        "text": "What does the fund manager recommend?",
+        "options": [
+          "Invest full amount now",
+          "Wait until next year",
+          "Smaller investment with clear milestones",
+          "Sell existing holdings"
+        ],
+        "correctIndex": 2
+      }
+    ]
+  },
+  {
+    "id": "art_trade_205",
+    "sceneId": "s_trade",
+    "title": "International Trade Order",
+    "type": "article",
+    "estimatedTime": 2,
+    "passage": "Meridian Corporation's trade division announced today that it has secured a major export contract with a European retail chain. The deal, valued at $4.2 million, will see Meridian supply consumer electronics to 200 stores across Germany and France.\n\nThe contract was signed last Friday following six months of negotiation. The European buyer, an established retail dealer, has agreed to an initial order of 50,000 units, with shipments beginning next month. To secure the transaction, the buyer provided a letter of credit from Deutsche Bank, guaranteeing payment upon delivery. Meridian's CFO noted that this significantly reduces the risk of non-payment.\n\nThe goods will be shipped from Meridian's warehouse in Shenzhen to the buyer's distribution center in Hamburg. The bill of lading has already been prepared by the freight forwarder, and customs clearance at the destination port is expected to take three to five business days.\n\nThe company's corporate headquarters in Singapore will oversee all aspects of the transaction, including quality control, documentation, and compliance with EU import regulations. The deal is part of Meridian's long-range strategy to diversify its customer base beyond Asia.\n\nHowever, the company faces some headwinds. Tariff changes following recent trade disputes could affect the final pricing. The CFO said the company has built some flexibility into the contract to account for potential tariff adjustments. Despite the challenges, industry analysts view the deal positively. The company is emerging as a serious competitor in the consumer electronics space.",
+    "vocabWordIds": [
+      "w_0029",
+      "w_0075",
+      "w_0080",
+      "w_0271",
+      "w_0356",
+      "w_0385",
+      "w_0398",
+      "w_0433",
+      "w_0571",
+      "w_0647",
+      "w_0757",
+      "w_0768",
+      "w_0845",
+      "w_0878",
+      "w_1133",
+      "w_1146"
+    ],
+    "questions": [
+      {
+        "id": "q1",
+        "text": "What did Meridian secure with a European retailer?",
+        "options": [
+          "Merger agreement",
+          "A major export contract worth 4.2 million dollars",
+          "New office lease",
+          "Bank loan"
+        ],
+        "correctIndex": 1
+      },
+      {
+        "id": "q2",
+        "text": "What financial instrument guarantees payment?",
+        "options": [
+          "Passport",
+          "Letter of credit",
+          "Driver's license",
+          "Email confirmation"
+        ],
+        "correctIndex": 1
+      },
+      {
+        "id": "q3",
+        "text": "What challenge does the CFO mention?",
+        "options": [
+          "Tariff changes affecting pricing",
+          "Supplier bankruptcy",
+          "Quality issues",
+          "Shipping delays"
+        ],
+        "correctIndex": 0
+      }
+    ]
+  },
+  {
+    "id": "art_trade_206",
+    "sceneId": "s_trade",
+    "title": "Supplier Negotiation Dialogue",
+    "type": "dialogue",
+    "estimatedTime": 2,
+    "passage": "Buyer: Thanks for sending over the quotation for the electronic components. I have reviewed it with my team, and overall, we are interested. But I have a few points I would like to discuss.\n\nSupplier: Of course. Which items concern you?\n\nBuyer: Mainly the pricing. Your quote is about 15 percent higher than what we are currently paying our existing contractor. I understand the quality might be better, but we need a more competitive offer.\n\nSupplier: I appreciate your honesty. For an order of this size, I can offer a 10 percent discount. That brings the unit price down to $4.50.\n\nBuyer: Better, but I was hoping for closer to $4.20, especially if we commit to a long-range supply agreement. We are looking at a three-year contract.\n\nSupplier: For a three-year commitment, I can do $4.35. At that level, it is a very cost-effective deal given the quality.\n\nBuyer: And the minimum order quantity? A thousand units per quarter is higher than we need. Can we start with 750?\n\nSupplier: We can do 750 for the first two quarters, then step up to the full quota if the partnership is working.\n\nBuyer: That works. Let us talk about payment terms. Your invoice says payment is due within 15 days. We usually work on 30-day terms.\n\nSupplier: For new clients, we prefer 15 days. But given the volume, I can extend it to 25.\n\nBuyer: 25 days is fine. And the warranty on the components?\n\nSupplier: Standard 12-month warranty covering any manufacturing defects. If you need extended coverage, we offer an 18-month plan for an additional 2 percent.\n\nBuyer: We will take the extended warranty. I think we have a deal. I will wait for the revised documents and we can finalize by Friday.\n\nSupplier: Perfect. Looking forward to a long and profitable partnership.",
+    "vocabWordIds": [
+      "w_0029",
+      "w_0030",
+      "w_0072",
+      "w_0389",
+      "w_0402",
+      "w_0612",
+      "w_0768",
+      "w_0845",
+      "w_0878",
+      "w_0966",
+      "w_0967",
+      "w_1133"
+    ],
+    "questions": [
+      {
+        "id": "q1",
+        "text": "What is the buyer initially concerned about?",
+        "options": [
+          "Product quality",
+          "Price being 15 percent higher and minimum order quantity",
+          "Delivery time",
+          "Payment terms"
+        ],
+        "correctIndex": 1
+      },
+      {
+        "id": "q2",
+        "text": "What compromise do they reach?",
+        "options": [
+          "Immediate payment",
+          "10 percent discount with 750 units starting quantity",
+          "Cancel the order",
+          "Meet next month"
+        ],
+        "correctIndex": 1
+      },
+      {
+        "id": "q3",
+        "text": "What warranty does the buyer request?",
+        "options": [
+          "Lifetime warranty",
+          "18-month extended warranty",
+          "Trademark registration",
+          "Free shipping"
+        ],
+        "correctIndex": 1
+      }
+    ]
+  },
+  {
+    "id": "art_tech_207",
+    "sceneId": "s_tech",
+    "title": "IT Department Newsletter",
+    "type": "article",
+    "estimatedTime": 2,
+    "passage": "The IT team successfully completed the server infrastructure upgrade last week. The new equipment, including state-of-the-art blade servers and improved network cable routing, will increase our data processing capacity by 40 percent. All data was migrated to the new system without any loss.\n\nRegular network maintenance was performed on Saturday from 10 p.m. to 4 a.m. During this window, the company intranet and remote access were temporarily unavailable. This maintenance included critical security patches and a firewall configuration update to ensure our digital assets remain protected.\n\nStarting December 1st, all employees will have access to a new suite of productivity tools, including a collaborative spreadsheet application and a project management platform. Training sessions will be held on November 25th and 26th. You can register through the employee portal.\n\nWe have implemented enhanced email filtering to detect phishing attempts and malware. All employees are reminded to activate two-factor authentication and report any suspicious emails immediately. Our automated threat detection system now scans all incoming attachments.\n\nEmployees whose laptops are more than three years old are eligible for an upgrade. The new devices feature faster processors and improved battery life. To browse available options and submit a request, visit the IT self-service portal. Our team can install all necessary software and transfer your data within one business day.\n\nTech Tips: Use the keyboard shortcut Ctrl+Shift+T to restore a browser tab you accidentally closed. To free up disk space, regularly delete temporary files and clear your download folder.\n\nIf you experience issues with any device or software, please submit a ticket through the helpdesk system. For urgent matters, call extension 2700. Our team monitors the system 24/7 to detect and address any malfunction quickly.\n\nCongratulations to the engineering team for developing a new automated quality inspection procedure! Their innovative approach, using machine learning to detect substandard components in real time, has already reduced defects by 23 percent. This is a great example of cutting-edge technology applied to real-world manufacturing.",
+    "vocabWordIds": [
+      "w_0056",
+      "w_0057",
+      "w_0058",
+      "w_0059",
+      "w_0060",
+      "w_0156",
+      "w_0170",
+      "w_0285",
+      "w_0293",
+      "w_0301",
+      "w_0373",
+      "w_0451",
+      "w_0477",
+      "w_0685",
+      "w_0690",
+      "w_0773",
+      "w_0934",
+      "w_1063",
+      "w_1095",
+      "w_1103",
+      "w_1126",
+      "w_1192"
+    ],
+    "questions": [
+      {
+        "id": "q1",
+        "text": "What upgrade did IT complete last week?",
+        "options": [
+          "Office furniture",
+          "Server infrastructure upgrade",
+          "New cafeteria",
+          "Logo redesign"
+        ],
+        "correctIndex": 1
+      },
+      {
+        "id": "q2",
+        "text": "When was network maintenance performed?",
+        "options": [
+          "Monday work hours",
+          "Saturday night 10 p.m. to 4 a.m.",
+          "Friday afternoon",
+          "During company picnic"
+        ],
+        "correctIndex": 1
+      },
+      {
+        "id": "q3",
+        "text": "What security measure was implemented?",
+        "options": [
+          "More security guards",
+          "Enhanced email filtering and mandatory two-factor authentication",
+          "More cameras",
+          "Locked office doors"
+        ],
+        "correctIndex": 1
+      }
+    ]
+  },
+  {
+    "id": "art_tech_208",
+    "sceneId": "s_tech",
+    "title": "IT Support Call",
+    "type": "dialogue",
+    "estimatedTime": 2,
+    "passage": "Employee: Hi, this is Mark from marketing. My laptop keeps disconnecting from the Wi-Fi. I have been trying to download a large file and it keeps failing.\n\nIT Support: Let me check. What is your laptop model?\n\nEmployee: It is the Dell that was upgraded last month. The latest model.\n\nIT Support: Got it. Are you in the office or working remotely?\n\nEmployee: In the office, on the third floor, near the window.\n\nIT Support: Okay. First, let us run a quick diagnostic. Can you open the command prompt and type ipconfig? That will show us your network configuration.\n\nEmployee: Sure. Okay, it is showing an IP address but says media disconnected for the wireless adapter.\n\nIT Support: That suggests the network driver might need an update. Let us try something simpler first: can you restart your laptop? Sometimes a quick reboot fixes the issue.\n\nEmployee: Okay, give me a minute. Alright, I am back but it is still not connecting.\n\nIT Support: Let me check on my end. I can see the access point on the third floor is showing an error. It looks like the cable connecting it to the main switch might be loose. I will send someone up to inspect it.\n\nEmployee: Okay. Should I wait or can I use a different connection?\n\nIT Support: You can try the guest Wi-Fi for now. I will have a technician check the hardware within the hour. If the cable needs replacement, we might need to shut down that access point temporarily.\n\nEmployee: Alright. Oh, one more thing: I got a suspicious email this morning with an attachment I did not recognize. Should I delete it?\n\nIT Support: Yes, delete it immediately. Do not open attachments from unknown senders. It could be a virus. Forward it to our security team first so we can analyze it, then delete it. Good catch.\n\nEmployee: Will do. Thanks!",
+    "vocabWordIds": [
+      "w_0059",
+      "w_0060",
+      "w_0132",
+      "w_0156",
+      "w_0293",
+      "w_0341",
+      "w_0373",
+      "w_0451",
+      "w_0737",
+      "w_1075",
+      "w_1139",
+      "w_1216"
+    ],
+    "questions": [
+      {
+        "id": "q1",
+        "text": "What problem is the employee having?",
+        "options": [
+          "Printer jammed",
+          "Laptop keeps disconnecting from Wi-Fi",
+          "Laptop will not start",
+          "Email inbox full"
+        ],
+        "correctIndex": 1
+      },
+      {
+        "id": "q2",
+        "text": "What does IT ask the employee to try first?",
+        "options": [
+          "Take laptop to IT",
+          "Restart the laptop",
+          "Download driver from portal",
+          "Call manager"
+        ],
+        "correctIndex": 1
+      },
+      {
+        "id": "q3",
+        "text": "What caused the problem?",
+        "options": [
+          "Virus",
+          "A loose cable at the third-floor access point",
+          "Dead battery",
+          "Corrupted operating system"
+        ],
+        "correctIndex": 1
+      }
+    ]
+  },
+  {
+    "id": "art_media_209",
+    "sceneId": "s_media",
+    "title": "Press Release: New Product Launch",
+    "type": "article",
+    "estimatedTime": 2,
+    "passage": "FOR IMMEDIATE RELEASE\n\nMeridian Corporation Unveils EcoSmart Home Series, Targeting Sustainable Living Market\n\nSAN FRANCISCO, November 20, 2025. Meridian Corporation today announced the launch of its EcoSmart Home Series, a new line of energy-efficient smart home devices. The campaign represents the company's largest product launch in three years.\n\nThe EcoSmart series includes a smart thermostat, automated lighting system, and energy monitoring hub, all controlled through a single mobile application. The products were designed with sustainability in mind, using recycled materials and ultra-low-power components. Our research shows that consumers are increasingly looking for products that are both innovative and environmentally responsible.\n\nThe launch will be supported by a multi-channel advertising campaign, including digital advertisements, social media content, and printed leaflets distributed at major retail locations. A banner will also appear on the company's website and partner portals. A product demonstration will be live-streamed on the company's social media channels next Tuesday at 11 a.m. Pacific Time.\n\nThe company has also distributed a detailed brochure to retail partners, outlining product specifications and promotional materials. A confidential circular was sent to key distributors last week with advance information.\n\n\"We are encouraging our retail partners to use the promotional materials we have provided,\" said Lisa Wong, VP of Marketing. \"Consistency in messaging is key. Our slogan for this campaign is Smart Living, Naturally.\"\n\nThe company has published a series of blog posts and an editorial-style article explaining the technology behind the EcoSmart system. A video appendix demonstrating the installation process is available on the company's YouTube channel.\n\nPrinted materials, including a product catalog and specification sheets, will be distributed through our courier network to retail locations nationwide. Inside each package, customers will find a quick-start guide with legible instructions and a QR code linking to the online support portal.\n\nMedia Contact: James Park, Communications Director | media@meridian.com | (415) 555-0190",
+    "vocabWordIds": [
+      "w_0061",
+      "w_0213",
+      "w_0259",
+      "w_0324",
+      "w_0371",
+      "w_0406",
+      "w_0754",
+      "w_1082"
+    ],
+    "questions": [
+      {
+        "id": "q1",
+        "text": "What is the new product line called?",
+        "options": [
+          "Meridian Pro",
+          "EcoSmart Home Series",
+          "CloudSync Enterprise",
+          "MediaPro Suite"
+        ],
+        "correctIndex": 1
+      },
+      {
+        "id": "q2",
+        "text": "What media event is mentioned?",
+        "options": [
+          "TV commercial",
+          "Product demonstration live-streamed on social media next Tuesday",
+          "Newspaper interview",
+          "Radio ad"
+        ],
+        "correctIndex": 1
+      },
+      {
+        "id": "q3",
+        "text": "How can customers get more information?",
+        "options": [
+          "Call customer service",
+          "Subscribe to newsletter",
+          "Register on website by Friday",
+          "Visit office in person"
+        ],
+        "correctIndex": 2
+      }
+    ]
+  },
+  {
+    "id": "art_travel_210",
+    "sceneId": "s_travel",
+    "title": "Travel Advisory for Business Trip",
+    "type": "article",
+    "estimatedTime": 2,
+    "passage": "To: All Staff Attending the Regional Sales Summit\nFrom: Travel Coordination Team\nSubject: Travel Advisory for Singapore, December 8-12\n\nDear colleagues, this memo provides key travel information for those attending the Regional Sales Summit in Singapore.\n\nAll flight bookings have been confirmed. You will receive your electronic ticket and itinerary via email by December 1st. Please check in online at least 24 hours before departure. The airline requires passengers to arrive at the airport three hours before international flights.\n\nUpon arrival at Changi Airport, we recommend taking a taxi or rideshare to the hotel. The journey takes approximately 25 minutes and costs around 30 Singapore dollars. Alternatively, the subway is an affordable option. The station is directly connected to the terminal. A timetable is available on the transit authority website.\n\nAccommodation has been arranged at the Marina Bay Grand Hotel. Check-in begins at 2 p.m. The hotel offers a fitness center, swimming pool, and complimentary breakfast. If your flight arrives early, the hotel concierge can store your luggage until your room is ready.\n\nPlease pack appropriate business attire for three days of meetings, plus casual clothing for the networking dinner. Singapore's weather is warm and humid year-round. The company will reimburse all reasonable travel expenses. Keep all receipts. For the flight, the boarding pass and baggage claim tags should be retained as proof of travel.\n\nA vehicle will be arranged for group transport to the conference venue each morning. For any questions, contact the Travel Coordination Team at extension 2800. Safe travels!",
+    "vocabWordIds": [
+      "w_0082",
+      "w_1129",
+      "w_1166",
+      "w_1175",
+      "w_1207",
+      "w_1212"
+    ],
+    "questions": [
+      {
+        "id": "q1",
+        "text": "How are employees advised to travel from airport to hotel?",
+        "options": [
+          "Rental car",
+          "Taxi or rideshare",
+          "Shuttle bus",
+          "On foot"
+        ],
+        "correctIndex": 1
+      },
+      {
+        "id": "q2",
+        "text": "What must employees keep for expense reimbursement?",
+        "options": [
+          "Passport",
+          "All receipts including taxi and meal receipts",
+          "Travel diary",
+          "Business cards"
+        ],
+        "correctIndex": 1
+      },
+      {
+        "id": "q3",
+        "text": "What should employees label on luggage?",
+        "options": [
+          "Home address",
+          "Name, company, and contact number",
+          "Social security number",
+          "Nothing"
+        ],
+        "correctIndex": 1
+      }
+    ]
+  },
+  {
+    "id": "art_travel_211",
+    "sceneId": "s_travel",
+    "title": "At the Airport Check-In",
+    "type": "dialogue",
+    "estimatedTime": 2,
+    "passage": "Passenger: Good morning. I am on the 8:45 flight to Singapore.\n\nAgent: Good morning. May I see your passport and the booking reference?\n\nPassenger: Here you go. I checked in online but have not printed the boarding pass.\n\nAgent: I can print that now. Are you checking any luggage today?\n\nPassenger: Yes, one suitcase. And I have a carry-on bag.\n\nAgent: Please place your suitcase on the scale. It is within the weight limit. Your baggage claim tag is attached to your boarding pass. Your flight departs from Gate 47, Terminal 3. Boarding time is 8:00 a.m.\n\nPassenger: Thank you. Is there any delay? I saw on the departure board that some afternoon flights are showing delays due to weather.\n\nAgent: Your flight is on schedule. Afternoon flights may experience delays, but your morning departure looks good. Is there anything else?\n\nPassenger: I have a connecting flight in Singapore to Kuala Lumpur. Will my luggage be transferred automatically?\n\nAgent: Yes, your luggage is checked through to Kuala Lumpur. Just follow the transit signs when you arrive. Your connecting flight details are on page two of your itinerary.\n\nPassenger: Great. I have a bit of acrophobia, so I prefer an aisle seat. Did my online selection go through?\n\nAgent: Yes, you are in seat 18C, an aisle seat. The seat belt sign will be on during take-off and landing. Flight time today is approximately two hours and forty minutes.\n\nPassenger: Perfect. I get jet lag quite badly. Any tips?\n\nAgent: Stay hydrated during the flight and avoid alcohol. When you arrive, try to adjust to local time immediately. Stay awake until evening if you can.\n\nPassenger: Good advice. Thank you very much.\n\nAgent: You are welcome. Have a pleasant flight!",
+    "vocabWordIds": [
+      "w_0018",
+      "w_0168",
+      "w_1055",
+      "w_1175"
+    ],
+    "questions": [
+      {
+        "id": "q1",
+        "text": "How many bags is the passenger checking?",
+        "options": [
+          "None",
+          "One suitcase and one carry-on",
+          "Two checked bags",
+          "Three bags"
+        ],
+        "correctIndex": 1
+      },
+      {
+        "id": "q2",
+        "text": "What type of seat does the passenger prefer and why?",
+        "options": [
+          "Window seat, best view",
+          "Aisle seat, due to fear of heights",
+          "Middle seat",
+          "Exit row for legroom"
+        ],
+        "correctIndex": 1
+      },
+      {
+        "id": "q3",
+        "text": "What is offered for the afternoon delay?",
+        "options": [
+          "Free ticket",
+          "Meal voucher and lounge access",
+          "Hotel stay",
+          "Business class upgrade"
+        ],
+        "correctIndex": 1
+      }
+    ]
+  },
+  {
+    "id": "art_shopping_212",
+    "sceneId": "s_shopping",
+    "title": "Customer Service Training Memo",
+    "type": "article",
+    "estimatedTime": 2,
+    "passage": "To: All Retail Staff\nFrom: Sarah Chen, Director of Retail Operations\nSubject: Customer Service Excellence\n\nOur customers are the heart of our business. Every interaction matters, whether a client is browsing our latest collection, inquiring about a discount, or requesting a refund for a defective item.\n\nWhen a customer enters the store, greet them warmly within 30 seconds. If they are looking for a specific item, walk them to it rather than pointing from across the store. Our display should always be neat, with price labels clearly visible. Ask open-ended questions and listen to the response before recommending products.\n\nIf a customer is looking for a bargain, show them our sale section, but also mention that items purchased at full price come with our extended warranty. When a customer is ready to purchase, process the transaction efficiently. Always ask if they have a coupon or voucher. Place the receipt in the bag and point out the warranty information and exchange policy.\n\nWhen a customer brings back a defective product, apologize sincerely first. Process the refund or replacement promptly. A smooth return experience turns a dissatisfied customer into a loyal one. A customer who complains is giving you a chance to fix the problem. Listen, acknowledge their frustration, and offer a solution.\n\nDuring seasonal sales, highlight the discount percentage clearly. When customers ask if an item is the latest model, be honest. Our reputation depends on it. Our VIP program members receive exclusive previews of new arrivals and early access to sales. Always check if a customer qualifies.\n\nRemember: a single negative experience can cost us a customer, and that customer will tell others. The workmanship and quality of our service must match the quality of our products.",
+    "vocabWordIds": [
+      "w_0031",
+      "w_0032",
+      "w_0033",
+      "w_0034",
+      "w_0035",
+      "w_0073",
+      "w_0332",
+      "w_0405",
+      "w_0443",
+      "w_0489",
+      "w_0739",
+      "w_1009",
+      "w_1227",
+      "w_1237",
+      "w_1245"
+    ],
+    "questions": [
+      {
+        "id": "q1",
+        "text": "What should an associate do first when a customer enters?",
+        "options": [
+          "Ask for credit card",
+          "Greet them warmly within 30 seconds",
+          "Show most expensive item",
+          "Direct to clearance section"
+        ],
+        "correctIndex": 1
+      },
+      {
+        "id": "q2",
+        "text": "What should be given after purchase?",
+        "options": [
+          "Business card",
+          "Receipt with warranty information highlighted",
+          "Free sample",
+          "Discount coupon"
+        ],
+        "correctIndex": 1
+      },
+      {
+        "id": "q3",
+        "text": "What represents the biggest risk to the store reputation?",
+        "options": [
+          "Running out of stock",
+          "Failing to handle a complaint effectively",
+          "Too many employees",
+          "Too many discounts"
+        ],
+        "correctIndex": 1
+      }
+    ]
+  },
+  {
+    "id": "art_food_213",
+    "sceneId": "s_food",
+    "title": "Restaurant Review: The Blue Apron",
+    "type": "article",
+    "estimatedTime": 2,
+    "passage": "The Blue Apron, which opened last month in the downtown dining district, is already generating significant buzz. As someone who covers the local food scene, I decided to see if the restaurant lives up to the hype.\n\nMy companion and I arrived at 7 p.m. on a Friday. The exterior is understated, with a simple neon sign above the entrance, but inside, the atmosphere is warm and inviting. The aroma from the open kitchen was fragrant, with hints of garlic and fresh herbs.\n\nOur server presented the menu and recited the evening's specialty: pan-seared duck breast with cherry reduction sauce. The beverage list features a good selection of local wines and craft cocktails.\n\nWe started with appetizers. The chef's selection of hors d'oeuvres included delicate pastry cups filled with herbed goat cheese. My companion ordered the grilled octopus, which came with a citrus seasoning that balanced the smoky flavor beautifully. The appetizer portions were generous and left us eager for the main course.\n\nFor the entree, I chose the duck. The meat was tender and juicy, paired with roasted root vegetables. My companion's grilled salmon was equally impressive, served on a bed of sauteed spinach with a light butter sauce.\n\nWe could not resist dessert. I ordered the chocolate souffle, which arrived puffed and golden, with a side of vanilla bean ice cream. My companion had the pastry chef's tasting plate. Every item demonstrated the craftsmanship of a kitchen that cares deeply about ingredients. The restaurant caters to vegetarian diners as well, with a separate plant-based menu available upon request.\n\nA few minor critiques: the appetizer portions, while delicious, felt slightly small for the price. The chef's use of seasoning, particularly salt, was a bit heavy-handed in the soup. The background music was a touch loud during peak hours. But these are quibbles. The Blue Apron deserves its reputation. This is dining as it should be.",
+    "vocabWordIds": [
+      "w_0044",
+      "w_0045",
+      "w_0215",
+      "w_0319",
+      "w_0465",
+      "w_0615",
+      "w_0873",
+      "w_1054",
+      "w_1090",
+      "w_1206"
+    ],
+    "questions": [
+      {
+        "id": "q1",
+        "text": "What cuisine does The Blue Apron specialize in?",
+        "options": [
+          "Italian",
+          "French with seasonal ingredients",
+          "Japanese",
+          "Mexican"
+        ],
+        "correctIndex": 1
+      },
+      {
+        "id": "q2",
+        "text": "What did the reviewer order for dessert?",
+        "options": [
+          "Chocolate cake",
+          "Chocolate souffle with vanilla ice cream",
+          "Fruit salad",
+          "Nothing"
+        ],
+        "correctIndex": 1
+      },
+      {
+        "id": "q3",
+        "text": "What criticism does the reviewer mention?",
+        "options": [
+          "Food not fresh",
+          "Appetizer portions small for the price and chef heavy-handed with salt",
+          "Slow service",
+          "Bad location"
+        ],
+        "correctIndex": 1
+      }
+    ]
+  },
+  {
+    "id": "art_food_214",
+    "sceneId": "s_food",
+    "title": "Business Lunch Conversation",
+    "type": "dialogue",
+    "estimatedTime": 2,
+    "passage": "Man: Thanks for meeting me for lunch. I have been meaning to discuss the project, and it is easier over a good meal. Have you been to this place before?\n\nWoman: No, it is my first time. The menu looks excellent. I have heard the chef trained in Paris. What do you recommend?\n\nMan: Everything I have tried has been good. Their specialty is northern Italian. The appetizers are particularly good. The appetizer platter with cured meats and cheeses is a great start.\n\nWoman: Let us order that to share. I am quite hungry. I skipped breakfast and I am absolutely starving.\n\nMan: Me too. I will start with the minestrone soup. The last time I was here, the seasoning was perfect.\n\nWoman: I will have the caprese salad. For the main course, I am torn between the pasta with seafood and the grilled fish. What are you considering?\n\nMan: I am going for the grilled salmon. I had it here before and it was excellent. Crispy skin, perfectly cooked inside. The chef uses fresh herbs from the rooftop garden.\n\nWoman: That sounds good. I will go with the handmade pasta. And a glass of the house white wine.\n\nMan: You go ahead. I have a meeting at two. For dessert, we should try the tiramisu. I had a bite of someone else's last time and it was amazing.\n\nWaiter: Good afternoon. Here are your menus. Can I start you with something to drink? We have a full bar, and our signature cocktails are on the first page.\n\nMan: I will have sparkling water with lemon, please.\n\nWoman: I will try the seasonal spritz. And we are ready to order food. We will start with the appetizer platter to share, then the soup and the caprese salad. For the main course, the grilled salmon and the seafood pasta. And could you let the chef know I have a mild allergy to nuts?\n\nWaiter: Absolutely, I will note that. Any nut-based ingredients will be omitted from your dish. Can I interest you in our dessert menu?\n\nMan: We will decide later, but please keep two slices of tiramisu for us.\n\nWaiter: Will do. Enjoy your meal!",
+    "vocabWordIds": [
+      "w_0044",
+      "w_0215",
+      "w_0319",
+      "w_0465",
+      "w_1054",
+      "w_1090"
+    ],
+    "questions": [
+      {
+        "id": "q1",
+        "text": "What type of cuisine does the woman suggest?",
+        "options": [
+          "Fast food",
+          "Italian with handmade pasta",
+          "Food court",
+          "Street food"
+        ],
+        "correctIndex": 1
+      },
+      {
+        "id": "q2",
+        "text": "What does the man order for his main course?",
+        "options": [
+          "Salad",
+          "Grilled salmon",
+          "Steak with potatoes",
+          "Pizza"
+        ],
+        "correctIndex": 1
+      },
+      {
+        "id": "q3",
+        "text": "What dessert do they plan to order?",
+        "options": [
+          "Chocolate cake",
+          "Tiramisu",
+          "Lemon sorbet",
+          "Nothing"
+        ],
+        "correctIndex": 1
+      }
+    ]
+  },
+  {
+    "id": "art_social_215",
+    "sceneId": "s_social",
+    "title": "Networking Event Invitation",
+    "type": "article",
+    "estimatedTime": 2,
+    "passage": "You are Invited: Annual Industry Networking Evening\n\nHosted by the Chamber of Commerce, this year's networking event brings together professionals from across the region for an evening of connection, conversation, and community.\n\nDate: Friday, December 5th, 2025 | Time: 6:30 p.m. to 9:30 p.m.\nVenue: The Grand Ballroom, Metropolitan Hotel\nDress Code: Business casual\n\nJoin us for a relaxed evening designed to foster meaningful relationships. Whether you are a seasoned executive or new to the industry, this event offers the perfect opportunity to expand your professional circle in a welcoming atmosphere.\n\nUpon arrival, guests will be greeted with a complimentary welcome drink. The banquet room will feature a mix of seated areas and standing cocktail tables, encouraging natural conversation. Hors d'oeuvres will be served throughout the evening.\n\nOur keynote speaker is Dr. Maria Santos, author of The Art of Connection, who will deliver a brief talk on building authentic professional relationships. Her presentation will touch on key themes including business etiquette, active listening, and the importance of empathy in professional settings.\n\nWe encourage attendees to go beyond surface-level small talk. Ask questions, share experiences, and look for ways to support others in the community. The best connections often come from genuine curiosity rather than a transactional approach.\n\nA few etiquette tips: Introduce yourself with a warm greeting and a firm handshake, or a respectful nod if you prefer. When someone pays you a compliment, a simple thank you is the appropriate response. Avoid gossip about competitors. It reflects poorly on you and your organization. Extend courtesy to everyone you meet, regardless of their position.\n\nFor those who would like to reconnect after the event, we will provide a digital contact directory for all attendees who opt in. RSVP by November 28th through the Chamber of Commerce website. Space is limited. We look forward to an evening of lively conversation and new acquaintances.",
+    "vocabWordIds": [
+      "w_0260",
+      "w_0361",
+      "w_0407",
+      "w_0548",
+      "w_0573",
+      "w_0633",
+      "w_0636"
+    ],
+    "questions": [
+      {
+        "id": "q1",
+        "text": "What is the main purpose of the event?",
+        "options": [
+          "Company anniversary",
+          "Welcome new professionals and facilitate networking",
+          "Announce layoffs",
+          "Review quarterly results"
+        ],
+        "correctIndex": 1
+      },
+      {
+        "id": "q2",
+        "text": "What is the dress code?",
+        "options": [
+          "Formal black-tie",
+          "Business casual",
+          "Casual jeans",
+          "Traditional formal wear"
+        ],
+        "correctIndex": 1
+      },
+      {
+        "id": "q3",
+        "text": "What etiquette tip is mentioned?",
+        "options": [
+          "Always talk about yourself",
+          "A simple thank you is appropriate when receiving a compliment",
+          "Avoid eye contact",
+          "Discuss salary immediately"
+        ],
+        "correctIndex": 1
+      }
+    ]
+  },
+  {
+    "id": "art_entertainment_216",
+    "sceneId": "s_entertainment",
+    "title": "Arts Center Season Preview",
+    "type": "article",
+    "estimatedTime": 2,
+    "passage": "The Riverside Arts Center has announced its winter season program, and it promises to be one of the most ambitious lineups in the venue's 25-year history.\n\nThe season opens on January 10 with the City Symphony Orchestra performing A Night at the Movies, featuring iconic film scores from the past five decades. The concert will include pieces from classics and modern blockbusters. Tickets go on sale next Monday, and the box office expects a sellout. The theater has excellent acoustics. Every seat offers a full, rich sound.\n\nThe dance program is equally exciting. The Urban Groove Collective, a hip-hop dance troupe that has won three national choreography awards, will take the stage for five nights in February. Their show blends street dance with theatrical storytelling, and audience members will be invited to participate in the finale. No dance experience required, just enthusiasm.\n\nFor drama lovers, the local playwright's festival returns in March. Three original plays will premiere over consecutive weekends, each followed by a Q&A session with the writers and cast. This year's theme is Identity and Belonging. One of the featured playwrights is a former circus performer who brings a uniquely physical approach to storytelling.\n\nThe season closes in April with a special event: a screening of the classic film City Lights accompanied by a live chamber orchestra. It is a rare opportunity to experience silent cinema the way it was originally intended, with live music filling the theater.\n\nThe arts center also announced that its long-awaited renovation of the main theater, including upgrades to lighting, sound, and the screen, will be completed by year end, in time for the January opening. The renovation includes new rehearsal spaces that local performing groups can book. Season passes are available now at a 20 percent discount.",
+    "vocabWordIds": [
+      "w_0325",
+      "w_0367",
+      "w_0593",
+      "w_0903",
+      "w_0994",
+      "w_1051",
+      "w_1159"
+    ],
+    "questions": [
+      {
+        "id": "q1",
+        "text": "What is the theme of the opening concert?",
+        "options": [
+          "Pop hits",
+          "A Night at the Movies with film scores",
+          "Jazz standards",
+          "Opera highlights"
+        ],
+        "correctIndex": 1
+      },
+      {
+        "id": "q2",
+        "text": "When will the theater renovation be completed?",
+        "options": [
+          "By year end, ready for January",
+          "Next summer",
+          "In two years",
+          "Already finished"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "id": "q3",
+        "text": "Which performance involves audience participation?",
+        "options": [
+          "The orchestra",
+          "Urban Groove Collective dance troupe in the finale",
+          "Local playwright drama",
+          "Youth theater workshop"
+        ],
+        "correctIndex": 1
+      }
+    ]
+  },
+  {
+    "id": "art_sports_217",
+    "sceneId": "s_sports",
+    "title": "Company Sports Day Announcement",
+    "type": "article",
+    "estimatedTime": 2,
+    "passage": "To: All Employees\nFrom: Employee Activities Committee\nSubject: Annual Sports Day, Saturday December 13\n\nGet ready for the most anticipated event of the year! The Meridian Corporation Sports Day is back, and this year promises to be bigger and better than ever. The event will be held at Riverside Park from 9 a.m. to 4 p.m. All employees and their families are welcome to participate or simply come and cheer.\n\nThe main tournament this year will be volleyball, with teams of six competing in a round-robin format. Our defending champions, the IT department's Server Smashers, will be back to defend their trophy against all challengers. Other activities include a 5K fun run, walkers welcome, soccer penalty shootout, tug-of-war, and a new addition: a chess and billiards corner for those who prefer mental competition.\n\nFor spectators who want to relax, we will have a stretching and yoga area, plus a massage booth to ease those muscles. For the younger members of the Meridian family, there will be a dedicated playground area with supervised activities. The kids' race always draws the biggest cheers of the day.\n\nA barbecue lunch will be served from noon. Vegetarian options will be available. Please bring your own water bottle. Refill stations will be set up around the park. Snacks and drinks will be available throughout the day.\n\nTeams can sign up online through the employee portal by Friday, December 5th. Individual participants for the fun run can register on the day, but pre-registration is encouraged.\n\nThe only rule? Leave your work stress at home. Sports Day is about recreation, relaxation, and building team spirit. Whether you are a marathon runner or someone whose favorite pastime is watching from a lawn chair, there is a place for you. Come for the competition, stay for the camaraderie!",
+    "vocabWordIds": [
+      "w_0099",
+      "w_0778",
+      "w_0779",
+      "w_0872",
+      "w_0985",
+      "w_0997",
+      "w_1085",
+      "w_1168",
+      "w_1179",
+      "w_1222"
+    ],
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Which event offers the most team points?",
+        "options": [
+          "5K fun run",
+          "Volleyball tournament",
+          "Tug-of-war",
+          "Chess competition"
+        ],
+        "correctIndex": 1
+      },
+      {
+        "id": "q2",
+        "text": "What activities are available for non-competitors?",
+        "options": [
+          "Only watching",
+          "Yoga, massage booth, and board games",
+          "Working at office",
+          "Sleeping"
+        ],
+        "correctIndex": 1
+      },
+      {
+        "id": "q3",
+        "text": "How should employees sign up?",
+        "options": [
+          "Show up on the day",
+          "Register online by Friday, teams of six",
+          "Email CEO",
+          "Wait for manager"
+        ],
+        "correctIndex": 1
+      }
+    ]
+  },
+  {
+    "id": "art_health_218",
+    "sceneId": "s_health",
+    "title": "Health and Wellness Program Update",
+    "type": "article",
+    "estimatedTime": 2,
+    "passage": "As part of our commitment to employee wellbeing, we are pleased to announce the updated Health and Wellness Program for the coming year. Your health is important to us, and we encourage everyone to take full advantage of these benefits.\n\nAll employees are entitled to a comprehensive annual health checkup at the general hospital downtown. The checkup includes a physical examination, blood tests, and basic screening for common conditions such as high blood pressure, diabetes, and high cholesterol. Appointments can be booked directly through the hospital's outpatient department. The checkup is fully covered by the company's health insurance plan. Early diagnosis leads to better outcomes.\n\nFlu season is approaching. The company will host an on-site vaccination clinic on November 20-22 in Conference Room B, from 9 a.m. to 4 p.m. The vaccine is free for all employees. No appointment is necessary. Side effects are generally mild. Some people experience soreness at the injection site or mild fatigue for a day.\n\nOur cafeteria now features a nutrition information display for all menu items. The display includes calorie counts and identifies common allergens. We have expanded the salad bar and introduced more vegetarian and plant-based choices.\n\nStress, anxiety, and depression can affect anyone. The Employee Assistance Program offers confidential counseling at no cost. You can schedule an appointment by calling the helpline at extension 2900. All sessions are private.\n\nIf you have an infection or any contagious illness, please stay home to prevent infecting others. Notify your supervisor before the start of your workday. A doctor's certificate is required for absences of three or more consecutive days. In case of a medical emergency at the workplace, call the front desk at extension 0 immediately. All floors are equipped with a first aid kit, and several staff members are trained in CPR. The nearest emergency room is at City General, 10 minutes away. Stay healthy!",
+    "vocabWordIds": [
+      "w_0133",
+      "w_0147",
+      "w_0364",
+      "w_0387",
+      "w_0524",
+      "w_0626",
+      "w_0676",
+      "w_0829",
+      "w_0854"
+    ],
+    "questions": [
+      {
+        "id": "q1",
+        "text": "What happens if an employee misses the annual checkup?",
+        "options": [
+          "Fired",
+          "Health insurance premium increases",
+          "Warning letter",
+          "Nothing"
+        ],
+        "correctIndex": 1
+      },
+      {
+        "id": "q2",
+        "text": "When is the flu vaccination clinic?",
+        "options": [
+          "November 20-22, 9 a.m. to 4 p.m., Conference Room B",
+          "December 25",
+          "January 1",
+          "Every Monday"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "id": "q3",
+        "text": "What should an employee with a contagious illness do?",
+        "options": [
+          "Come to work",
+          "Stay home, notify supervisor, seek medical attention if severe",
+          "Go on vacation",
+          "Ignore it"
+        ],
+        "correctIndex": 1
+      }
+    ]
+  },
+  {
+    "id": "art_housing_219",
+    "sceneId": "s_housing",
+    "title": "Relocation Guide for New Employees",
+    "type": "article",
+    "estimatedTime": 2,
+    "passage": "Welcome to Singapore! Moving to a new city is exciting, but finding the right place to live can feel overwhelming. This guide will help you navigate the housing market and settle into your new home.\n\nSingapore offers a wide range of housing options, from modern condominiums with full facilities to more affordable public housing apartments. The key is finding the right balance between location, budget, and lifestyle. Most newcomers choose to rent rather than buy, at least initially.\n\nEach community in Singapore has its own character. The central districts are convenient but expensive. The suburbs offer more space and a quieter environment, often at a lower price. Consider your commute. Being near a subway station can save you significant time each day. Spend a weekend exploring different neighborhoods before making a decision.\n\nCondominiums typically include facilities such as a swimming pool, gym, playground for children, and a garage for parking. Many also have a balcony with city views. Public housing is well-maintained and located in established neighborhoods with good access to schools and public transport.\n\nOnce you find a property you like, you will need to submit an application. The landlord will review your employment details and may request references. If approved, you will sign a lease, typically for one or two years. Review every clause carefully. Most landlords require a security deposit, usually one month's rent, and the first month's rent in advance.\n\nDuring property viewings, check the condition of the appliances, plumbing, and the overall state of the furnishings if the unit is furnished. Ask about utility costs. Electricity and water can add significantly to your monthly expenses. Check for signs of dampness or pests. If the unit comes with a lawn or garden, clarify who is responsible for maintenance.\n\nIf you rent an unfurnished apartment, you will need to purchase furniture, kitchenware, and electronics. The company offers a relocation allowance to help with these costs. There are several furniture stores in the city that offer package deals for new residents.\n\nThe HR department can connect you with a real estate agent who specializes in helping relocating employees. The company will reimburse up to five thousand dollars in moving expenses, including temporary storage if needed. Keep all receipts. For questions about the relocation process, contact the HR housing coordinator at extension 2550.",
+    "vocabWordIds": [
+      "w_0255",
+      "w_0348",
+      "w_0517",
+      "w_0621",
+      "w_0622",
+      "w_0624",
+      "w_0732",
+      "w_0736",
+      "w_0744",
+      "w_0750",
+      "w_0902",
+      "w_0943",
+      "w_0977",
+      "w_1112",
+      "w_1197"
+    ],
+    "questions": [
+      {
+        "id": "q1",
+        "text": "What does the guide recommend before choosing a neighborhood?",
+        "options": [
+          "Buy immediately",
+          "Rent for the first year to get familiar with the area",
+          "Stay in a hotel permanently",
+          "Live in the office"
+        ],
+        "correctIndex": 1
+      },
+      {
+        "id": "q2",
+        "text": "What is included in the relocation support?",
+        "options": [
+          "Free housing for life",
+          "Up to 5000 dollars reimbursement for moving costs and temporary storage",
+          "Company car",
+          "Free furniture"
+        ],
+        "correctIndex": 1
+      },
+      {
+        "id": "q3",
+        "text": "What should tenants review carefully before signing?",
+        "options": [
+          "Wall color",
+          "Lease agreement, especially the notice period",
+          "Appliance brand",
+          "Neighbor's name"
+        ],
+        "correctIndex": 1
+      }
+    ]
+  },
+  {
+    "id": "art_mgmt_220",
+    "sceneId": "s_mgmt",
+    "title": "CEO Letter: Annual Strategy Update",
+    "type": "article",
+    "estimatedTime": 2,
+    "passage": "Dear Meridian Corporation Team,\n\nAs we approach the end of 2025, I want to reflect on the year and share our vision for the year ahead. This letter is longer than usual, but the topics are important, and I believe in communicating openly about where we are heading.\n\nOur strategy must evolve. The business landscape is changing rapidly. Over the past quarter, the leadership team has conducted an extensive review of our operations and identified three priorities for 2026.\n\nFirst: Innovation at Every Level. Innovation is not just about breakthrough products. It is about improving every process. From how we handle customer feedback to how we manage our supply chain, there is always room to improve. I am asking every department to identify one process that can be streamlined by the end of Q1. The reliability of our operations is what our customers count on.\n\nSecond: Investing in Our People. Our employees are our greatest asset. We are expanding our training programs and introducing a mentorship initiative. We are also reviewing our compensation structure to ensure it remains competitive. A survey of employee satisfaction will be conducted in January. Please participate honestly. Your perception of the workplace matters.\n\nThird: Embracing Globalization. Our international operations now account for 35 percent of revenue, and that figure is growing. To support this, we are investing in localization, ensuring our products, marketing, and customer support are tailored to each region.\n\nAI and automation are transforming every industry. I know there is anxiety about what this means for jobs. Our goal is to use technology to augment human creativity, not replace it. The first AI-assisted customer inquiry pilot will begin in Q1.\n\nSustainability is not a fad. It is a responsibility. Next year we will publish our first annual sustainability report, including a commitment to carbon-neutral operations by 2030.\n\nThere will be conflicts and setbacks. What defines us is how we respond. If you see something that should be different, speak up. The best ideas often come from the people closest to the work.\n\nThank you for your hard work this year. I am genuinely excited about what we will achieve together in 2026.\n\nWith appreciation, Sarah Chen, CEO, Meridian Corporation",
+    "vocabWordIds": [
+      "w_0041",
+      "w_0062",
+      "w_0086",
+      "w_0116",
+      "w_0121",
+      "w_0631",
+      "w_0667",
+      "w_0765",
+      "w_0886",
+      "w_1000",
+      "w_1015"
+    ],
+    "questions": [
+      {
+        "id": "q1",
+        "text": "What is the core message of the CEO letter?",
+        "options": [
+          "Company is struggling",
+          "Company is evolving with AI, globalization, and sustainability as key priorities",
+          "CEO is resigning",
+          "Company is being sold"
+        ],
+        "correctIndex": 1
+      },
+      {
+        "id": "q2",
+        "text": "What does the CEO say about AI?",
+        "options": [
+          "Too risky",
+          "Will be deployed thoughtfully to augment staff, with Q1 pilot project",
+          "No relevance",
+          "Full automation immediately"
+        ],
+        "correctIndex": 1
+      },
+      {
+        "id": "q3",
+        "text": "What health initiative is mentioned?",
+        "options": [
+          "Free gym memberships",
+          "New policy and wellness room to address fatigue risk",
+          "Mandatory daily exercise",
+          "Personal trainers for all"
+        ],
+        "correctIndex": 1
+      }
+    ]
+  },
+  {
+    "id": "art_career_221",
+    "sceneId": "s_career",
+    "title": "Career Development Workshop Guide",
+    "type": "article",
+    "estimatedTime": 2,
+    "passage": "Are you ready to take the next step in your career? Whether you are a recent graduate entering the job market or an experienced professional looking for a change, this guide will help you succeed.\n\nBefore you update your resume, take time for honest self-assessment. What are your strengths? What skills set do you bring to an employer? What kind of work environment helps you thrive? Understanding your own character and career goals is the foundation of any successful job search.\n\nYour qualifications matter, but so does how you present them. The most qualified candidate does not always get the job. Often, it is the candidate who best communicates their value. Practice describing your experience in terms of results: I improved customer retention by 15 percent is more powerful than I was responsible for customer service.\n\nTailor your resume for each position. A generic application is easy to spot. Read the job description carefully and highlight the experiences most relevant to the role. When you find a vacancy that interests you, apply promptly but carefully. A well-prepared application submitted a day later is better than a rushed one. Before submitting, proofread everything. A single typo can undermine an otherwise strong application.\n\nThe interviewer will assess not only your technical ability but also your interpersonal skills and how you might fit with the team. Practice answering common questions out loud. Prepare examples that illustrate your problem-solving ability and teamwork. The interview is also your opportunity to evaluate whether this company and role are right for you.\n\nDuring the interview, listen carefully. Answer the question that was asked, not the one you wish had been asked. When discussing your current or past employment, remain professional. Speaking negatively about a previous employer rarely reflects well on a candidate.\n\nAfter the interview, send a thank-you note within 24 hours. Restate your interest and briefly reference something specific from the conversation. If you do not hear back within the expected timeframe, a polite follow-up is appropriate. If you receive an offer, review the terms carefully: salary, benefits, working hours, and any internship or probationary period.\n\nIf you are not selected, do not be discouraged. Every interview is practice for the next one. Ask for feedback if possible. Many employers are willing to share insights that can help you improve. The workshop will be held on December 10th. Registration is required through the employee portal.",
+    "vocabWordIds": [
+      "w_0315",
+      "w_0461",
+      "w_0527",
+      "w_0562",
+      "w_0613",
+      "w_0635",
+      "w_0703",
+      "w_0704",
+      "w_0709",
+      "w_0960",
+      "w_0988",
+      "w_1081",
+      "w_1198"
+    ],
+    "questions": [
+      {
+        "id": "q1",
+        "text": "What is the first step in job searching?",
+        "options": [
+          "Buy new suit",
+          "Self-assessment: knowing your character, skills, values, and goals",
+          "Quit current job",
+          "Ask friends for jobs"
+        ],
+        "correctIndex": 1
+      },
+      {
+        "id": "q2",
+        "text": "What should candidates research before an interview?",
+        "options": [
+          "Weather forecast",
+          "Company website, LinkedIn, and recent news",
+          "Restaurant menus near office",
+          "Sports scores"
+        ],
+        "correctIndex": 1
+      },
+      {
+        "id": "q3",
+        "text": "What should a candidate send after an interview?",
+        "options": [
+          "Gift basket",
+          "Thank-you email within 24 hours restating interest",
+          "Complaint to HR",
+          "Nothing"
+        ],
+        "correctIndex": 1
+      }
+    ]
+  },
+  {
+    "id": "art_benefits_222",
+    "sceneId": "s_benefits",
+    "title": "Employee Benefits Guide 2026",
+    "type": "article",
+    "estimatedTime": 2,
+    "passage": "Open enrollment for 2026 benefits begins November 15 and runs through December 15. This guide summarizes all benefits available to Meridian Corporation employees. Please review it carefully.\n\nThe company offers comprehensive medical coverage through our partnership with National Health Insurance. The plan covers outpatient visits, hospitalization, surgery, prescription medications, and emergency room treatment. Coverage extends to your spouse and dependent children. The premium is shared: the company covers 80 percent, and your contribution is deducted from your monthly salary.\n\nAll full-time employees are automatically enrolled in the company retirement insurance plan. Meridian contributes 6 percent of your base salary to your retirement account each month, and you may contribute additional amounts voluntarily. These funds are invested in a diversified portfolio managed by our financial partners.\n\nAs required by law, the company provides unemployment insurance and employment injury insurance for all employees. These programs protect you in the event of job loss or workplace injury. The company covers the full cost of these premiums. Female employees are covered by maternity insurance, which provides paid leave and medical coverage during pregnancy and childbirth. The standard maternity leave is 14 weeks.\n\nEmployees who relocate for work may be eligible for the housing subsidy, providing up to 500 dollars per month toward rental costs for the first year. The automobile subsidy is available for employees whose roles require regular business travel, up to 300 dollars per month toward vehicle costs.\n\nYour total compensation includes your base salary plus any applicable bonuses. The company also provides an annual team performance bonus. All components of direct financial compensation are outlined in your employment contract. Please note that some benefits may be subject to indirect taxes.\n\nMeridian is committed to maintaining both internal and external equity in our compensation structure. We regularly benchmark our salary ranges against industry standards. The annual compensation review considers both market data and individual performance. For questions, contact the benefits team at benefits@meridian.com.",
+    "vocabWordIds": [
+      "w_0064",
+      "w_0781",
+      "w_1023",
+      "w_1150",
+      "w_1188",
+      "w_1251",
+      "w_1252",
+      "w_1253",
+      "w_1254",
+      "w_1255",
+      "w_1256",
+      "w_1257",
+      "w_1258",
+      "w_1259"
+    ],
+    "questions": [
+      {
+        "id": "q1",
+        "text": "What happens if an employee does nothing during open enrollment?",
+        "options": [
+          "Lose all benefits",
+          "Current elections automatically renew",
+          "Get a bonus",
+          "Must reapply"
+        ],
+        "correctIndex": 1
+      },
+      {
+        "id": "q2",
+        "text": "What is NOT covered by company insurance?",
+        "options": [
+          "Medical insurance",
+          "Retirement insurance",
+          "Automobile insurance for personal vehicles",
+          "Maternity insurance"
+        ],
+        "correctIndex": 2
+      },
+      {
+        "id": "q3",
+        "text": "How does the company ensure fair pay?",
+        "options": [
+          "Guessing market rates",
+          "Annual compensation reviews using market data, including internal and external equity analysis",
+          "Same salary for everyone",
+          "Employees name their own salary"
+        ],
+        "correctIndex": 1
+      }
+    ]
+  },
+  {
+    "id": "art_phone_223",
+    "sceneId": "s_phone",
+    "title": "Office Phone System Training Guide",
+    "type": "article",
+    "estimatedTime": 2,
+    "passage": "Effective phone communication is vital to our daily work. How you handle calls reflects directly on Meridian Corporation's reputation, whether speaking with a client, supplier, or colleague.\n\nAnswer within three rings whenever possible. Your greeting should be warm and professional: \"Good morning, Meridian Corporation, this is your name. How can I help you?\" Smile when you speak. Callers can hear the difference in your voice.\n\nWhen the caller asks for a colleague who is not available, offer to take a message. Write down the caller's name, company, phone number, and a brief note about the reason for their call. Confirm the spelling of names and repeat the number back. Place the message slip in the person's in-tray or send it via email immediately.\n\nTo transfer a call, press the Transfer button, dial the extension, and wait for the person to answer. Briefly explain who is calling and why. Then press Transfer again to complete the connection. If the person does not answer, return to the caller, apologize, and offer to take a message.\n\nIf you need to put a caller on hold, say: \"Let me just take a look. It will be about a minute. Is that okay?\" Wait for their response before pressing Hold. If the hold extends, check back: \"Thank you for holding. I am still working on this.\"\n\nTo set up a conference call, call the first person, press Conference, dial the second person, and press Conference again to join all three lines. If you will be away from your desk for more than an hour, activate your voicemail greeting and check messages promptly upon return. When you hear the call waiting beep during a call, you can answer the incoming call by pressing the Flash button. The first caller will be placed on hold automatically.\n\nIf a caller reaches you by mistake or you encounter crossed lines, apologize politely and suggest reconnecting. If you promise to call someone back, note down their preferred time and make the call as scheduled. A missed call-back can damage a business relationship. If you encounter an engaged tone, try again in a few minutes rather than giving up.\n\nIf a caller reports an emergency or safety hazard, transfer them immediately to the front desk at extension 0 or security at extension 911. Do not put an emergency caller on hold. After the transfer, follow up to ensure the situation was addressed.\n\nFor external calls, dial 9 first, then the number. For long distance calls, dial 9 plus 1 plus area code plus number. For international calls, dial 9 plus 011 plus country code plus number. The office telephone directory lists all department extensions. The IT helpdesk at extension 2700 can assist with technical issues.",
+    "vocabWordIds": [
+      "w_0068",
+      "w_0263",
+      "w_0334",
+      "w_0370",
+      "w_0417",
+      "w_0536",
+      "w_0673",
+      "w_0791",
+      "w_0824",
+      "w_1025",
+      "w_1153",
+      "w_1174"
+    ],
+    "questions": [
+      {
+        "id": "q1",
+        "text": "How do you transfer a call?",
+        "options": [
+          "Shout across office",
+          "Press Transfer, dial extension, announce caller, press Transfer again",
+          "Hang up and tell person to call back",
+          "Send text message"
+        ],
+        "correctIndex": 1
+      },
+      {
+        "id": "q2",
+        "text": "What should you say when putting a caller on hold?",
+        "options": [
+          "Nothing",
+          "Let me just take a look. It will be about a minute. Is that okay?",
+          "Goodbye",
+          "Call back later"
+        ],
+        "correctIndex": 1
+      },
+      {
+        "id": "q3",
+        "text": "Which caller gets immediate priority?",
+        "options": [
+          "Salesperson",
+          "Anyone mentioning an emergency or safety hazard",
+          "Wrong number",
+          "Prank caller"
+        ],
+        "correctIndex": 1
+      }
+    ]
+  },
+  {
+    "id": "art_legal_224",
+    "sceneId": "s_legal",
+    "title": "Contract Review Checklist",
+    "type": "article",
+    "estimatedTime": 2,
+    "passage": "Before you sign any business agreement, take the time to review it thoroughly. A contract is a legally binding document, and once signed, it can be difficult and expensive to undo.\n\nVerify that the contract correctly identifies all parties, including full legal names and addresses. Ensure the description of goods or services is accurate and complete. Every deliverable, milestone, and specification should be clearly stated.\n\nReview the payment clause carefully. It should specify the total amount, payment schedule, and method of payment. Look for details about late fees, discounts for early payment, and conditions under which payment may be withheld. The contract should specify the start date, end date, and renewal terms. Pay special attention to the termination clause. Under what circumstances can either party terminate? What is the required notice period? The standard notice period is typically 30 days, though this can vary.\n\nThe confidentiality clause prohibits both parties from disclosing each other's sensitive business information. Confirm what information is covered and how long the obligation lasts. Some confidentiality obligations survive termination, continuing even after the business relationship ends. The liability clause defines who is responsible if something goes wrong. Look for any caps on liability. The indemnity provision may require one party to cover the other's legal costs in certain situations.\n\nHow will disagreements be handled? Many contracts specify arbitration rather than litigation. Arbitration is generally faster and less expensive than going to court. The clause should specify where arbitration will take place and under whose jurisdiction. An irrevocable arbitration clause means neither party can later decide to go to court instead. For international contracts, this is especially important.\n\nIf the contract involves creative work, inventions, or proprietary processes, the intellectual property clause is crucial. It should state clearly who owns what, including patents, trademarks, and copyrights, both during and after the contract. The contract should specify how it can be amended, typically only through a written document signed by both parties.\n\nBefore signing, ensure you have the authority to bind your company. Both parties must receive a fully executed original or a signed copy. If any clause seems unclear or ambiguous, seek clarification before signing. A brief delay for legal review is always preferable to the consequences of a poorly understood contract. For contract reviews, contact legal@meridian.com.",
+    "vocabWordIds": [
+      "w_0069",
+      "w_0123",
+      "w_0223",
+      "w_0272",
+      "w_0720",
+      "w_0730",
+      "w_0848",
+      "w_1005",
+      "w_1078",
+      "w_1155",
+      "w_1156"
+    ],
+    "questions": [
+      {
+        "id": "q1",
+        "text": "What should you do before signing any contract?",
+        "options": [
+          "Sign immediately",
+          "Read every clause with no exceptions",
+          "Let colleague sign for you",
+          "Trust other party completely"
+        ],
+        "correctIndex": 1
+      },
+      {
+        "id": "q2",
+        "text": "What does the confidentiality clause protect?",
+        "options": [
+          "Cafeteria menu",
+          "Both parties' confidential business information from disclosure",
+          "Parking spots",
+          "Holiday party date"
+        ],
+        "correctIndex": 1
+      },
+      {
+        "id": "q3",
+        "text": "What is the minimum recommended notice period for termination?",
+        "options": [
+          "One day",
+          "30 days",
+          "Six months",
+          "No minimum"
+        ],
+        "correctIndex": 1
+      }
+    ]
+  },
+  {
+    "id": "art_emotion_225",
+    "sceneId": "s_emotion",
+    "title": "Customer Feedback Analysis Report",
+    "type": "article",
+    "estimatedTime": 2,
+    "passage": "Every quarter, Meridian Corporation analyzes customer feedback to understand how our clients feel about our products and services. The Q3 2025 analysis reveals valuable insights about customer sentiment.\n\nThe majority of customers, 78 percent, reported satisfaction with their recent purchases. One customer wrote: \"The quality exceeded my expectations. I was genuinely impressed.\" Terms like delighted, impressed, and confident appeared frequently in positive reviews. Many expressed a strong affection for our brand, with several mentioning they had been loyal customers for over five years. These customers described feeling optimistic about future purchases and proud to be associated with our brand.\n\nBut not all feedback was glowing. Approximately 22 percent of customers reported some level of dissatisfaction. The most common complaints related to shipping delays and difficulty reaching customer support during peak hours. One customer wrote: \"I was excited about my order, but after three delays, my excitement turned to frustration and then to disgust.\" Another described feeling panic when a critical business order did not arrive on time.\n\nThe emotional language used by dissatisfied customers is worth noting. Words like upset, annoyed, disappointed, and stressed appeared repeatedly. These are not just complaints about products. They are expressions of genuine distress. When a customer says they feel ignored or helpless, they are describing an emotional state, not just a transactional problem. This is a warning sign that should never be overlooked.\n\nInterestingly, the analysis found that customers whose problems were resolved well were often more loyal than customers who never had a problem at all. One customer described going from furious to grateful after a support agent went above and beyond. \"I had lost all hope for a refund, but then your team surprised me. I have so much respect for how this was handled.\" This demonstrates the power of turning a negative into a positive.\n\nCustomers also appreciate being kept informed. A simple status update, even if it says \"we are still working on it,\" reduces uncertainty and builds trust. Silence creates anxiety, and anxious customers are more likely to perceive problems negatively. Acknowledge customer emotions explicitly in support interactions. Every customer interaction is an emotional experience. Handle it with care.",
+    "vocabWordIds": [
+      "w_0180",
+      "w_0488",
+      "w_0843",
+      "w_0867",
+      "w_0885",
+      "w_1193"
+    ],
+    "questions": [
+      {
+        "id": "q1",
+        "text": "What was the most common positive emotion?",
+        "options": [
+          "Anger",
+          "Satisfaction with product quality and service",
+          "Sadness",
+          "Boredom"
+        ],
+        "correctIndex": 1
+      },
+      {
+        "id": "q2",
+        "text": "How did customers who experienced problems describe their feelings?",
+        "options": [
+          "Indifferent",
+          "Frustration, disappointment, and in some cases panic about deadlines",
+          "Happy",
+          "Confused in a good way"
+        ],
+        "correctIndex": 1
+      },
+      {
+        "id": "q3",
+        "text": "What surprising finding did the analysis reveal?",
+        "options": [
+          "All customers were angry",
+          "Customers whose problems were resolved often became more loyal than those with no problems",
+          "No one cared about service",
+          "Everyone wanted refunds"
+        ],
+        "correctIndex": 1
+      }
+    ]
+  },
+  {
+    "id": "art_action_226",
+    "sceneId": "s_action",
+    "title": "Project Kickoff Meeting Guide",
+    "type": "article",
+    "estimatedTime": 2,
+    "passage": "A well-executed project does not happen by accident. It requires careful planning, clear communication, and disciplined follow-through. Whether you are leading a small internal initiative or a major client engagement, these steps will help you manage the process effectively.\n\nBefore anything else, clarify exactly what the project is meant to accomplish. What problem does it solve? What does success look like? Put this in writing. If you cannot articulate the intended outcome in two sentences, you are not ready to proceed. Share this with the team and confirm everyone understands and agrees. If there are conflicts, resolve them now.\n\nDefine the scope. Identify what is included, and what is not. Scope creep is one of the biggest risks to any project. Write a clear scope statement and get approval from stakeholders. When someone proposes an addition, assess the impact before agreeing.\n\nWork backwards from the deadline to build the schedule. Identify key milestones and assign responsibilities. For each milestone, ask: \"What could prevent this from being completed on time?\" This helps identify obstacles before they become problems. Build in buffer. Things will go wrong.\n\nDetermine who will do what. Match tasks to skills and availability. Ensure each person understands their role and has the tools they need. If you need to instruct someone on a new process, factor in training time. Overloading your best people leads to burnout.\n\nDecide how the team will communicate. Weekly status meetings? Daily stand-ups? A shared project board? Regular updates prevent misunderstandings and keep everyone aligned. When something falls behind, address it immediately. Do not wait, hoping it will catch up. Use data to verify progress, not just verbal assurances. If a milestone is at risk, escalate early.\n\nList every risk you can think of: technical, financial, scheduling, personnel. For each, estimate likelihood and potential impact. Focus on high-likelihood, high-impact risks first. Risk management is not about eliminating uncertainty. It is about being prepared.\n\nWhen the project is complete, hold a post-mortem. What went well? What could have been better? Document lessons learned. This is not about assigning blame. It is about improving the process. The most valuable skill in project management is the ability to adapt. Plans change. The leaders who succeed are those who can assess new information, decide on a course of action, and proceed with confidence.",
+    "vocabWordIds": [
+      "w_0327",
+      "w_0663",
+      "w_0693",
+      "w_0935",
+      "w_1032",
+      "w_1209"
+    ],
+    "questions": [
+      {
+        "id": "q1",
+        "text": "What is the first step a project lead should take?",
+        "options": [
+          "Start immediately without a plan",
+          "Clarify scope, objectives, and timeline in a kickoff meeting",
+          "Assign work randomly",
+          "Wait for CEO instructions"
+        ],
+        "correctIndex": 1
+      },
+      {
+        "id": "q2",
+        "text": "How should a project lead handle potential risks?",
+        "options": [
+          "Ignore them",
+          "Identify early, document, and prepare mitigation plans",
+          "Pray they do not happen",
+          "Blame someone else"
+        ],
+        "correctIndex": 1
+      },
+      {
+        "id": "q3",
+        "text": "How frequently should progress be reported?",
+        "options": [
+          "Only at the end",
+          "Weekly updates, immediate escalation if milestones at risk",
+          "Every hour",
+          "Never"
+        ],
+        "correctIndex": 1
+      }
+    ]
+  },
+  {
+    "id": "art_adjective_227",
+    "sceneId": "s_adjective",
+    "title": "Product Evaluation Report",
+    "type": "article",
+    "estimatedTime": 2,
+    "passage": "Product: EcoCharge Portable Power Bank\nSupplier: GreenTech Industries\nEvaluator: Meridian Quality Assurance Team\n\nThis report provides a comprehensive evaluation of the EcoCharge sample for potential inclusion in our product line.\n\nOverall Rating: 3.8 out of 5.0\n\nThe EcoCharge has a sleek, modern design. The matte finish is elegant and resists fingerprints well. The device is remarkably lightweight at just 180 grams, making it portable enough to slip into a pocket or small bag. However, the glossy trim around the edge feels fragile and could crack if dropped.\n\nThe power bank charged a standard smartphone from zero to 85 percent in 45 minutes, a rapid result that exceeds the industry average. The 10,000 mAh capacity is adequate for most users, providing approximately two full phone charges. The device stayed cool during operation, with no excessive heat buildup. The output is consistent, with no fluctuation in voltage.\n\nThe EcoCharge includes several distinctive features that set it apart. The built-in USB-C cable is a convenient addition. The device supports pass-through charging. A small but appreciated detail: the power button requires a firm press, preventing accidental activation in a bag.\n\nUnfortunately, the packaging is the product's weakest point. The box is fragile and offers insufficient protection. Two of three sample units arrived with minor exterior damage. The instruction leaflet is printed in a font so small it is barely legible. The accessories feel like afterthoughts.\n\nAt the proposed retail price of $39.99, the EcoCharge offers excellent value. Comparable products from leading brands cost 50 to 60 dollars. The price feels appropriate for the quality, and our market research suggests consumers would perceive it as a fair offer.\n\nGreenTech promotes the EcoCharge as eco-friendly, citing the use of recycled plastics. While this is commendable, the vague language in their marketing materials is problematic. We recommend requesting more detailed documentation before making these claims in our own marketing.\n\nCompared to the three leading products in this category, the EcoCharge holds its own. Its charging speed is superior. Its feature set is comparable. Where it falls short is in packaging and accessories, areas that are relatively inexpensive to improve.\n\nRecommendation: Proceed with the partnership on the condition that GreenTech addresses the packaging concerns and provides clearer environmental documentation. This was not a rushed assessment. Each criterion was tested independently over multiple days. The measurements are accurate, and the subjective ratings reflect consensus among three independent evaluators.",
+    "vocabWordIds": [
+      "w_0163",
+      "w_0172",
+      "w_0221",
+      "w_0551",
+      "w_0614",
+      "w_0971",
+      "w_1201",
+      "w_1273"
+    ],
+    "questions": [
+      {
+        "id": "q1",
+        "text": "What rating scale is used?",
+        "options": [
+          "1-10",
+          "1-5 scale",
+          "A-F letters",
+          "Pass/Fail"
+        ],
+        "correctIndex": 1
+      },
+      {
+        "id": "q2",
+        "text": "What did the evaluator say about the packaging?",
+        "options": [
+          "It was beautiful",
+          "It was fragile and two of three units arrived with exterior damage",
+          "It was heavy",
+          "It was perfect"
+        ],
+        "correctIndex": 1
+      },
+      {
+        "id": "q3",
+        "text": "What was the overall recommendation?",
+        "options": [
+          "Reject",
+          "Proceed only after critical issues are resolved and re-tested",
+          "Launch immediately with all issues",
+          "Ignore all issues"
+        ],
+        "correctIndex": 1
+      }
+    ]
+  },
+  {
+    "id": "art_general_228",
+    "sceneId": "s_general",
+    "title": "Company Newsletter: November Roundup",
+    "type": "article",
+    "estimatedTime": 2,
+    "passage": "Happy November, Meridian team! As we head into the final weeks of 2025, here is a roundup of news and updates from around the company.\n\nCongratulations to the product team on the successful launch of the EcoSmart Home Series! The launch event at the Metropolitan Hotel was a great success. The new product line has already generated significant media coverage and positive early feedback. A special thanks to the laboratory team for their late nights during the testing phase.\n\nOur quarterly financial results were released last week, showing a 12 percent increase in revenue compared to Q3 2024. This growth reflects the collective effort of every department. While the income tax implications of our international expansion are complex, our finance team is managing the transition smoothly.\n\nOpen enrollment for 2026 benefits ends on December 15. If you have not already reviewed your insurance options, please do so soon. The employee portal has a comparison tool. The internal communications team has posted short explainer videos on the intranet.\n\nSeveral colleagues have asked about managing jet lag during international business trips. Our unofficial travel guide recommends: stay hydrated, avoid alcohol on long flights, and try to adjust to the destination time zone as soon as you board. The itinerary for the Singapore Summit has been distributed. Check your email for hotel and transport details.\n\nThe office will be closed from December 24 through January 1 for the winter holiday. Please plan your projects accordingly. If you need to work during the closure for any urgent matter, coordinate with your supervisor in advance.\n\nA personal note from the leadership team: this has been a year of significant change and growth. We are grateful for your dedication, creativity, and resilience. Take time during the holidays to rest, recharge, and spend time with the people who matter most. You have earned it. See you in 2026!",
+    "vocabWordIds": [
+      "w_0020",
+      "w_0066",
+      "w_0672",
+      "w_0701",
+      "w_0726",
+      "w_0735",
+      "w_0740"
+    ],
+    "questions": [
+      {
+        "id": "q1",
+        "text": "What was the largest recent achievement?",
+        "options": [
+          "New office plant",
+          "Launch of an innovative product line and 12 percent quarterly revenue increase",
+          "Staff birthday party",
+          "New coffee machine"
+        ],
+        "correctIndex": 1
+      },
+      {
+        "id": "q2",
+        "text": "How do employees access insurance information?",
+        "options": [
+          "Ask a coworker",
+          "Through the employee portal under My Benefits",
+          "Call the CEO",
+          "Read the newspaper"
+        ],
+        "correctIndex": 1
+      },
+      {
+        "id": "q3",
+        "text": "What does the company encourage over the holiday season?",
+        "options": [
+          "Work overtime every day",
+          "Use leave days and spend time with loved ones",
+          "Ignore their families",
+          "Apply for new jobs"
+        ],
+        "correctIndex": 1
+      }
+    ]
+  }
+]

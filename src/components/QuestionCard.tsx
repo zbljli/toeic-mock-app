@@ -1,8 +1,7 @@
-import React from 'react';
-import { View, Text, StyleSheet, Image, Dimensions } from 'react-native';
+import React, { useState } from 'react';
+import { View, Text, StyleSheet, Image, Dimensions, ActivityIndicator } from 'react-native';
 
 const SCREEN_WIDTH = Dimensions.get('window').width;
-const CARD_WIDTH = SCREEN_WIDTH - 32;
 
 interface Props {
   part: number;
@@ -12,71 +11,94 @@ interface Props {
   imageUrl?: string;
   questionNumber: number;
   totalQuestions: number;
-  /** 'photo' = Part 1 只显示图片不显示题干 / 'text' = 正常显示 */
   displayMode?: 'photo' | 'text';
+  /** Hide passage text (official exam: audio only, no reading) */
+  hidePassage?: boolean;
 }
+
+const PART_NAMES: Record<number, string> = {
+  1: 'Photographs',
+  2: 'Question-Response',
+  3: 'Conversations',
+  4: 'Talks',
+};
 
 export default function QuestionCard({
   part,
-  partTitle,
   prompt,
   passage,
   imageUrl,
   questionNumber,
   totalQuestions,
   displayMode = 'text',
+  hidePassage = false,
 }: Props) {
-  const isPhotoMode = displayMode === 'photo' && imageUrl;
+  const isPhotoMode = displayMode === 'photo' && !!imageUrl;
+  const [imageLoading, setImageLoading] = useState(!!imageUrl);
+  const [imageError, setImageError] = useState(false);
+
+  const renderImage = (uri: string, style: object, resizeMode: 'cover' | 'contain') => (
+    <View style={[style, { overflow: 'hidden' }]}>
+      {imageLoading && (
+        <View style={styles.imageLoader}>
+          <ActivityIndicator size="large" color="#9E9E9E" />
+        </View>
+      )}
+      {imageError ? (
+        <View style={styles.imageError}>
+          <Text style={styles.errorIcon}>🖼</Text>
+        </View>
+      ) : (
+        <Image
+          source={{ uri }}
+          style={[style, imageLoading && styles.imageHidden]}
+          resizeMode={resizeMode}
+          onLoadStart={() => setImageLoading(true)}
+          onLoad={() => setImageLoading(false)}
+          onError={() => {
+            setImageLoading(false);
+            setImageError(true);
+          }}
+        />
+      )}
+    </View>
+  );
 
   return (
     <View style={styles.container}>
-      {/* 题号 & Part 信息 */}
+      {/* Part badge + question number */}
       <View style={styles.header}>
         <View style={styles.partBadge}>
-          <Text style={styles.partBadgeText}>Part {part}</Text>
+          <Text style={styles.partBadgeText}>PART {part}</Text>
         </View>
-        <Text style={styles.partTitle}>{partTitle}</Text>
+        <Text style={styles.partName}>{PART_NAMES[part] ?? ''}</Text>
         <Text style={styles.questionCount}>
           {questionNumber}/{totalQuestions}
         </Text>
       </View>
 
-      {/* Part 1 大图模式: 图片占主体，不显示题干 */}
+      {/* Part 1: clean photo, no overlay text */}
       {isPhotoMode ? (
         <View style={styles.photoContainer}>
-          <Image
-            source={{ uri: imageUrl }}
-            style={styles.photoImage}
-            resizeMode="contain"
-          />
-          <View style={styles.photoOverlay}>
-            <Text style={styles.photoLabel}>📷 观察图片，聆听音频选择最合适的描述</Text>
-          </View>
+          {renderImage(imageUrl!, styles.photoImage, 'contain')}
         </View>
       ) : (
         <>
-          {/* 普通图片（非 Part 1 也可能有图） */}
           {imageUrl && (
             <View style={styles.imageContainer}>
-              <Image
-                source={{ uri: imageUrl }}
-                style={styles.image}
-                resizeMode="cover"
-              />
+              {renderImage(imageUrl, styles.image, 'cover')}
             </View>
           )}
 
-          {/* 阅读材料 */}
-          {passage && (
+          {/* Passage — hidden during official exam simulation */}
+          {passage && !hidePassage && (
             <View style={styles.passageContainer}>
-              <Text style={styles.passageLabel}>📄 参考材料</Text>
               <Text style={styles.passageText}>{passage}</Text>
             </View>
           )}
 
-          {/* 题干 */}
+          {/* Prompt */}
           <View style={styles.promptContainer}>
-            <Text style={styles.promptLabel}>📝 题目</Text>
             <Text style={styles.promptText}>{prompt}</Text>
           </View>
         </>
@@ -114,7 +136,7 @@ const styles = StyleSheet.create({
     fontSize: 13,
     fontWeight: '700',
   },
-  partTitle: {
+  partName: {
     flex: 1,
     fontSize: 14,
     color: '#757575',
@@ -126,31 +148,16 @@ const styles = StyleSheet.create({
     color: '#9E9E9E',
     fontWeight: '600',
   },
-  // === Photo Mode (Part 1) ===
+  // Part 1 photo
   photoContainer: {
-    borderRadius: 10,
+    borderRadius: 8,
     overflow: 'hidden',
-    backgroundColor: '#1A1A2E',
-    marginBottom: 4,
   },
   photoImage: {
     width: '100%',
-    height: 340,
+    height: 320,
   },
-  photoOverlay: {
-    backgroundColor: 'rgba(0,0,0,0.04)',
-    paddingVertical: 10,
-    paddingHorizontal: 16,
-    borderTopWidth: 1,
-    borderTopColor: '#EEEEEE',
-  },
-  photoLabel: {
-    fontSize: 12,
-    color: '#757575',
-    textAlign: 'center',
-    fontWeight: '500',
-  },
-  // === Regular Image ===
+  // Regular image
   imageContainer: {
     marginBottom: 14,
     borderRadius: 10,
@@ -161,7 +168,7 @@ const styles = StyleSheet.create({
     width: '100%',
     height: 220,
   },
-  // === Passage ===
+  // Passage
   passageContainer: {
     backgroundColor: '#FFF8E1',
     borderRadius: 8,
@@ -170,26 +177,14 @@ const styles = StyleSheet.create({
     borderLeftWidth: 3,
     borderLeftColor: '#FFC107',
   },
-  passageLabel: {
-    fontSize: 11,
-    color: '#F57F17',
-    fontWeight: '600',
-    marginBottom: 4,
-  },
   passageText: {
     fontSize: 14,
     color: '#424242',
     lineHeight: 21,
   },
-  // === Prompt ===
+  // Prompt
   promptContainer: {
     marginBottom: 2,
-  },
-  promptLabel: {
-    fontSize: 11,
-    color: '#1565C0',
-    fontWeight: '600',
-    marginBottom: 4,
   },
   promptText: {
     fontSize: 15,
@@ -197,4 +192,22 @@ const styles = StyleSheet.create({
     lineHeight: 23,
     fontWeight: '500',
   },
+  // Loading
+  imageLoader: {
+    position: 'absolute',
+    top: 0, left: 0, right: 0, bottom: 0,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#F5F5F5',
+    zIndex: 1,
+  },
+  imageHidden: { opacity: 0 },
+  imageError: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#F5F5F5',
+    padding: 20,
+  },
+  errorIcon: { fontSize: 36 },
 });

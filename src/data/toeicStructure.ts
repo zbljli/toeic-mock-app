@@ -1,25 +1,20 @@
 import { TestModeConfig, ToeicPart } from '../types';
 
 /**
- * TOEIC Listening & Reading Test 结构
+ * TOEIC Listening Test 结构
  *
  * Listening (45 min, 100 题):
  *   Part 1 - Photographs (6 题)
  *   Part 2 - Question-Response (25 题)
  *   Part 3 - Conversations (39 题)
  *   Part 4 - Talks (30 题)
- *
- * Reading (75 min, 100 题):
- *   Part 5 - Incomplete Sentences (30 题)
- *   Part 6 - Text Completion (16 题)
- *   Part 7 - Reading Comprehension (54 题)
  */
 
 export interface PartInfo {
   part: ToeicPart;
   title: string;
   titleZh: string;
-  type: 'listening' | 'reading';
+  type: 'listening';
   questionCount: number;
   description: string;
 }
@@ -28,96 +23,55 @@ export const TOEIC_PARTS: PartInfo[] = [
   {
     part: 1,
     title: 'Photographs',
-    titleZh: '照片描述',
+    titleZh: 'Photographs',
     type: 'listening',
     questionCount: 6,
-    description: '听录音，选择最符合图片的描述',
+    description: 'Listen to 4 statements and choose the one that best describes the photo.',
   },
   {
     part: 2,
     title: 'Question-Response',
-    titleZh: '应答问题',
+    titleZh: 'Question-Response',
     type: 'listening',
     questionCount: 25,
-    description: '听问题，选择最合适的回答',
+    description: 'Listen to a question and choose the most appropriate response.',
   },
   {
     part: 3,
     title: 'Conversations',
-    titleZh: '简短对话',
+    titleZh: 'Conversations',
     type: 'listening',
     questionCount: 39,
-    description: '听对话，回答相关问题',
+    description: 'Listen to a conversation and answer questions about it.',
   },
   {
     part: 4,
     title: 'Talks',
-    titleZh: '简短独白',
+    titleZh: 'Talks',
     type: 'listening',
     questionCount: 30,
-    description: '听独白，回答相关问题',
-  },
-  {
-    part: 5,
-    title: 'Incomplete Sentences',
-    titleZh: '句子填空',
-    type: 'reading',
-    questionCount: 30,
-    description: '选择正确的单词或短语完成句子',
-  },
-  {
-    part: 6,
-    title: 'Text Completion',
-    titleZh: '段落填空',
-    type: 'reading',
-    questionCount: 16,
-    description: '选择正确的单词或短语完成段落',
-  },
-  {
-    part: 7,
-    title: 'Reading Comprehension',
-    titleZh: '阅读理解',
-    type: 'reading',
-    questionCount: 54,
-    description: '阅读文章或图表，回答相关问题',
+    description: 'Listen to a short talk and answer questions about it.',
   },
 ];
 
-export const TEST_MODES: TestModeConfig[] = [
-  {
-    mode: 'full',
-    label: '完整模考',
-    description: '听力 45 分钟 + 阅读 75 分钟，共 200 题',
-    totalQuestions: 200,
-    totalTimeMinutes: 120,
-    parts: [1, 2, 3, 4, 5, 6, 7],
-  },
-  {
-    mode: 'listening-only',
-    label: '听力专项',
-    description: '听力 45 分钟，100 题',
-    totalQuestions: 100,
-    totalTimeMinutes: 45,
-    parts: [1, 2, 3, 4],
-  },
-  {
-    mode: 'reading-only',
-    label: '阅读专项',
-    description: '阅读 75 分钟，100 题',
-    totalQuestions: 100,
-    totalTimeMinutes: 75,
-    parts: [5, 6, 7],
-  },
-];
+/** 听力模拟考试配置 */
+export const LISTENING_TEST_CONFIG: TestModeConfig = {
+  mode: 'listening-only',
+  label: 'Full Listening Test',
+  description: 'Part 1–4 · 45 min · 100 questions',
+  totalQuestions: 100,
+  totalTimeMinutes: 45,
+  parts: [1, 2, 3, 4],
+};
 
-/** 生成 Part 练习模式 */
+/** 生成 Part 练习模式（仅听力 Parts） */
 export function getPartPracticeConfigs(): TestModeConfig[] {
   return TOEIC_PARTS.map((p) => ({
     mode: 'part-practice' as const,
-    label: `Part ${p.part} - ${p.titleZh}`,
+    label: `Part ${p.part} - ${p.title}`,
     description: p.description,
     totalQuestions: p.questionCount,
-    totalTimeMinutes: Math.ceil(p.questionCount * 0.75), // 约 45 秒/题
+    totalTimeMinutes: Math.ceil(p.questionCount * 0.75),
     parts: [p.part],
   }));
 }

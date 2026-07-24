@@ -6,6 +6,7 @@ import {
   Question,
   TestResult,
 } from '../types';
+import type { PersistedHistoryEntry } from '../utils/storage';
 
 // ===== State =====
 interface TestState {
@@ -15,8 +16,8 @@ interface TestState {
   session: TestSession | null;
   /** 考试成绩 */
   result: TestResult | null;
-  /** 历史记录 */
-  history: TestSession[];
+  /** 历史记录（持久化后的条目） */
+  history: PersistedHistoryEntry[];
 }
 
 const initialState: TestState = {
@@ -29,6 +30,7 @@ const initialState: TestState = {
 // ===== Actions =====
 type TestAction =
   | { type: 'LOAD_QUESTIONS'; questions: Question[] }
+  | { type: 'LOAD_HISTORY'; history: PersistedHistoryEntry[] }
   | { type: 'START_TEST'; mode: TestMode; sessionId: string }
   | { type: 'ANSWER_QUESTION'; answer: Answer }
   | { type: 'NEXT_QUESTION' }
@@ -42,6 +44,9 @@ function testReducer(state: TestState, action: TestAction): TestState {
   switch (action.type) {
     case 'LOAD_QUESTIONS':
       return { ...state, questions: action.questions };
+
+    case 'LOAD_HISTORY':
+      return { ...state, history: action.history };
 
     case 'START_TEST':
       return {
@@ -115,19 +120,30 @@ function testReducer(state: TestState, action: TestAction): TestState {
         },
       };
 
-    case 'COMPLETE_TEST':
+    case 'COMPLETE_TEST': {
       if (!state.session) return state;
       const completedSession = {
         ...state.session,
         isCompleted: true,
         isScored: true,
       };
+      const entry: PersistedHistoryEntry = {
+        sessionId: completedSession.id,
+        mode: completedSession.mode,
+        modeLabel: getModeLabel(completedSession.mode),
+        startedAt: completedSession.startedAt,
+        isCompleted: true,
+        totalQuestions: state.questions.length,
+        answeredCount: completedSession.answers.filter((a) => a.selectedOptionId !== null).length,
+        result: action.result,
+      };
       return {
         ...state,
         session: completedSession,
         result: action.result,
-        history: [...state.history, completedSession],
+        history: [...state.history, entry],
       };
+    }
 
     case 'RESET':
       return { ...state, session: null, result: null };
@@ -177,4 +193,13 @@ export function getAnswerForQuestion(
 
 export function getAnsweredCount(state: TestState): number {
   return state.session?.answers.filter((a) => a.selectedOptionId !== null).length ?? 0;
+}
+
+// ===== Helpers =====
+function getModeLabel(mode: TestMode): string {
+  const labels: Record<TestMode, string> = {
+    'listening-only': 'Full Listening Test',
+    'part-practice': 'Part Practice',
+  };
+  return labels[mode] ?? mode;
 }

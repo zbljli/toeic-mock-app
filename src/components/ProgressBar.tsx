@@ -38,7 +38,7 @@ export default function ProgressBar({ current, total, answeredCount }: Props) {
           <Text style={styles.labelBold}>{current}</Text>/{total}
         </Text>
         <Text style={styles.answeredLabel}>
-          已答 <Text style={styles.labelBold}>{answeredCount}</Text>
+          <Text style={styles.labelBold}>{answeredCount}</Text> answered
         </Text>
       </View>
     </View>

@@ -31,6 +31,40 @@ export interface Question {
   correctOptionId: string;
   /** 听力文本（用于 review） */
   transcript?: string;
+  /** 结构化音频脚本（替代 transcript 用于 TTS 播放） */
+  audioScript?: AudioScript;
+}
+
+// ══════════════════════════════════════════════
+//  Audio Script — 真人感 TTS 音频脚本
+// ══════════════════════════════════════════════
+
+/** 说话人定义 */
+export interface SpeakerProfile {
+  id: string;
+  gender: 'male' | 'female';
+  /** 角色描述，用于语音选型：'商务男性' | '商务女性' | '广播员' | '提问者' | '回答者' */
+  voiceStyle: string;
+}
+
+/** 单段音频 */
+export interface AudioSegment {
+  /** 关联 SpeakerProfile.id */
+  speakerId: string;
+  /** 纯净文本，不含任何角色标签 */
+  text: string;
+  /** 此句之前的停顿时间（秒） */
+  pauseBefore: number;
+  /** 覆盖默认语速（可选） */
+  rate?: number;
+}
+
+/** 结构化音频脚本 */
+export interface AudioScript {
+  segments: AudioSegment[];
+  speakers: SpeakerProfile[];
+  /** 场景描述：'office' | 'restaurant' | 'airport' | 'hotel' | 'meeting' | 'announcement' 等 */
+  scenario: string;
 }
 
 /** 用户对一道题的作答 */
@@ -60,9 +94,7 @@ export interface TestSession {
 
 /** 考试模式 */
 export type TestMode =
-  | 'full'            // 完整 200 题
-  | 'listening-only'  // 仅听力 100 题
-  | 'reading-only'    // 仅阅读 100 题
+  | 'listening-only'  // 听力模拟（Part 1-4）
   | 'part-practice';  // 单 Part 练习
 
 /** 考试模式配置 */

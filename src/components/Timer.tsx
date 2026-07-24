@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import { formatTime } from '../utils/timer';
 
@@ -19,6 +19,12 @@ export default function Timer({
 }: Props) {
   const [remaining, setRemaining] = useState(seconds);
 
+  // Use refs for callbacks to avoid stale closures in setInterval
+  const onTickRef = useRef(onTick);
+  onTickRef.current = onTick;
+  const onTimeUpRef = useRef(onTimeUp);
+  onTimeUpRef.current = onTimeUp;
+
   useEffect(() => {
     setRemaining(seconds);
   }, [seconds]);
@@ -26,20 +32,30 @@ export default function Timer({
   useEffect(() => {
     if (!isRunning) return;
 
+    let timedOut = false;
+
     const interval = setInterval(() => {
+      if (timedOut) return;
       setRemaining((prev) => {
         const next = prev - 1;
-        onTick?.(next);
         if (next <= 0) {
+          timedOut = true;
           clearInterval(interval);
-          onTimeUp?.();
+          // Defer onTimeUp to avoid calling during setState
+          setTimeout(() => {
+            onTimeUpRef.current?.();
+          }, 0);
           return 0;
         }
+        onTickRef.current?.(next);
         return next;
       });
     }, 1000);
 
-    return () => clearInterval(interval);
+    return () => {
+      timedOut = true;
+      clearInterval(interval);
+    };
   }, [isRunning]);
 
   const isWarning = remaining <= warningThreshold;
@@ -79,7 +95,7 @@ const styles = StyleSheet.create({
     fontSize: 18,
     fontWeight: '700',
     color: '#212121',
-    fontVariant: ['tabular-nums'],
+    fontVariant: ['tabular-nums'] as any,
   },
   timeWarning: {
     color: '#F44336',

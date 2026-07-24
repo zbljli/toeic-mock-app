@@ -39,7 +39,7 @@ export default function AnswerSheet({
       const info = TOEIC_PARTS.find((p) => p.part === currentPart);
       partGroups.push({
         part: currentPart,
-        title: info?.titleZh ?? `Part ${currentPart}`,
+        title: info?.title ?? `Part ${currentPart}`,
         questionIndices: [i],
       });
     } else {
@@ -62,9 +62,9 @@ export default function AnswerSheet({
         {/* Header */}
         <View style={styles.header}>
           <TouchableOpacity onPress={onClose} style={styles.closeBtn}>
-            <Text style={styles.closeText}>✕ 关闭</Text>
+            <Text style={styles.closeText}>✕ Close</Text>
           </TouchableOpacity>
-          <Text style={styles.headerTitle}>答题卡</Text>
+          <Text style={styles.headerTitle}>Answer Sheet</Text>
           <View style={styles.summary}>
             <Text style={styles.summaryText}>
               {totalAnswered}/{questions.length}
@@ -76,15 +76,15 @@ export default function AnswerSheet({
         <View style={styles.legend}>
           <View style={styles.legendItem}>
             <View style={[styles.legendDot, styles.dotAnswered]} />
-            <Text style={styles.legendText}>已答</Text>
+            <Text style={styles.legendText}>Answered</Text>
           </View>
           <View style={styles.legendItem}>
             <View style={[styles.legendDot, styles.dotCurrent]} />
-            <Text style={styles.legendText}>当前</Text>
+            <Text style={styles.legendText}>Current</Text>
           </View>
           <View style={styles.legendItem}>
             <View style={[styles.legendDot, styles.dotUnanswered]} />
-            <Text style={styles.legendText}>未答</Text>
+            <Text style={styles.legendText}>Unanswered</Text>
           </View>
         </View>
 

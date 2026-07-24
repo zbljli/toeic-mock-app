@@ -36,7 +36,7 @@ export default function PartTransition({
         <Text style={styles.sectionLabel}>{sectionLabel}</Text>
         <Text style={styles.partNumber}>PART {part}</Text>
         <Text style={styles.partTitle}>{partTitle}</Text>
-        <Text style={styles.hint}>3 秒后自动开始 · 点击跳过</Text>
+        <Text style={styles.hint}>Auto-start in 3s · Tap to skip</Text>
       </TouchableOpacity>
     </View>
   );
