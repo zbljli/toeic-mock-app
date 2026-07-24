@@ -8,6 +8,10 @@ import type {
 } from '../types/coach';
 import { generateDailyTasks } from '../engines/trainingPlanEngine';
 
+/** Bump this when onboarding flow changes to force re-welcome */
+const COACH_VERSION = 2;
+const VERSION_KEY = '@coach_version';
+
 const STORAGE_KEYS = {
   ONBOARDING_STAGE: '@coach_onboarding_stage',
   USER_GOAL: '@coach_user_goal',
@@ -102,6 +106,10 @@ export function CoachProvider({ children }: { children: ReactNode }) {
   useEffect(() => {
     (async () => {
       try {
+        // ── Version migration ──
+        const storedVersion = await AsyncStorage.getItem(VERSION_KEY);
+        const currentVersion = storedVersion ? parseInt(storedVersion, 10) : 0;
+
         const [
           stage, goal, profile, rec, assess, train, scores, tasks, mistakes,
           savedDiaries, savedProgress, savedStories,
@@ -120,7 +128,15 @@ export function CoachProvider({ children }: { children: ReactNode }) {
           AsyncStorage.getItem(STORAGE_KEYS.USER_STORIES),
         ]);
 
-        if (stage) setOnboardingStageState(stage as OnboardingStage);
+        // Migrate: if version is old, reset onboarding to welcome screen
+        if (currentVersion < COACH_VERSION) {
+          setOnboardingStageState('welcome');
+          await AsyncStorage.setItem(STORAGE_KEYS.ONBOARDING_STAGE, 'welcome');
+          await AsyncStorage.setItem(VERSION_KEY, String(COACH_VERSION));
+        } else if (stage) {
+          setOnboardingStageState(stage as OnboardingStage);
+        }
+
         if (goal) setUserGoal(JSON.parse(goal));
         if (profile) setAbilityProfile(JSON.parse(profile));
         if (rec) setRecommendation(JSON.parse(rec));
