@@ -5,11 +5,11 @@ import {
 } from 'react-native';
 import { useNavigation, useRoute, RouteProp } from '@react-navigation/native';
 import type { StackNavigationProp } from '@react-navigation/stack';
-import * as Speech from 'expo-speech';
 import type { SceneEntry, WordEntry, WordStatus } from '../types/vocabulary';
 import type { VocabTabParamList } from '../navigation/AppNavigator';
 import { loadVocabState, saveVocabState, migrateMasteryIfNeeded } from '../utils/storage';
 import { analyzeEtymology } from '../utils/etymology';
+import { speakWord, stopSpeech } from '../utils/speech';
 import scenesData from '../data/scenes.json';
 import wordsData from '../data/words.json';
 
@@ -111,24 +111,48 @@ const cardStyles = StyleSheet.create({
 });
 
 // ═══════════════════════════════════════════════════════
-//  STATS BANNER  — 顶部统计卡片
+//  STATS BANNER  — clickable filter stats
 // ═══════════════════════════════════════════════════════
 function StatsBanner({
   total, mastered, unknown, unreviewed, rate,
+  activeFilter, onFilterChange,
 }: {
   total: number; mastered: number; unknown: number; unreviewed: number; rate: number;
+  activeFilter: WordStatus | null;
+  onFilterChange: (f: WordStatus | null) => void;
 }) {
   const tested = mastered + unknown;
 
   return (
     <View style={statsStyles.card}>
-      {/* 3 stat columns */}
+      {/* 3 clickable stat columns */}
       <View style={statsStyles.columns}>
-        <StatItem value={mastered} label="Mastered" color="#2E7D32" />
+        <TouchableOpacity
+          style={statsStyles.item}
+          onPress={() => onFilterChange(activeFilter === 'mastered' ? null : 'mastered')}
+          activeOpacity={0.6}
+        >
+          <Text style={[statsStyles.itemValue, { color: '#2E7D32' }, activeFilter === 'mastered' && statsStyles.itemActive]}>{mastered}</Text>
+          <Text style={[statsStyles.itemLabel, activeFilter === 'mastered' && { color: '#2E7D32', fontWeight: '700' }]}>Mastered</Text>
+        </TouchableOpacity>
         <View style={statsStyles.divider} />
-        <StatItem value={unknown} label="Learning" color="#E65100" />
+        <TouchableOpacity
+          style={statsStyles.item}
+          onPress={() => onFilterChange(activeFilter === 'unknown' ? null : 'unknown')}
+          activeOpacity={0.6}
+        >
+          <Text style={[statsStyles.itemValue, { color: '#E65100' }, activeFilter === 'unknown' && statsStyles.itemActive]}>{unknown}</Text>
+          <Text style={[statsStyles.itemLabel, activeFilter === 'unknown' && { color: '#E65100', fontWeight: '700' }]}>Learning</Text>
+        </TouchableOpacity>
         <View style={statsStyles.divider} />
-        <StatItem value={unreviewed} label="Untested" color="#9E9E9E" />
+        <TouchableOpacity
+          style={statsStyles.item}
+          onPress={() => onFilterChange(activeFilter === 'unreviewed' ? null : 'unreviewed')}
+          activeOpacity={0.6}
+        >
+          <Text style={[statsStyles.itemValue, { color: '#9E9E9E' }, activeFilter === 'unreviewed' && statsStyles.itemActive]}>{unreviewed}</Text>
+          <Text style={[statsStyles.itemLabel, activeFilter === 'unreviewed' && { color: '#757575', fontWeight: '700' }]}>Untested</Text>
+        </TouchableOpacity>
       </View>
 
       {/* Progress track — segmented bar */}
@@ -149,16 +173,14 @@ function StatsBanner({
         Tested <Text style={statsStyles.summaryBold}>{tested}</Text>/{total}
         {'  '}·{'  '}
         Mastery <Text style={[statsStyles.summaryBold, { color: rate >= 60 ? '#2E7D32' : '#E65100' }]}>{rate}%</Text>
+        {activeFilter && (
+          <>
+            {'  '}·{'  '}
+            <Text style={[statsStyles.summaryBold, { color: '#1565C0' }]}>Filtered</Text>
+            <Text style={statsStyles.summaryDim}> — tap again to clear</Text>
+          </>
+        )}
       </Text>
-    </View>
-  );
-}
-
-function StatItem({ value, label, color }: { value: number; label: string; color: string }) {
-  return (
-    <View style={statsStyles.item}>
-      <Text style={[statsStyles.itemValue, { color }]}>{value}</Text>
-      <Text style={statsStyles.itemLabel}>{label}</Text>
     </View>
   );
 }
@@ -191,6 +213,13 @@ const statsStyles = StyleSheet.create({
   item: {
     alignItems: 'center',
     flex: 1,
+    paddingVertical: 6,
+    borderRadius: 12,
+  },
+  itemActive: {
+    backgroundColor: '#F5F5F5',
+    borderRadius: 8,
+    overflow: 'hidden',
   },
   itemValue: {
     fontSize: 24,
@@ -222,28 +251,32 @@ const statsStyles = StyleSheet.create({
     fontWeight: '700',
     color: '#424242',
   },
+  summaryDim: {
+    color: '#BDBDBD',
+  },
 });
 
 // ═══════════════════════════════════════════════════════
-//  WORD SHEET  — 底部弹窗（两阶段）
+//  WORD SHEET  — 3-button bottom sheet
 // ═══════════════════════════════════════════════════════
 function WordSheet({
-  visible, word, status, onClose, onMark, onToggle,
+  visible, word, status, onClose, onMark,
 }: {
   visible: boolean; word: WordEntry | null; status: WordStatus;
-  onClose: () => void; onMark: (s: WordStatus) => void; onToggle: (s: WordStatus) => void;
+  onClose: () => void;
+  onMark: (s: WordStatus) => void;
 }) {
-  const [phase, setPhase] = useState<'ask' | 'reveal'>('ask');
+  const [revealed, setRevealed] = useState(false);
   const meta = STATUS_META[status];
 
-  // Reset phase on word change, auto-speak
+  // Reset on word change, auto-speak
   useEffect(() => {
     if (!visible || !word) return;
-    setPhase('ask');
+    setRevealed(false);
     const t = setTimeout(() => {
-      Speech.speak(word.word, { language: 'en-US', rate: 0.85 });
-    }, 350);
-    return () => { clearTimeout(t); Speech.stop(); };
+      speakWord(word.word);
+    }, 400);
+    return () => { clearTimeout(t); stopSpeech(); };
   }, [visible, word?.id]);
 
   const etymology = useMemo(
@@ -251,10 +284,20 @@ function WordSheet({
     [word?.id],
   );
 
+  /** Know it → mark as mastered, advance */
   const handleKnow = () => { onMark('mastered'); };
-  const handleDunno = () => { onMark('unknown'); };
+
+  /** Not sure → mark as unknown, advance */
+  const handleNotSure = () => { onMark('unknown'); };
+
+  /** Show answer → reveal meanings AND count as unknown */
+  const handleReveal = () => {
+    setRevealed(true);
+    onMark('unknown');
+  };
+
   const handleSpeak = () => {
-    if (word) Speech.speak(word.word, { language: 'en-US', rate: 0.85 });
+    if (word) speakWord(word.word);
   };
 
   if (!word) return null;
@@ -273,37 +316,45 @@ function WordSheet({
 
           {/* ── Word hero ── */}
           <Text style={sheet.wordHero}>{word.word}</Text>
-          {word.phonetic !== `/${word.word.toLowerCase()}/` && (
+          {word.phonetic && word.phonetic !== `/${word.word.toLowerCase()}/` && (
             <Text style={sheet.phonetic}>{word.phonetic}</Text>
           )}
+
+          {/* 🔊 Audio button */}
           <TouchableOpacity style={sheet.speakPill} onPress={handleSpeak}>
             <Text style={sheet.speakIcon}>🔊</Text>
             <Text style={sheet.speakLabel}>Listen</Text>
           </TouchableOpacity>
 
-          {/* ══ Phase 1: Ask ══ */}
-          {phase === 'ask' && (
-            <View style={sheet.askSection}>
-              <TouchableOpacity
-                style={sheet.btnKnow}
-                onPress={handleKnow}
-                activeOpacity={0.7}
-              >
-                <Text style={sheet.btnKnowText}>✅  Know It</Text>
-              </TouchableOpacity>
+          {/* ══ Three action buttons ══ */}
+          <View style={sheet.actions}>
+            <TouchableOpacity
+              style={[sheet.actionBtn, sheet.btnKnow]}
+              onPress={handleKnow}
+              activeOpacity={0.7}
+            >
+              <Text style={sheet.btnKnowText}>✅ Know</Text>
+            </TouchableOpacity>
 
-              <TouchableOpacity
-                style={sheet.btnDunno}
-                onPress={handleDunno}
-                activeOpacity={0.7}
-              >
-                <Text style={sheet.btnDunnoText}>❌  Not Sure</Text>
-              </TouchableOpacity>
-            </View>
-          )}
+            <TouchableOpacity
+              style={[sheet.actionBtn, sheet.btnDunno]}
+              onPress={handleNotSure}
+              activeOpacity={0.7}
+            >
+              <Text style={sheet.btnDunnoText}>❌ Not Sure</Text>
+            </TouchableOpacity>
 
-          {/* ══ Phase 2: Reveal ══ */}
-          {phase === 'reveal' && (
+            <TouchableOpacity
+              style={[sheet.actionBtn, sheet.btnReveal]}
+              onPress={handleReveal}
+              activeOpacity={0.7}
+            >
+              <Text style={sheet.btnRevealText}>👁 Answer</Text>
+            </TouchableOpacity>
+          </View>
+
+          {/* ══ Revealed content ══ */}
+          {revealed && (
             <ScrollView
               style={sheet.revealScroll}
               contentContainerStyle={sheet.revealPad}
@@ -314,13 +365,14 @@ function WordSheet({
                 <View style={sheet.posChip}>
                   <Text style={sheet.posChipText}>{word.partOfSpeech}</Text>
                 </View>
-                <View style={[sheet.statusChip, { backgroundColor: meta.bg }]}>
-                  <Text style={[sheet.statusChipText, { color: meta.fg }]}>{meta.label}</Text>
+                <View style={[sheet.statusChip, { backgroundColor: STATUS_META.unknown.bg }]}>
+                  <Text style={[sheet.statusChipText, { color: STATUS_META.unknown.fg }]}>Learning</Text>
                 </View>
               </View>
 
-              {/* Meanings */}
+              {/* Chinese meanings — always visible for unknown words */}
               <View style={sheet.meaningBlock}>
+                <Text style={sheet.meaningTitle}>中文释义</Text>
                 {word.meanings.map((m, i) => (
                   <Text key={i} style={sheet.meaningText}>
                     {m.zh}{m.context ? `（${m.context}）` : ''}
@@ -377,28 +429,6 @@ function WordSheet({
                   </View>
                 </View>
               )}
-
-              {/* Toggle status */}
-              <View style={sheet.toggleRow}>
-                <TouchableOpacity
-                  style={[sheet.toggleBtn, status === 'mastered' && sheet.toggleBtnActive]}
-                  onPress={() => onToggle('mastered')}
-                  activeOpacity={0.7}
-                >
-                  <Text style={[sheet.toggleText, status === 'mastered' && sheet.toggleTextActive]}>
-                    ✅ Mastered
-                  </Text>
-                </TouchableOpacity>
-                <TouchableOpacity
-                  style={[sheet.toggleBtn, status === 'unknown' && sheet.toggleBtnActiveDunno]}
-                  onPress={() => onToggle('unknown')}
-                  activeOpacity={0.7}
-                >
-                  <Text style={[sheet.toggleText, status === 'unknown' && sheet.toggleTextActiveDunno]}>
-                    ❌ Learning
-                  </Text>
-                </TouchableOpacity>
-              </View>
             </ScrollView>
           )}
         </TouchableOpacity>
@@ -440,6 +470,9 @@ export default function VocabSceneScreen() {
   const [sheetWord, setSheetWord] = useState<WordEntry | null>(null);
   const [sheetOpen, setSheetOpen] = useState(false);
 
+  // Filter
+  const [activeFilter, setActiveFilter] = useState<WordStatus | null>(null);
+
   // Load scene + words + vocab state
   useEffect(() => {
     (async () => {
@@ -452,58 +485,58 @@ export default function VocabSceneScreen() {
       setWordMap(map);
 
       await migrateMasteryIfNeeded(sceneId);
-      setState(await loadVocabState(sceneId));
+      const savedState = await loadVocabState(sceneId);
+      console.log('[Vocab] Loaded state for', sceneId, ':', Object.keys(savedState).length, 'words');
+      setState(savedState);
       setLoading(false);
     })();
   }, [sceneId]);
 
   // Words in this scene
-  const words = useMemo(() => {
+  const allWords = useMemo(() => {
     if (!scene) return [];
     return scene.wordIds.map((id) => wordMap[id]).filter(Boolean) as WordEntry[];
   }, [scene, wordMap]);
 
-  // Stats
+  // Filtered words
+  const words = useMemo(() => {
+    if (!activeFilter) return allWords;
+    return allWords.filter((w) => (state[w.id] ?? 'unreviewed') === activeFilter);
+  }, [allWords, state, activeFilter]);
+
+  // Stats (always based on ALL words)
   const stats = useMemo(() => {
     let mastered = 0, unknown = 0, unreviewed = 0;
-    words.forEach((w) => {
+    allWords.forEach((w) => {
       const s = state[w.id] ?? 'unreviewed';
       if (s === 'mastered') mastered++;
       else if (s === 'unknown') unknown++;
       else unreviewed++;
     });
-    const total = words.length;
+    const total = allWords.length;
     const tested = mastered + unknown;
     return {
       total, mastered, unknown, unreviewed, tested,
       rate: total > 0 ? Math.round((mastered / total) * 100) : 0,
     };
-  }, [words, state]);
+  }, [allWords, state]);
 
-  // Mark word status (Phase 1 → auto-advance)
-  const handleMarkPhase1 = useCallback((status: WordStatus) => {
+  // Mark word status — persist immediately, auto-advance
+  const handleMark = useCallback(async (status: WordStatus) => {
     if (!sheetWord) return;
     const wordId = sheetWord.id;
     const next = { ...state, [wordId]: status };
     setState(next);
-    saveVocabState(sceneId, next);
-    // Auto-advance to next word
-    const idx = words.findIndex(w => w.id === wordId);
-    if (idx >= 0 && idx < words.length - 1) {
-      setSheetWord(words[idx + 1]);
+    await saveVocabState(sceneId, next);
+    // Auto-advance to next word in current view
+    const currentList = activeFilter ? allWords.filter((w) => (next[w.id] ?? 'unreviewed') === activeFilter) : allWords;
+    const idx = currentList.findIndex(w => w.id === wordId);
+    if (idx >= 0 && idx < currentList.length - 1) {
+      setSheetWord(currentList[idx + 1]);
     } else {
       setSheetOpen(false);
     }
-  }, [sheetWord, state, sceneId, words]);
-
-  // Phase 2 toggle — just mark, no auto-advance
-  const handleToggle = useCallback((status: WordStatus) => {
-    if (!sheetWord) return;
-    const wordId = sheetWord.id;
-    const next = { ...state, [wordId]: status };
-    setState(next);
-    saveVocabState(sceneId, next);
-  }, [sheetWord, state, sceneId]);
+  }, [sheetWord, state, sceneId, allWords, activeFilter]);
 
   if (loading) {
     return (
@@ -530,13 +563,22 @@ export default function VocabSceneScreen() {
       </View>
 
       {/* ── Stats ── */}
-      <StatsBanner {...stats} />
+      <StatsBanner
+        {...stats}
+        activeFilter={activeFilter}
+        onFilterChange={setActiveFilter}
+      />
 
       {/* ── Word Grid ── */}
       <ScrollView
         contentContainerStyle={s.grid}
         showsVerticalScrollIndicator={false}
       >
+        {words.length === 0 && activeFilter && (
+          <View style={{ width: '100%', paddingVertical: 40, alignItems: 'center' }}>
+            <Text style={{ color: '#9E9E9E', fontSize: 14 }}>No words match this filter</Text>
+          </View>
+        )}
         {words.map((w, idx) => (
           <WordCard
             key={w.id}
@@ -557,8 +599,7 @@ export default function VocabSceneScreen() {
         word={sheetWord}
         status={sheetWord ? (state[sheetWord.id] ?? 'unreviewed') : 'unreviewed'}
         onClose={() => setSheetOpen(false)}
-        onMark={handleMarkPhase1}
-        onToggle={handleToggle}
+        onMark={handleMark}
       />
     </SafeAreaView>
   );
@@ -675,39 +716,51 @@ const sheet = StyleSheet.create({
   speakIcon: { fontSize: 16, marginRight: 6 },
   speakLabel: { fontSize: 13, color: '#9E9E9E', fontWeight: '500' },
 
-  // ── Phase 1: Ask ──
-  askSection: {
+  // ── Actions: 3 equal buttons ──
+  actions: {
+    flexDirection: 'row',
+    marginTop: 22,
+    paddingHorizontal: 0,
+  },
+  actionBtn: {
+    flex: 1,
+    paddingVertical: 14,
+    borderRadius: 14,
     alignItems: 'center',
-    marginTop: 26,
-    paddingHorizontal: 4,
+    justifyContent: 'center',
+    marginHorizontal: 3,
+    minHeight: 52,
   },
 
   btnKnow: {
-    backgroundColor: '#1565C0',
-    paddingVertical: 16,
-    borderRadius: 16,
-    width: '100%',
-    alignItems: 'center',
-    marginBottom: 12,
+    backgroundColor: '#E8F5E9',
+    borderWidth: 1.5,
+    borderColor: '#4CAF50',
   },
   btnKnowText: {
-    fontSize: 17,
+    fontSize: 14,
     fontWeight: '700',
-    color: '#FFFFFF',
+    color: '#2E7D32',
   },
   btnDunno: {
-    paddingVertical: 14,
-    borderRadius: 16,
-    width: '100%',
-    alignItems: 'center',
+    backgroundColor: '#FFF3E0',
     borderWidth: 1.5,
-    borderColor: '#E0E0E0',
-    backgroundColor: '#FAFAFA',
+    borderColor: '#FF9800',
   },
   btnDunnoText: {
-    fontSize: 15,
-    color: '#9E9E9E',
-    fontWeight: '600',
+    fontSize: 14,
+    color: '#E65100',
+    fontWeight: '700',
+  },
+  btnReveal: {
+    backgroundColor: '#E3F2FD',
+    borderWidth: 1.5,
+    borderColor: '#1565C0',
+  },
+  btnRevealText: {
+    fontSize: 14,
+    color: '#1565C0',
+    fontWeight: '700',
   },
 
   // ── Phase 2: Reveal ──
@@ -750,6 +803,12 @@ const sheet = StyleSheet.create({
     borderLeftWidth: 3,
     borderLeftColor: '#FFC107',
     marginBottom: 18,
+  },
+  meaningTitle: {
+    fontSize: 13,
+    fontWeight: '700',
+    color: '#F57F17',
+    marginBottom: 8,
   },
   meaningText: {
     fontSize: 16,

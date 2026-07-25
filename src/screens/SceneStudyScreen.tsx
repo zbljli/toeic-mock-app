@@ -6,6 +6,7 @@ import {
 import { useNavigation, useRoute, RouteProp } from '@react-navigation/native';
 import type { StackNavigationProp } from '@react-navigation/stack';
 import * as Speech from 'expo-speech';
+import { speakSentence, stopSpeech } from '../utils/speech';
 import type { VocabTabParamList } from '../navigation/AppNavigator';
 import { loadSceneMastery, saveSceneMastery, type SceneMastery } from '../utils/storage';
 import wordsAll from '../data/words.json';
@@ -400,27 +401,35 @@ export default function SceneStudyScreen() {
 
   // Stop speech on unmount
   useEffect(() => {
-    return () => { Speech.stop(); };
+    return () => { Speech.stop(); stopSpeech(); };
   }, []);
 
   const handleSpeakPassage = useCallback(async () => {
     if (!article) return;
     if (speaking) {
       Speech.stop();
+      stopSpeech();
       setSpeaking(false);
       return;
     }
-    // Clean the passage: strip excessive whitespace
     const text = article.passage.replace(/\s+/g, ' ').trim();
     setSpeaking(true);
-    // Use lower rate for natural reading cadence
-    Speech.speak(text, {
-      language: 'en-US',
-      rate: 0.78,
-      onDone: () => setSpeaking(false),
-      onStopped: () => setSpeaking(false),
-      onError: () => setSpeaking(false),
-    });
+
+    // Try expo-speech first, fall back to Google TTS
+    const voices = await Speech.getAvailableVoicesAsync();
+    if (voices.length > 0) {
+      Speech.speak(text, {
+        language: 'en-US',
+        rate: 0.78,
+        onDone: () => setSpeaking(false),
+        onStopped: () => setSpeaking(false),
+        onError: () => {
+          speakSentence(text, () => setSpeaking(false));
+        },
+      });
+    } else {
+      speakSentence(text, () => setSpeaking(false));
+    }
   }, [article, speaking]);
 
   // Known word IDs

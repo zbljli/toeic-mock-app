@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useCallback, useRef } from 'react';
-import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
+import { View, Text, TouchableOpacity, StyleSheet, Platform } from 'react-native';
 import * as Speech from 'expo-speech';
+import { speakSentence, stopSpeech } from '../utils/speech';
 import type { AudioScript } from '../types';
 
 interface Props {
@@ -181,19 +182,36 @@ export default function AudioPlayer({
     if (!stoppedRef.current) setIsPlaying(false);
   }, [voices]);
 
-  const handlePlay = useCallback(() => {
+  const handlePlay = useCallback(async () => {
     if (playLimitReached) return;
     if (isPlaying) {
       stoppedRef.current = true;
       Speech.stop();
+      stopSpeech();
       setIsPlaying(false);
       return;
     }
     if (!hasPlayed) { setHasPlayed(true); setPlayCount(1); }
     else { setPlayCount((c) => c + 1); }
 
-    if (audioScript) speakScript(audioScript);
-    else if (speechText) speakLegacy(speechText);
+    // Try expo-speech first; fall back to Google TTS on web
+    if (audioScript) {
+      const voicesAvailable = (await Speech.getAvailableVoicesAsync()).length > 0;
+      if (voicesAvailable) {
+        speakScript(audioScript);
+      } else {
+        // Fallback: speak the combined text as one utterance
+        const fullText = audioScript.segments.map(s => s.text).join('. ');
+        speakSentence(fullText);
+      }
+    } else if (speechText) {
+      const voicesAvailable = (await Speech.getAvailableVoicesAsync()).length > 0;
+      if (voicesAvailable) {
+        speakLegacy(speechText);
+      } else {
+        speakSentence(speechText);
+      }
+    }
   }, [audioScript, speechText, isPlaying, hasPlayed, playLimitReached, speakScript, speakLegacy]);
 
   const hasContent = !!audioScript || !!speechText;

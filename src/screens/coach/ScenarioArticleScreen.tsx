@@ -6,6 +6,7 @@ import {
 import { useNavigation, useRoute, RouteProp } from '@react-navigation/native';
 import type { StackNavigationProp } from '@react-navigation/stack';
 import * as Speech from 'expo-speech';
+import { speakSentence, stopSpeech } from '../../utils/speech';
 import type { ScenariosTabParamList } from '../../navigation/AppNavigator';
 import { loadVocabState, saveVocabState, migrateMasteryIfNeeded } from '../../utils/storage';
 import type { VocabState } from '../../types/vocabulary';
@@ -497,23 +498,32 @@ export default function ScenarioArticleScreen() {
     if (!currentArticle) return;
     if (speaking) {
       Speech.stop();
+      stopSpeech();
       setSpeaking(false);
       return;
     }
     setSpeaking(true);
-    await new Promise<void>((resolve) => {
+
+    // Try expo-speech first, fall back to Google TTS
+    const voices = await Speech.getAvailableVoicesAsync();
+    if (voices.length > 0) {
       Speech.speak(currentArticle.passage, {
         language: 'en-US',
         rate: 0.78,
-        onDone: () => { setSpeaking(false); resolve(); },
-        onError: () => { setSpeaking(false); resolve(); },
+        onDone: () => setSpeaking(false),
+        onError: () => {
+          // Fallback on error
+          speakSentence(currentArticle.passage, () => setSpeaking(false));
+        },
       });
-    });
+    } else {
+      speakSentence(currentArticle.passage, () => setSpeaking(false));
+    }
   }, [currentArticle, speaking]);
 
   // Cleanup TTS on unmount
   useEffect(() => {
-    return () => { Speech.stop(); };
+    return () => { Speech.stop(); stopSpeech(); };
   }, []);
 
   if (loading) {
