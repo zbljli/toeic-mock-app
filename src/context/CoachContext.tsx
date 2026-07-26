@@ -12,6 +12,10 @@ import { generateDailyTasks } from '../engines/trainingPlanEngine';
 const COACH_VERSION = 2;
 const VERSION_KEY = '@coach_version';
 
+/** Incomplete onboarding auto-resets after this many hours */
+const ONBOARDING_EXPIRY_HOURS = 24;
+const ONBOARDING_TS_KEY = '@coach_onboarding_ts';
+
 const STORAGE_KEYS = {
   ONBOARDING_STAGE: '@coach_onboarding_stage',
   USER_GOAL: '@coach_user_goal',
@@ -132,9 +136,24 @@ export function CoachProvider({ children }: { children: ReactNode }) {
         if (currentVersion < COACH_VERSION) {
           setOnboardingStageState('welcome');
           await AsyncStorage.setItem(STORAGE_KEYS.ONBOARDING_STAGE, 'welcome');
+          await AsyncStorage.setItem(ONBOARDING_TS_KEY, String(Date.now()));
           await AsyncStorage.setItem(VERSION_KEY, String(COACH_VERSION));
         } else if (stage) {
-          setOnboardingStageState(stage as OnboardingStage);
+          // Expire incomplete onboarding after N hours (prevents users getting stuck mid-flow)
+          const stageVal = stage as OnboardingStage;
+          if (stageVal !== 'completed') {
+            const savedTs = await AsyncStorage.getItem(ONBOARDING_TS_KEY);
+            const elapsed = savedTs ? Date.now() - parseInt(savedTs, 10) : Infinity;
+            if (elapsed > ONBOARDING_EXPIRY_HOURS * 3600_000) {
+              setOnboardingStageState('welcome');
+              await AsyncStorage.setItem(STORAGE_KEYS.ONBOARDING_STAGE, 'welcome');
+              await AsyncStorage.setItem(ONBOARDING_TS_KEY, String(Date.now()));
+            } else {
+              setOnboardingStageState(stageVal);
+            }
+          } else {
+            setOnboardingStageState('completed');
+          }
         }
 
         if (goal) setUserGoal(JSON.parse(goal));
@@ -162,6 +181,7 @@ export function CoachProvider({ children }: { children: ReactNode }) {
   const setOnboardingStage = useCallback(async (s: OnboardingStage) => {
     setOnboardingStageState(s);
     await AsyncStorage.setItem(STORAGE_KEYS.ONBOARDING_STAGE, s);
+    await AsyncStorage.setItem(ONBOARDING_TS_KEY, String(Date.now()));
   }, []);
 
   const saveUserGoal = useCallback(async (g: UserGoal) => {
