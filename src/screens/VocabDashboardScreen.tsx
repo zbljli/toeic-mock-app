@@ -15,9 +15,9 @@ type Nav = StackNavigationProp<VocabTabParamList>;
 function computeSceneProgress(scene: SceneEntry, state: VocabState): SceneProgress {
   let unreviewed = 0, mastered = 0, unknown = 0;
   for (const wid of scene.wordIds) {
-    const s = state[wid] ?? 'unreviewed';
-    if (s === 'unreviewed') unreviewed++;
-    else if (s === 'mastered') mastered++;
+    const s = state[wid] ?? 'new';
+    if (s === 'new') unreviewed++;
+    else if (s === 'known') mastered++;
     else unknown++;
   }
   const total = scene.wordIds.length;
@@ -115,15 +115,15 @@ export default function VocabDashboardScreen() {
             </View>
             <View style={styles.bannerItem}>
               <Text style={[styles.bannerNum, { color: '#4CAF50' }]}>{overall.mastered}</Text>
-              <Text style={styles.bannerLabel}>Mastered</Text>
+              <Text style={styles.bannerLabel}>已认识</Text>
             </View>
             <View style={styles.bannerItem}>
               <Text style={[styles.bannerNum, { color: '#FF9800' }]}>{overall.unknown}</Text>
-              <Text style={styles.bannerLabel}>Learning</Text>
+              <Text style={styles.bannerLabel}>待学习</Text>
             </View>
             <View style={styles.bannerItem}>
               <Text style={[styles.bannerNum, { color: '#9E9E9E' }]}>{overall.unreviewed}</Text>
-              <Text style={styles.bannerLabel}>Untested</Text>
+              <Text style={styles.bannerLabel}>未检测</Text>
             </View>
           </View>
           <View style={styles.bannerBar}>
@@ -176,13 +176,13 @@ export default function VocabDashboardScreen() {
 
               <View style={styles.cardStats}>
                 <Text style={styles.statText}>
-                  🟢 <Text style={{ fontWeight: '700' }}>{sp.mastered}</Text> Mastered
+                  🟢 <Text style={{ fontWeight: '700' }}>{sp.mastered}</Text> 已认识
                 </Text>
                 <Text style={styles.statText}>
-                  🟠 <Text style={{ fontWeight: '700' }}>{sp.unknown}</Text> Learning
+                  🟠 <Text style={{ fontWeight: '700' }}>{sp.unknown}</Text> 待学习
                 </Text>
                 <Text style={styles.statText}>
-                  ⬜ <Text style={{ fontWeight: '700' }}>{sp.unreviewed}</Text> Untested
+                  ⬜ <Text style={{ fontWeight: '700' }}>{sp.unreviewed}</Text> 未检测
                 </Text>
               </View>
             </TouchableOpacity>

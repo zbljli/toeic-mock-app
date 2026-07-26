@@ -9,7 +9,7 @@ import type { SceneEntry, VocabState } from '../../types/vocabulary';
 import type { ScenariosTabParamList } from '../../navigation/AppNavigator';
 import { loadVocabState, migrateMasteryIfNeeded } from '../../utils/storage';
 import scenesData from '../../data/scenes.json';
-import articlesData from '../../data/articles.json';
+import { loadArticles } from '../../utils/loadData';
 
 type Nav = StackNavigationProp<ScenariosTabParamList>;
 
@@ -32,7 +32,7 @@ export default function ScenarioLearningScreen() {
   useEffect(() => {
     (async () => {
       const sList: SceneEntry[] = scenesData as SceneEntry[];
-      const aList: ArticleMeta[] = articlesData as ArticleMeta[];
+      const aList: ArticleMeta[] = await loadArticles() as ArticleMeta[];
       setScenes(sList);
       setArticles(aList);
 
@@ -57,7 +57,7 @@ export default function ScenarioLearningScreen() {
       for (const a of sceneArticles) {
         for (const wid of a.vocabWordIds) {
           totalVocab++;
-          if ((state[wid] ?? 'unreviewed') === 'mastered') mastered++;
+          if ((state[wid] ?? 'new') === 'known') mastered++;
         }
       }
 

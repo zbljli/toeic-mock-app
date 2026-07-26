@@ -5,13 +5,11 @@ import {
 } from 'react-native';
 import { useNavigation, useRoute, RouteProp } from '@react-navigation/native';
 import type { StackNavigationProp } from '@react-navigation/stack';
-import * as Speech from 'expo-speech';
-import { speakSentence, stopSpeech } from '../../utils/speech';
+import { playText, stopAll } from '../../utils/audio';
 import type { ScenariosTabParamList } from '../../navigation/AppNavigator';
 import { loadVocabState, saveVocabState, migrateMasteryIfNeeded } from '../../utils/storage';
 import type { VocabState } from '../../types/vocabulary';
-import articlesAll from '../../data/articles.json';
-import wordsAll from '../../data/words.json';
+import { loadArticles, loadWords } from '../../utils/loadData';
 
 // ── Types ──
 
@@ -262,20 +260,20 @@ function WordBlocks({
   words: WordInfo[]; mastery: VocabState; initialMastery: VocabState; onWordTap: (w: WordInfo) => void;
 }) {
   const justLearned = words.filter((w) => {
-    const was = initialMastery[w.id] ?? 'unreviewed';
-    const now = mastery[w.id] ?? 'unreviewed';
-    return was !== 'mastered' && now === 'mastered';
+    const was = initialMastery[w.id] ?? 'new';
+    const now = mastery[w.id] ?? 'new';
+    return was !== 'known' && now === 'known';
   });
 
   const stillLearning = words.filter((w) => {
-    const now = mastery[w.id] ?? 'unreviewed';
-    return now !== 'mastered';
+    const now = mastery[w.id] ?? 'new';
+    return now !== 'known';
   });
 
   const alreadyKnew = words.filter((w) => {
-    const was = initialMastery[w.id] ?? 'unreviewed';
-    const now = mastery[w.id] ?? 'unreviewed';
-    return was === 'mastered' && now === 'mastered';
+    const was = initialMastery[w.id] ?? 'new';
+    const now = mastery[w.id] ?? 'new';
+    return was === 'known' && now === 'known';
   });
 
   if (words.length === 0) return null;
@@ -389,8 +387,10 @@ export default function ScenarioArticleScreen() {
     (async () => {
       await migrateMasteryIfNeeded(sceneId);
 
-      const allArticles: ArticleItem[] = articlesAll as ArticleItem[];
-      const allWordsData: any[] = wordsAll as any[];
+      const [allArticlesData, allWordsData] = await Promise.all([
+        loadArticles(), loadWords(),
+      ]);
+      const allArticles = allArticlesData as ArticleItem[];
 
       const sceneArticles = allArticles.filter((a) => a.sceneId === sceneId);
       setArticles(sceneArticles);
@@ -458,7 +458,7 @@ export default function ScenarioArticleScreen() {
   const masteryStats = useMemo(() => {
     let mastered = 0;
     for (const w of articleWords) {
-      if ((mastery[w.id] ?? 'unreviewed') === 'mastered') mastered++;
+      if ((mastery[w.id] ?? 'new') === 'known') mastered++;
     }
     return { mastered, total: articleWords.length };
   }, [articleWords, mastery]);
@@ -466,9 +466,9 @@ export default function ScenarioArticleScreen() {
   // Words learned this session
   const justLearned = useMemo(() => {
     return articleWords.filter((w) => {
-      const was = initialMastery.current[w.id] ?? 'unreviewed';
-      const now = mastery[w.id] ?? 'unreviewed';
-      return was !== 'mastered' && now === 'mastered';
+      const was = initialMastery.current[w.id] ?? 'new';
+      const now = mastery[w.id] ?? 'new';
+      return was !== 'known' && now === 'known';
     });
   }, [articleWords, mastery]);
 
@@ -480,7 +480,7 @@ export default function ScenarioArticleScreen() {
 
   const handleMarkMastered = useCallback(async () => {
     if (!popupWord) return;
-    const next = { ...mastery, [popupWord.id]: 'mastered' as const };
+    const next = { ...mastery, [popupWord.id]: 'known' as const };
     setMastery(next);
     await saveVocabState(sceneId, next);
     setPopupWord(null);
@@ -488,42 +488,29 @@ export default function ScenarioArticleScreen() {
 
   const handleMarkUnknown = useCallback(async () => {
     if (!popupWord) return;
-    const next = { ...mastery, [popupWord.id]: 'unknown' as const };
+    const next = { ...mastery, [popupWord.id]: 'learning' as const };
     setMastery(next);
     await saveVocabState(sceneId, next);
     setPopupWord(null);
   }, [popupWord, mastery, sceneId]);
 
-  const handleTTS = useCallback(async () => {
+  const handleTTS = useCallback(() => {
     if (!currentArticle) return;
     if (speaking) {
-      Speech.stop();
-      stopSpeech();
+      stopAll();
       setSpeaking(false);
       return;
     }
     setSpeaking(true);
-
-    // Try expo-speech first, fall back to Google TTS
-    const voices = await Speech.getAvailableVoicesAsync();
-    if (voices.length > 0) {
-      Speech.speak(currentArticle.passage, {
-        language: 'en-US',
-        rate: 0.78,
-        onDone: () => setSpeaking(false),
-        onError: () => {
-          // Fallback on error
-          speakSentence(currentArticle.passage, () => setSpeaking(false));
-        },
-      });
-    } else {
-      speakSentence(currentArticle.passage, () => setSpeaking(false));
-    }
+    playText(currentArticle.passage, {
+      rate: 0.78,
+      onDone: () => setSpeaking(false),
+    });
   }, [currentArticle, speaking]);
 
-  // Cleanup TTS on unmount
+  // Cleanup audio on unmount
   useEffect(() => {
-    return () => { Speech.stop(); stopSpeech(); };
+    return () => { stopAll(); };
   }, []);
 
   if (loading) {
@@ -608,7 +595,7 @@ export default function ScenarioArticleScreen() {
                   if (!seg.isVocab) {
                     return <Text key={i}>{seg.text}</Text>;
                   }
-                  const isMastered = (mastery[seg.wordId!] ?? 'unreviewed') === 'mastered';
+                  const isMastered = (mastery[seg.wordId!] ?? 'new') === 'known';
                   const wordInfo = vocabMap.get(seg.wordId!);
                   return (
                     <Text
@@ -656,7 +643,7 @@ export default function ScenarioArticleScreen() {
           visible={true}
           word={popupWord.word}
           meaning={popupWord.meaning}
-          isMastered={(mastery[popupWord.id] ?? 'unreviewed') === 'mastered'}
+          isMastered={(mastery[popupWord.id] ?? 'new') === 'known'}
           onMarkMastered={handleMarkMastered}
           onMarkUnknown={handleMarkUnknown}
           onClose={() => setPopupWord(null)}

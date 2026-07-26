@@ -85,7 +85,7 @@ export interface SceneEntry {
 // ===== Assessment System Types =====
 
 /** 单词掌握状态 */
-export type WordStatus = 'unreviewed' | 'mastered' | 'unknown';
+export type WordStatus = 'new' | 'known' | 'learning';
 
 /** 单个场景的学习进度 */
 export interface SceneProgress {

@@ -23,10 +23,13 @@ export interface InProgressSnapshot {
   modeLabel: string;
   startedAt: string;
   currentQuestionIndex: number;
-  answeredQuestionIds: string[];
+  /** Saved answers with selected options */
+  answers: Array<{ questionId: string; selectedOptionId: string }>;
   parts: ToeicPart[];
   totalQuestions: number;
   totalTimeMinutes: number;
+  /** Seconds already elapsed when the snapshot was saved */
+  elapsedSeconds: number;
 }
 
 // ===== History =====
@@ -92,6 +95,13 @@ export async function clearInProgress(): Promise<void> {
 
 import type { VocabState, WordStatus } from '../types/vocabulary';
 
+/** Map old status values → new status values (backward compatible) */
+const STATUS_MIGRATION_MAP: Record<string, WordStatus> = {
+  unreviewed: 'new',
+  mastered: 'known',
+  unknown: 'learning',
+};
+
 /** @deprecated — use VocabState with WordStatus */
 export interface SceneMastery {
   [wordId: string]: boolean;
@@ -110,7 +120,13 @@ export async function loadVocabState(sceneId: string): Promise<VocabState> {
   try {
     const raw = await AsyncStorage.getItem(vocabStateKey(sceneId));
     if (!raw) return {};
-    return JSON.parse(raw) as VocabState;
+    const parsed = JSON.parse(raw) as Record<string, string>;
+    // Migrate old status values to new ones
+    const migrated: VocabState = {};
+    for (const [wordId, status] of Object.entries(parsed)) {
+      migrated[wordId] = (STATUS_MIGRATION_MAP[status] ?? status) as WordStatus;
+    }
+    return migrated;
   } catch (e) {
     console.warn('[Storage] Failed to load vocab state:', e);
     return {};
@@ -148,12 +164,12 @@ export async function migrateMasteryIfNeeded(sceneId: string): Promise<void> {
     if (!raw) return;
     const old = JSON.parse(raw) as SceneMastery;
     // Old format: { wordId: true|false }
-    // New format: { wordId: 'mastered'|'unknown' }
+    // New format: { wordId: 'known'|'learning' }
     const state = await loadVocabState(sceneId);
     let migrated = false;
-    for (const [wid, known] of Object.entries(old)) {
+    for (const [wid, knownFlag] of Object.entries(old)) {
       if (!(wid in state)) {
-        state[wid] = known ? 'mastered' : 'unknown';
+        state[wid] = knownFlag ? 'known' : 'learning';
         migrated = true;
       }
     }
