@@ -108,7 +108,7 @@ export default function TrainingCenterScreen({ navigation }: any) {
         <Text style={ts.sectionTitle}>Grammar</Text>
         <TouchableOpacity
           style={ts.grammarCard}
-          onPress={() => navigation.navigate('GrammarWiki')}
+          onPress={() => navigation.navigate('Vocab', { screen: 'GrammarWiki' })}
           activeOpacity={0.7}
         >
           <Text style={ts.grammarIcon}>📝</Text>
