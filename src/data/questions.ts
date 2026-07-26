@@ -136,12 +136,12 @@ function parseDialogueScript(
 //  单人描述，选项间自然停顿
 // ══════════════════════════════════════════════
 const PART1_IMAGES = [
-  'https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=1600&h=1000&fit=crop&q=85',
-  'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=1600&h=1000&fit=crop&q=85',
-  'https://images.unsplash.com/photo-1577412647305-991150c7d5e3?w=1600&h=1000&fit=crop&q=85',
-  'https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=1600&h=1000&fit=crop&q=85',
-  'https://images.unsplash.com/photo-1436491865332-7a61a109bb05?w=1600&h=1000&fit=crop&q=85',
-  'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1600&h=1000&fit=crop&q=85',
+  'https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800&h=500&fit=crop&q=80',
+  'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=500&fit=crop&q=80',
+  'https://images.unsplash.com/photo-1577412647305-991150c7d5e3?w=800&h=500&fit=crop&q=80',
+  'https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=800&h=500&fit=crop&q=80',
+  'https://images.unsplash.com/photo-1436491865332-7a61a109bb05?w=800&h=500&fit=crop&q=80',
+  'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&h=500&fit=crop&q=80',
 ];
 
 const PART1_TEMPLATES: Omit<Question, 'id'>[] = [

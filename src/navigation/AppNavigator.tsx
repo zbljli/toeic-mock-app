@@ -24,7 +24,6 @@ import HistoryScreen from '../screens/HistoryScreen';
 import VocabDashboardScreen from '../screens/VocabDashboardScreen';
 import VocabSceneScreen from '../screens/VocabSceneScreen';
 import VocabularyQuizScreen from '../screens/VocabularyQuizScreen';
-import SceneStudyScreen from '../screens/SceneStudyScreen';
 import GrammarWikiScreen from '../screens/GrammarWikiScreen';
 import GrammarQuizScreen from '../screens/GrammarQuizScreen';
 
@@ -53,7 +52,6 @@ export type VocabTabParamList = {
   VocabMain: undefined;
   VocabScene: { sceneId: string; sceneTitle: string; sceneIcon: string };
   VocabularyQuiz: undefined;
-  SceneStudy: { sceneId: string; sceneTitle: string; sceneIcon: string };
   GrammarWiki: undefined;
   GrammarQuiz: { grammarId: string };
 };
@@ -127,7 +125,6 @@ function VocabTab() {
       <VocabStack.Screen name="VocabMain" component={VocabDashboardScreen} />
       <VocabStack.Screen name="VocabScene" component={VocabSceneScreen} />
       <VocabStack.Screen name="VocabularyQuiz" component={VocabularyQuizScreen} />
-      <VocabStack.Screen name="SceneStudy" component={SceneStudyScreen} />
       <VocabStack.Screen name="GrammarWiki" component={GrammarWikiScreen} />
       <VocabStack.Screen name="GrammarQuiz" component={GrammarQuizScreen} />
     </VocabStack.Navigator>

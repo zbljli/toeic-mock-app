@@ -21,6 +21,7 @@
   },
   "devDependencies": {
     "@types/react": "~19.2.2",
+    "playwright": "^1.62.0",
     "typescript": "~6.0.3"
   },
   "scripts": {
@@ -28,8 +29,10 @@
     "android": "expo start --android",
     "ios": "expo start --ios",
     "web": "expo start --web",
-    "build:web": "npx expo export --platform web",
-    "deploy": "npx expo export --platform web && npx netlify-cli deploy --dir=dist --prod"
+    "build:web": "npx expo export --platform web && node scripts/copy-data.cjs && node scripts/patch-html.cjs",
+    "deploy": "npx expo export --platform web && node scripts/copy-data.cjs && node scripts/patch-html.cjs && npx netlify-cli deploy --dir=dist --prod",
+    "generate-audio": "node scripts/generate-audio.cjs",
+    "generate-tts-audio": "node scripts/generate-tts-audio.cjs"
   },
   "private": true
 }

@@ -1,20 +1,10 @@
 import React from 'react';
 import { View, Text, StyleSheet, ScrollView, TouchableOpacity, SafeAreaView } from 'react-native';
 import { useCoach } from '../../context/CoachContext';
-import { useTestContext } from '../../context/TestContext';
-import { generateQuestions } from '../../data/questions';
 import type { ToeicPart } from '../../types';
-
-const SCENE_LIST = [
-  { id: 's_meeting', icon: '💼', name: 'Business Meeting' },
-  { id: 's_office', icon: '🏢', name: 'Office' },
-  { id: 's_travel', icon: '✈️', name: 'Travel' },
-  { id: 's_telephone', icon: '📞', name: 'Phone Calls' },
-];
 
 export default function TrainingCenterScreen({ navigation }: any) {
   const { recommendation } = useCoach();
-  const { dispatch } = useTestContext();
   const rec = recommendation;
 
   const startMockTest = () => {
@@ -84,26 +74,6 @@ export default function TrainingCenterScreen({ navigation }: any) {
           ))}
         </View>
 
-        {/* Scene Listening */}
-        <Text style={ts.sectionTitle}>Scene Listening</Text>
-        <View style={ts.sceneGrid}>
-          {SCENE_LIST.map(scene => (
-            <TouchableOpacity
-              key={scene.id}
-              style={ts.sceneCard}
-              onPress={() => navigation.navigate('SceneStudy', {
-                sceneId: scene.id,
-                sceneTitle: scene.name,
-                sceneIcon: scene.icon,
-              })}
-              activeOpacity={0.7}
-            >
-              <Text style={ts.sceneIcon}>{scene.icon}</Text>
-              <Text style={ts.sceneName}>{scene.name}</Text>
-            </TouchableOpacity>
-          ))}
-        </View>
-
         {/* Grammar */}
         <Text style={ts.sectionTitle}>Grammar</Text>
         <TouchableOpacity
@@ -117,13 +87,6 @@ export default function TrainingCenterScreen({ navigation }: any) {
             <Text style={ts.grammarDesc}>Key TOEIC grammar points with translation exercises and quizzes.</Text>
           </View>
           <Text style={ts.grammarArrow}>→</Text>
-        </TouchableOpacity>
-
-        {/* Mistake Review */}
-        <TouchableOpacity style={ts.mistakeCard} activeOpacity={0.7}>
-          <Text style={ts.mistakeIcon}>📋</Text>
-          <Text style={ts.mistakeTitle}>Mistake Review</Text>
-          <Text style={ts.mistakeDesc}>Review your recent mistakes and reinforce weak areas.</Text>
         </TouchableOpacity>
       </ScrollView>
     </SafeAreaView>
@@ -164,14 +127,6 @@ const ts = StyleSheet.create({
   partNum: { fontSize: 18, fontWeight: '800', color: '#1A237E' },
   partName: { fontSize: 13, color: '#757575', marginTop: 4 },
 
-  sceneGrid: { flexDirection: 'row', flexWrap: 'wrap', gap: 10, marginBottom: 24 },
-  sceneCard: {
-    width: '47%', backgroundColor: '#FFFFFF', padding: 16, borderRadius: 14,
-    borderWidth: 1, borderColor: '#E8E8E8',
-  },
-  sceneIcon: { fontSize: 28, marginBottom: 8 },
-  sceneName: { fontSize: 14, fontWeight: '600', color: '#212121' },
-
   grammarCard: {
     flexDirection: 'row', alignItems: 'center',
     backgroundColor: '#FFFFFF', padding: 16, borderRadius: 14, marginBottom: 24,
@@ -183,12 +138,4 @@ const ts = StyleSheet.create({
   grammarTitle: { fontSize: 16, fontWeight: '700', color: '#212121' },
   grammarDesc: { fontSize: 13, color: '#757575', marginTop: 4, lineHeight: 18 },
   grammarArrow: { fontSize: 20, color: '#BDBDBD' },
-
-  mistakeCard: {
-    backgroundColor: '#FFFFFF', padding: 18, borderRadius: 14, marginBottom: 24,
-    borderWidth: 1, borderColor: '#E8E8E8',
-  },
-  mistakeIcon: { fontSize: 24, marginBottom: 6 },
-  mistakeTitle: { fontSize: 16, fontWeight: '700', color: '#212121' },
-  mistakeDesc: { fontSize: 13, color: '#757575', marginTop: 4 },
 });

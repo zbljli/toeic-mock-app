@@ -10,7 +10,8 @@ headers = []
 publish = "/Users/lujiali/toeic-mock-app/dist"
 publishOrigin = "config"
 commandOrigin = "config"
-command = "npx expo export --platform web && node scripts/patch-html.cjs"
+command = "npx expo export --platform web && node scripts/copy-data.cjs && node scripts/patch-html.cjs"
+base = "/Users/lujiali/toeic-mock-app"
 
 [build.environment]
 

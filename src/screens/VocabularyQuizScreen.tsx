@@ -4,7 +4,7 @@ import {
 } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import type { StackNavigationProp } from '@react-navigation/stack';
-import * as Speech from 'expo-speech';
+import { playWord } from '../utils/audio';
 import { VOCAB_GROUPS, type VocabWord } from '../data/vocabulary';
 import type { VocabTabParamList } from '../navigation/AppNavigator';
 
@@ -77,7 +77,7 @@ export default function VocabularyQuizScreen() {
     } else { setIsDone(true); }
   };
 
-  const handleSpeak = () => Speech.speak(currentQ.word.word, { language: 'en-US', rate: 0.9 });
+  const handleSpeak = () => playWord(currentQ.word.word);
 
   if (isDone) {
     const pct = Math.round((score / quiz.length) * 100);

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><title>Audio QA Test</title></head><body>
+<h1>🔊 TOEIC Word Audio QA Test</h1>
+<div id="results"></div>
+<script>
+const words = ['account', 'abandon', 'appointment', 'budget', 'colleague'];
+const results = document.getElementById('results');
+
+async function test() {
+  for (const word of words) {
+    const row = document.createElement('div');
+    row.style.cssText = 'margin:12px 0;padding:12px;border:1px solid #ccc;border-radius:8px;';
+    row.innerHTML = `<strong>${word}</strong><br>`;
+    results.appendChild(row);
+
+    // Step 1: Fetch audio URL from API
+    row.innerHTML += '⏳ Fetching API...<br>';
+    try {
+      const resp = await fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${word}`);
+      const data = await resp.json();
+      let audioUrl = null;
+      for (const entry of (Array.isArray(data) ? data : [data])) {
+        for (const p of entry.phonetics || []) {
+          if (p.audio && p.audio.trim()) { audioUrl = p.audio; break; }
+        }
+        if (audioUrl) break;
+      }
+      if (audioUrl) {
+        row.innerHTML += `✅ API returned: <code style="font-size:10px;word-break:break-all">${audioUrl}</code><br>`;
+
+        // Step 2: Try playing via HTML5 Audio
+        row.innerHTML += '▶ Playing...<br>';
+        const audio = new Audio(audioUrl);
+        const playResult = await new Promise(resolve => {
+          audio.onplay = () => resolve('PLAYING');
+          audio.onerror = (e) => resolve(`ERROR: audio.onerror code=${audio.error?.code} message=${audio.error?.message}`);
+          audio.onended = () => resolve('ENDED');
+          audio.play().catch(err => resolve(`PLAY_REJECTED: ${err.message}`));
+          setTimeout(() => { if (!audio.paused) resolve('TIMED_OUT_PLAYING'); }, 3000);
+        });
+        row.innerHTML += `${playResult === 'PLAYING' ? '✅' : playResult === 'ENDED' ? '✅' : '❌'} Result: ${playResult}<br>`;
+        audio.pause();
+      } else {
+        row.innerHTML += '❌ No audio URL in API response<br>';
+      }
+    } catch(e) {
+      row.innerHTML += `❌ API fetch failed: ${e.message}<br>`;
+    }
+  }
+}
+test();
+</script>
+</body></html>

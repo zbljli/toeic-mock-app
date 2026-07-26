@@ -32,6 +32,7 @@ type TestAction =
   | { type: 'LOAD_QUESTIONS'; questions: Question[] }
   | { type: 'LOAD_HISTORY'; history: PersistedHistoryEntry[] }
   | { type: 'START_TEST'; mode: TestMode; sessionId: string }
+  | { type: 'RESTORE_SESSION'; session: TestSession }
   | { type: 'ANSWER_QUESTION'; answer: Answer }
   | { type: 'NEXT_QUESTION' }
   | { type: 'PREV_QUESTION' }
@@ -62,6 +63,13 @@ function testReducer(state: TestState, action: TestAction): TestState {
           isCompleted: false,
           isScored: false,
         },
+      };
+
+    case 'RESTORE_SESSION':
+      return {
+        ...state,
+        result: null,
+        session: action.session,
       };
 
     case 'ANSWER_QUESTION': {

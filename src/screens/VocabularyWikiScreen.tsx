@@ -5,11 +5,11 @@ import {
 } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import type { StackNavigationProp } from '@react-navigation/stack';
-import * as Speech from 'expo-speech';
+import { playWord } from '../utils/audio';
 import type { SceneEntry, WordEntry } from '../types/vocabulary';
 import type { VocabTabParamList } from '../navigation/AppNavigator';
 import scenesData from '../data/scenes.json';
-import wordsData from '../data/words.json';
+import { loadWords } from '../utils/loadData';
 import { loadSceneMastery, saveSceneMastery, type SceneMastery } from '../utils/storage';
 
 type Nav = StackNavigationProp<VocabTabParamList>;
@@ -146,7 +146,7 @@ export default function VocabularyWikiScreen() {
   useEffect(() => {
     (async () => {
       const sList: SceneEntry[] = scenesData as SceneEntry[];
-      const wList: WordEntry[] = wordsData as WordEntry[];
+      const wList = await loadWords();
 
       setScenes(sList);
       const wm: Record<string, WordEntry> = {};
@@ -175,8 +175,8 @@ export default function VocabularyWikiScreen() {
   }, []);
 
   // Speak word
-  const speakWord = useCallback((word: string) => {
-    Speech.speak(word, { language: 'en-US', rate: 0.9 });
+  const speakWordCB = useCallback((word: string) => {
+    playWord(word);
   }, []);
 
   // Computed: overall stats
@@ -321,7 +321,7 @@ export default function VocabularyWikiScreen() {
                 meaning={w.meanings?.[0]?.zh ?? ''}
                 isKnown={w.isKnown}
                 onToggle={() => toggleWord(selectedScene.id, w.id)}
-                onSpeak={() => speakWord(w.word)}
+                onSpeak={() => speakWordCB(w.word)}
               />
             ))
           )}
@@ -412,7 +412,7 @@ export default function VocabularyWikiScreen() {
                 meaning={`${r.word.meanings?.[0]?.zh ?? ''} · ${r.scene.icon} ${r.scene.nameZh}`}
                 isKnown={r.isKnown}
                 onToggle={() => toggleWord(r.scene.id, r.word.id)}
-                onSpeak={() => speakWord(r.word.word)}
+                onSpeak={() => speakWordCB(r.word.word)}
               />
             ));
           })()

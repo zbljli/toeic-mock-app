@@ -23,7 +23,7 @@ import PartTransition from '../components/PartTransition';
 import { TOEIC_PARTS } from '../data/toeicStructure';
 import { calculateScore } from '../utils/scoring';
 import { generateQuestions } from '../data/questions';
-import { appendHistoryEntry, type PersistedHistoryEntry } from '../utils/storage';
+import { appendHistoryEntry, saveInProgress, loadInProgress, clearInProgress, type PersistedHistoryEntry, type InProgressSnapshot } from '../utils/storage';
 import type { HomeTabParamList } from '../navigation/AppNavigator';
 import type { Answer } from '../types';
 
@@ -54,16 +54,102 @@ export default function TestScreen() {
     if (initializedRef.current) return;
     initializedRef.current = true;
 
-    const questions = generateQuestions(config.parts, config.totalQuestions);
-    dispatch({ type: 'LOAD_QUESTIONS', questions });
-    dispatch({
-      type: 'START_TEST',
-      mode: config.mode,
-      sessionId: `test-${Date.now()}`,
-    });
-    setTotalSeconds(config.totalTimeMinutes * 60);
-    setIsTimerRunning(true);
+    const init = async () => {
+      // ── Recovery check ──
+      const snapshot = await loadInProgress();
+      if (snapshot && snapshot.mode === config.mode) {
+        // Only recover if the mode matches the current config
+        alertRef.current = true;
+        // Small delay so the component renders before the Alert
+        await new Promise(r => setTimeout(r, 300));
+        Alert.alert(
+          'Resume Exam',
+          'You have an unfinished exam. Continue where you left off?',
+          [
+            {
+              text: 'Start New',
+              style: 'destructive',
+              onPress: () => {
+                alertRef.current = false;
+                clearInProgress();
+                startNewTest();
+              },
+            },
+            {
+              text: 'Resume',
+              onPress: () => {
+                alertRef.current = false;
+                restoreTest(snapshot);
+              },
+            },
+          ],
+        );
+      } else {
+        // No matching recovery — clean up any stale snapshot
+        if (snapshot) clearInProgress();
+        startNewTest();
+      }
+    };
+
+    const startNewTest = () => {
+      const questions = generateQuestions(config.parts, config.totalQuestions);
+      dispatch({ type: 'LOAD_QUESTIONS', questions });
+      dispatch({
+        type: 'START_TEST',
+        mode: config.mode,
+        sessionId: `test-${Date.now()}`,
+      });
+      setTotalSeconds(config.totalTimeMinutes * 60);
+      setIsTimerRunning(true);
+    };
+
+    const restoreTest = (snapshot: InProgressSnapshot) => {
+      const questions = generateQuestions(snapshot.parts, snapshot.totalQuestions);
+      dispatch({ type: 'LOAD_QUESTIONS', questions });
+      dispatch({
+        type: 'RESTORE_SESSION',
+        session: {
+          id: snapshot.sessionId,
+          startedAt: snapshot.startedAt,
+          mode: snapshot.mode,
+          currentQuestionIndex: snapshot.currentQuestionIndex,
+          answers: snapshot.answers.map(a => ({
+            questionId: a.questionId,
+            selectedOptionId: a.selectedOptionId,
+            timeSpent: 0,
+          })),
+          partTimeRemaining: {},
+          isCompleted: false,
+          isScored: false,
+        },
+      });
+      const remaining = Math.max(0, snapshot.totalTimeMinutes * 60 - snapshot.elapsedSeconds);
+      setTotalSeconds(remaining);
+      setIsTimerRunning(true);
+    };
+
+    init();
   }, [config, dispatch]);
+
+  // ── Auto-save progress on each answer / navigation ──
+  useEffect(() => {
+    if (!state.session || state.session.isCompleted) return;
+    const snapshot: InProgressSnapshot = {
+      sessionId: state.session.id,
+      mode: state.session.mode,
+      modeLabel: config.mode === 'listening-only' ? 'Full Listening Test' : 'Part Practice',
+      startedAt: state.session.startedAt,
+      currentQuestionIndex: state.session.currentQuestionIndex,
+      answers: state.session.answers
+        .filter(a => a.selectedOptionId !== null)
+        .map(a => ({ questionId: a.questionId, selectedOptionId: a.selectedOptionId! })),
+      parts: config.parts,
+      totalQuestions: state.questions.length,
+      totalTimeMinutes: config.totalTimeMinutes,
+      elapsedSeconds: config.totalTimeMinutes * 60 - totalSeconds,
+    };
+    saveInProgress(snapshot);
+  }, [state.session?.answers, state.session?.currentQuestionIndex]);
 
   const currentQuestion = getCurrentQuestion(state);
   const answeredCount = getAnsweredCount(state);
@@ -179,6 +265,7 @@ export default function TestScreen() {
     if (submittingRef.current) return; // prevent double submit
     submittingRef.current = true;
     setIsTimerRunning(false);
+    clearInProgress(); // clear auto-saved progress
     const result = calculateScore(state.session?.answers ?? [], state.questions);
     dispatch({ type: 'COMPLETE_TEST', result });
 
@@ -233,12 +320,14 @@ export default function TestScreen() {
           style: 'destructive',
           onPress: () => {
             alertRef.current = false;
+            clearInProgress();
             dispatch({ type: 'RESET' });
             navigation.goBack();
           },
         },
       ]);
     } else {
+      clearInProgress();
       dispatch({ type: 'RESET' });
       navigation.goBack();
     }

@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useCallback, useRef } from 'react';
 import { View, Text, TouchableOpacity, StyleSheet, Platform } from 'react-native';
 import * as Speech from 'expo-speech';
-import { speakSentence, stopSpeech } from '../utils/speech';
+import { playText, stopAll, speakWithExpo, stopExpo } from '../utils/audio';
 import type { AudioScript } from '../types';
 
 interface Props {
@@ -77,13 +77,16 @@ export default function AudioPlayer({
   const [hasPlayed, setHasPlayed] = useState(false);
   const [playCount, setPlayCount] = useState(0);
   const [voices, setVoices] = useState<SpeakerVoice>({ male: undefined, female: undefined });
+  const [isLoading, setIsLoading] = useState(false);
+  const [hasError, setHasError] = useState(false);
+  const [voicesReady, setVoicesReady] = useState(false);
   const stoppedRef = useRef(false);
   const playLimitReached = maxPlays != null && playCount >= maxPlays;
 
-  useEffect(() => { getSpeakerVoices().then(setVoices); }, []);
+  useEffect(() => { getSpeakerVoices().then(v => { setVoices(v); setVoicesReady(true); }); }, []);
 
   useEffect(() => {
-    Speech.stop();
+    stopExpo();
     setIsPlaying(false);
     setHasPlayed(false);
     setPlayCount(0);
@@ -131,7 +134,7 @@ export default function AudioPlayer({
         }),
         new Promise<void>((resolve) => {
           setTimeout(() => {
-            if (!resolved) { Speech.stop(); resolve(); }
+            if (!resolved) { stopExpo(); resolve(); }
           }, LINE_TIMEOUT_MS);
         }),
       ]);
@@ -174,7 +177,7 @@ export default function AudioPlayer({
         }),
         new Promise<void>((resolve) => {
           setTimeout(() => {
-            if (!resolved) { Speech.stop(); resolve(); }
+            if (!resolved) { stopExpo(); resolve(); }
           }, LINE_TIMEOUT_MS);
         }),
       ]);
@@ -186,31 +189,45 @@ export default function AudioPlayer({
     if (playLimitReached) return;
     if (isPlaying) {
       stoppedRef.current = true;
-      Speech.stop();
-      stopSpeech();
+      stopExpo();
+      stopAll();
       setIsPlaying(false);
       return;
     }
+
+    setHasError(false);
+    setIsLoading(true);
+
     if (!hasPlayed) { setHasPlayed(true); setPlayCount(1); }
     else { setPlayCount((c) => c + 1); }
 
-    // Try expo-speech first; fall back to Google TTS on web
-    if (audioScript) {
-      const voicesAvailable = (await Speech.getAvailableVoicesAsync()).length > 0;
-      if (voicesAvailable) {
-        speakScript(audioScript);
+    try {
+      // Try expo-speech first; fall back to Google TTS on web
+      if (audioScript) {
+        const voicesAvailable = (await Speech.getAvailableVoicesAsync()).length > 0;
+        setIsLoading(false);
+        if (voicesAvailable) {
+          speakScript(audioScript);
+        } else {
+          // Fallback: speak the combined text as one utterance
+          const fullText = audioScript.segments.map(s => s.text).join('. ');
+          playText(fullText);
+        }
+      } else if (speechText) {
+        const voicesAvailable = (await Speech.getAvailableVoicesAsync()).length > 0;
+        setIsLoading(false);
+        if (voicesAvailable) {
+          speakLegacy(speechText);
+        } else {
+          playText(speechText);
+        }
       } else {
-        // Fallback: speak the combined text as one utterance
-        const fullText = audioScript.segments.map(s => s.text).join('. ');
-        speakSentence(fullText);
+        setIsLoading(false);
       }
-    } else if (speechText) {
-      const voicesAvailable = (await Speech.getAvailableVoicesAsync()).length > 0;
-      if (voicesAvailable) {
-        speakLegacy(speechText);
-      } else {
-        speakSentence(speechText);
-      }
+    } catch (e) {
+      console.warn('[AudioPlayer] Playback error:', e);
+      setIsLoading(false);
+      setHasError(true);
     }
   }, [audioScript, speechText, isPlaying, hasPlayed, playLimitReached, speakScript, speakLegacy]);
 
@@ -220,16 +237,36 @@ export default function AudioPlayer({
   return (
     <View style={styles.container}>
       <TouchableOpacity
-        style={[styles.playBtn, isPlaying && styles.playBtnActive, playLimitReached && styles.playBtnDisabled]}
+        style={[
+          styles.playBtn,
+          isPlaying && styles.playBtnActive,
+          isLoading && styles.playBtnLoading,
+          hasError && styles.playBtnError,
+          playLimitReached && styles.playBtnDisabled,
+        ]}
         onPress={handlePlay}
         activeOpacity={0.7}
-        disabled={playLimitReached}
+        disabled={playLimitReached || isLoading}
       >
         <Text style={styles.playIcon}>
-          {playLimitReached ? '🔒' : isPlaying ? '⏸' : '▶'}
+          {playLimitReached ? '🔒' : isLoading ? '⏳' : hasError ? '⚠️' : isPlaying ? '⏸' : '▶'}
         </Text>
-        <Text style={[styles.playLabel, playLimitReached && styles.playLabelDim]}>
-          {playLimitReached ? 'Played' : isPlaying ? 'Playing...' : hasPlayed ? `Replay (${playCount})` : 'Play'}
+        <Text style={[
+          styles.playLabel,
+          hasError && styles.playLabelError,
+          playLimitReached && styles.playLabelDim,
+        ]}>
+          {playLimitReached
+            ? 'Played'
+            : isLoading
+              ? 'Loading...'
+              : hasError
+                ? 'Retry'
+                : isPlaying
+                  ? 'Playing...'
+                  : hasPlayed
+                    ? `Replay (${playCount})`
+                    : 'Play'}
         </Text>
       </TouchableOpacity>
     </View>
@@ -253,8 +290,11 @@ const styles = StyleSheet.create({
     gap: 8,
   },
   playBtnActive: { backgroundColor: '#EA4335' },
+  playBtnLoading: { backgroundColor: '#F57F17' },
+  playBtnError: { backgroundColor: '#C62828' },
   playBtnDisabled: { backgroundColor: '#9E9E9E' },
   playIcon: { fontSize: 16, color: '#FFFFFF' },
   playLabel: { fontSize: 15, fontWeight: '700', color: '#FFFFFF' },
+  playLabelError: { color: '#FFCDD2' },
   playLabelDim: { color: '#E0E0E0' },
 });

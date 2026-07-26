@@ -1,5 +1,6 @@
 [build]
-  command = "npx expo export --platform web && node scripts/patch-html.cjs"
+  base = "."
+  command = "npx expo export --platform web && node scripts/copy-data.cjs && node scripts/patch-html.cjs"
   publish = "dist"
 
 [[redirects]]
