@@ -79,8 +79,8 @@
         "correctIndex": 1
       }
     ],
-    "audio_url": "",
-    "duration": 0
+    "audio_url": "/audio-articles/art_meeting_001.mp3",
+    "duration": 168
   },
   {
     "id": "art_meeting_002",
@@ -153,8 +153,8 @@
         "correctIndex": 1
       }
     ],
-    "audio_url": "",
-    "duration": 0
+    "audio_url": "/audio-articles/art_meeting_002.mp3",
+    "duration": 131
   },
   {
     "id": "art_office_101",
@@ -241,8 +241,8 @@
         "correctIndex": 2
       }
     ],
-    "audio_url": "",
-    "duration": 0
+    "audio_url": "/audio-articles/art_office_101.mp3",
+    "duration": 149
   },
   {
     "id": "art_office_102",
@@ -329,8 +329,8 @@
         "correctIndex": 1
       }
     ],
-    "audio_url": "",
-    "duration": 0
+    "audio_url": "/audio-articles/art_office_102.mp3",
+    "duration": 128
   },
   {
     "id": "art_hr_201",
@@ -404,8 +404,8 @@
         "correctIndex": 1
       }
     ],
-    "audio_url": "",
-    "duration": 0
+    "audio_url": "/audio-articles/art_hr_201.mp3",
+    "duration": 139
   },
   {
     "id": "art_hr_202",
@@ -473,8 +473,8 @@
         "correctIndex": 1
       }
     ],
-    "audio_url": "",
-    "duration": 0
+    "audio_url": "/audio-articles/art_hr_202.mp3",
+    "duration": 140
   },
   {
     "id": "art_biz_203",
@@ -551,8 +551,8 @@
         "correctIndex": 2
       }
     ],
-    "audio_url": "",
-    "duration": 0
+    "audio_url": "/audio-articles/art_biz_203.mp3",
+    "duration": 121
   },
   {
     "id": "art_biz_204",
@@ -622,8 +622,8 @@
         "correctIndex": 2
       }
     ],
-    "audio_url": "",
-    "duration": 0
+    "audio_url": "/audio-articles/art_biz_204.mp3",
+    "duration": 115
   },
   {
     "id": "art_trade_205",
@@ -692,8 +692,8 @@
         "correctIndex": 0
       }
     ],
-    "audio_url": "",
-    "duration": 0
+    "audio_url": "/audio-articles/art_trade_205.mp3",
+    "duration": 118
   },
   {
     "id": "art_trade_206",
@@ -758,8 +758,8 @@
         "correctIndex": 1
       }
     ],
-    "audio_url": "",
-    "duration": 0
+    "audio_url": "/audio-articles/art_trade_206.mp3",
+    "duration": 141
   },
   {
     "id": "art_tech_207",
@@ -832,8 +832,8 @@
         "correctIndex": 1
       }
     ],
-    "audio_url": "",
-    "duration": 0
+    "audio_url": "/audio-articles/art_tech_207.mp3",
+    "duration": 163
   },
   {
     "id": "art_tech_208",
@@ -906,8 +906,8 @@
         "correctIndex": 1
       }
     ],
-    "audio_url": "",
-    "duration": 0
+    "audio_url": "/audio-articles/art_tech_208.mp3",
+    "duration": 137
   },
   {
     "id": "art_media_209",
@@ -989,8 +989,8 @@
         "correctIndex": 2
       }
     ],
-    "audio_url": "",
-    "duration": 0
+    "audio_url": "/audio-articles/art_media_209.mp3",
+    "duration": 165
   },
   {
     "id": "art_travel_210",
@@ -1054,8 +1054,8 @@
         "correctIndex": 1
       }
     ],
-    "audio_url": "",
-    "duration": 0
+    "audio_url": "/audio-articles/art_travel_210.mp3",
+    "duration": 121
   },
   {
     "id": "art_travel_211",
@@ -1116,8 +1116,8 @@
         "correctIndex": 1
       }
     ],
-    "audio_url": "",
-    "duration": 0
+    "audio_url": "/audio-articles/art_travel_211.mp3",
+    "duration": 132
   },
   {
     "id": "art_shopping_212",
@@ -1212,8 +1212,8 @@
         "correctIndex": 1
       }
     ],
-    "audio_url": "",
-    "duration": 0
+    "audio_url": "/audio-articles/art_shopping_212.mp3",
+    "duration": 131
   },
   {
     "id": "art_food_213",
@@ -1280,8 +1280,8 @@
         "correctIndex": 1
       }
     ],
-    "audio_url": "",
-    "duration": 0
+    "audio_url": "/audio-articles/art_food_213.mp3",
+    "duration": 140
   },
   {
     "id": "art_food_214",
@@ -1344,8 +1344,8 @@
         "correctIndex": 1
       }
     ],
-    "audio_url": "",
-    "duration": 0
+    "audio_url": "/audio-articles/art_food_214.mp3",
+    "duration": 149
   },
   {
     "id": "art_social_215",
@@ -1431,8 +1431,8 @@
         "correctIndex": 1
       }
     ],
-    "audio_url": "",
-    "duration": 0
+    "audio_url": "/audio-articles/art_social_215.mp3",
+    "duration": 149
   },
   {
     "id": "art_entertainment_216",
@@ -1494,8 +1494,8 @@
         "correctIndex": 1
       }
     ],
-    "audio_url": "",
-    "duration": 0
+    "audio_url": "/audio-articles/art_entertainment_216.mp3",
+    "duration": 131
   },
   {
     "id": "art_sports_217",
@@ -1577,8 +1577,8 @@
         "correctIndex": 1
       }
     ],
-    "audio_url": "",
-    "duration": 0
+    "audio_url": "/audio-articles/art_sports_217.mp3",
+    "duration": 130
   },
   {
     "id": "art_health_218",
@@ -1659,8 +1659,8 @@
         "correctIndex": 1
       }
     ],
-    "audio_url": "",
-    "duration": 0
+    "audio_url": "/audio-articles/art_health_218.mp3",
+    "duration": 143
   },
   {
     "id": "art_housing_219",
@@ -1741,8 +1741,8 @@
         "correctIndex": 1
       }
     ],
-    "audio_url": "",
-    "duration": 0
+    "audio_url": "/audio-articles/art_housing_219.mp3",
+    "duration": 178
   },
   {
     "id": "art_mgmt_220",
@@ -1819,8 +1819,8 @@
         "correctIndex": 1
       }
     ],
-    "audio_url": "",
-    "duration": 0
+    "audio_url": "/audio-articles/art_mgmt_220.mp3",
+    "duration": 169
   },
   {
     "id": "art_career_221",
@@ -1902,8 +1902,8 @@
         "correctIndex": 1
       }
     ],
-    "audio_url": "",
-    "duration": 0
+    "audio_url": "/audio-articles/art_career_221.mp3",
+    "duration": 178
   },
   {
     "id": "art_benefits_222",
@@ -1963,8 +1963,8 @@
         "correctIndex": 1
       }
     ],
-    "audio_url": "",
-    "duration": 0
+    "audio_url": "/audio-articles/art_benefits_222.mp3",
+    "duration": 162
   },
   {
     "id": "art_phone_223",
@@ -2040,8 +2040,8 @@
         "correctIndex": 1
       }
     ],
-    "audio_url": "",
-    "duration": 0
+    "audio_url": "/audio-articles/art_phone_223.mp3",
+    "duration": 193
   },
   {
     "id": "art_legal_224",
@@ -2132,8 +2132,8 @@
         "correctIndex": 1
       }
     ],
-    "audio_url": "",
-    "duration": 0
+    "audio_url": "/audio-articles/art_legal_224.mp3",
+    "duration": 188
   },
   {
     "id": "art_emotion_225",
@@ -2205,8 +2205,8 @@
         "correctIndex": 1
       }
     ],
-    "audio_url": "",
-    "duration": 0
+    "audio_url": "/audio-articles/art_emotion_225.mp3",
+    "duration": 174
   },
   {
     "id": "art_action_226",
@@ -2287,8 +2287,8 @@
         "correctIndex": 1
       }
     ],
-    "audio_url": "",
-    "duration": 0
+    "audio_url": "/audio-articles/art_action_226.mp3",
+    "duration": 179
   },
   {
     "id": "art_adjective_227",
@@ -2387,8 +2387,8 @@
         "correctIndex": 1
       }
     ],
-    "audio_url": "",
-    "duration": 0
+    "audio_url": "/audio-articles/art_adjective_227.mp3",
+    "duration": 202
   },
   {
     "id": "art_general_228",
@@ -2446,8 +2446,8 @@
         "correctIndex": 1
       }
     ],
-    "audio_url": "",
-    "duration": 0
+    "audio_url": "/audio-articles/art_general_228.mp3",
+    "duration": 141
   },
   {
     "id": "art_office_003",
@@ -2499,8 +2499,8 @@
       "w_0454",
       "w_0456"
     ],
-    "audio_url": "",
-    "duration": 0,
+    "audio_url": "/audio-articles/art_office_003.mp3",
+    "duration": 12,
     "questions": [
       {
         "id": "q1",
@@ -2565,8 +2565,8 @@
       "w_0590",
       "w_0592"
     ],
-    "audio_url": "",
-    "duration": 0,
+    "audio_url": "/audio-articles/art_office_004.mp3",
+    "duration": 12,
     "questions": [
       {
         "id": "q1",
@@ -2631,8 +2631,8 @@
       "w_0803",
       "w_0804"
     ],
-    "audio_url": "",
-    "duration": 0,
+    "audio_url": "/audio-articles/art_office_005.mp3",
+    "duration": 12,
     "questions": [
       {
         "id": "q1",
@@ -2697,8 +2697,8 @@
       "w_0930",
       "w_0933"
     ],
-    "audio_url": "",
-    "duration": 0,
+    "audio_url": "/audio-articles/art_office_006.mp3",
+    "duration": 12,
     "questions": [
       {
         "id": "q1",
@@ -2763,8 +2763,8 @@
       "w_1088",
       "w_1089"
     ],
-    "audio_url": "",
-    "duration": 0,
+    "audio_url": "/audio-articles/art_office_007.mp3",
+    "duration": 12,
     "questions": [
       {
         "id": "q1",
@@ -2824,8 +2824,8 @@
       "w_1240",
       "w_1241"
     ],
-    "audio_url": "",
-    "duration": 0,
+    "audio_url": "/audio-articles/art_office_008.mp3",
+    "duration": 12,
     "questions": [
       {
         "id": "q1",
@@ -2880,8 +2880,8 @@
       "w_1211",
       "w_1249"
     ],
-    "audio_url": "",
-    "duration": 0,
+    "audio_url": "/audio-articles/art_mgmt_220.mp3",
+    "duration": 12,
     "questions": [
       {
         "id": "q1",
@@ -2936,8 +2936,8 @@
       "w_1234",
       "w_1250"
     ],
-    "audio_url": "",
-    "duration": 0,
+    "audio_url": "/audio-articles/art_mgmt_221.mp3",
+    "duration": 12,
     "questions": [
       {
         "id": "q1",
@@ -2987,8 +2987,8 @@
       "w_1180",
       "w_1194"
     ],
-    "audio_url": "",
-    "duration": 0,
+    "audio_url": "/audio-articles/art_tech_209.mp3",
+    "duration": 12,
     "questions": [
       {
         "id": "q1",
