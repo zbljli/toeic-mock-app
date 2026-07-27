@@ -5,7 +5,7 @@ import {
 } from 'react-native';
 import { useNavigation, useRoute, RouteProp } from '@react-navigation/native';
 import type { StackNavigationProp } from '@react-navigation/stack';
-import { playText, stopAll } from '../../utils/audio';
+import { unlockAudio, playAudioUrl, stopAll } from '../../utils/audio';
 import type { ScenariosTabParamList } from '../../navigation/AppNavigator';
 import { loadVocabState, saveVocabState, migrateMasteryIfNeeded } from '../../utils/storage';
 import type { VocabState } from '../../types/vocabulary';
@@ -21,6 +21,8 @@ interface ArticleItem {
   estimatedTime: number;
   passage: string;
   vocabWordIds: string[];
+  audio_url?: string;
+  duration?: number;
   questions?: { id: string; text: string; options: string[]; correctIndex: number }[];
 }
 
@@ -494,17 +496,22 @@ export default function ScenarioArticleScreen() {
     setPopupWord(null);
   }, [popupWord, mastery, sceneId]);
 
-  const handleTTS = useCallback(() => {
-    if (!currentArticle) return;
+  const hasAudio = !!(currentArticle?.audio_url);
+
+  const handlePlayAudio = useCallback(() => {
+    if (!currentArticle?.audio_url) return;
+    // Required for iOS Safari / WeChat WKWebView autoplay policy
+    unlockAudio();
     if (speaking) {
       stopAll();
       setSpeaking(false);
       return;
     }
     setSpeaking(true);
-    playText(currentArticle.passage, {
-      rate: 0.78,
-      onDone: () => setSpeaking(false),
+    playAudioUrl(currentArticle.audio_url, {
+      onPlay: () => setSpeaking(true),
+      onEnded: () => setSpeaking(false),
+      onError: () => setSpeaking(false),
     });
   }, [currentArticle, speaking]);
 
@@ -561,16 +568,20 @@ export default function ScenarioArticleScreen() {
               </View>
             </View>
 
-            {/* TTS Button */}
+            {/* Audio Button */}
             <TouchableOpacity
-              style={[st.ttsBtn, speaking && st.ttsBtnActive]}
-              onPress={handleTTS}
-              activeOpacity={0.7}
+              style={[st.ttsBtn, !hasAudio && st.ttsBtnDisabled, speaking && st.ttsBtnActive]}
+              onPress={handlePlayAudio}
+              activeOpacity={hasAudio ? 0.7 : 1}
+              disabled={!hasAudio}
             >
               <Text style={st.ttsIcon}>{speaking ? '⏸' : '🔊'}</Text>
-              <Text style={st.ttsLabel}>
-                {speaking ? 'Stop Listening' : 'Listen to Article'}
+              <Text style={[st.ttsLabel, !hasAudio && st.ttsLabelDisabled]}>
+                {speaking ? 'Stop Listening' : hasAudio ? 'Listen to Article' : 'Audio coming soon'}
               </Text>
+              {hasAudio && currentArticle.duration ? (
+                <Text style={st.ttsDuration}>{Math.floor(currentArticle.duration / 60)}:{String(currentArticle.duration % 60).padStart(2, '0')}</Text>
+              ) : null}
             </TouchableOpacity>
 
             {/* Mastery Progress */}
@@ -686,8 +697,11 @@ const st = StyleSheet.create({
     backgroundColor: '#E3F2FD', gap: 8,
   },
   ttsBtnActive: { backgroundColor: '#FFF3E0' },
+  ttsBtnDisabled: { backgroundColor: '#F5F5F5' },
   ttsIcon: { fontSize: 20 },
   ttsLabel: { fontSize: 15, fontWeight: '700', color: '#1565C0' },
+  ttsLabelDisabled: { color: '#BDBDBD' },
+  ttsDuration: { fontSize: 12, color: '#757575', fontWeight: '600' },
 
   // Progress
   progressRow: { flexDirection: 'row', alignItems: 'center', paddingHorizontal: 20, marginTop: 14, marginBottom: 4 },

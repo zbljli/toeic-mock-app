@@ -7,22 +7,42 @@
     "estimatedTime": 5,
     "passage": "Meridian Corporation held its quarterly strategy meeting last Thursday in the main conference room. The meeting was scheduled to begin at 9 a.m., but was postponed by thirty minutes because several department heads were stuck in traffic.\n\nAt 9:30, the CEO, Ms. Patterson, opened the meeting by reviewing the agenda. The first item was a presentation by the marketing team, who proposed a new campaign targeting younger consumers. The proposal was backed by solid market research data, and after a brief discussion, the board gave its approval.\n\nHowever, not everyone was convinced. The finance director, Mr. Chen, expressed concern about the budget. He pointed out that the campaign would require a significant increase in spending, and he was not sure the expected revenue would justify the cost. 'We need to be realistic about our estimates,' he said.\n\nA lengthy negotiation followed. The marketing team argued that the investment was essential for long-term growth, while Mr. Chen insisted on a more conservative approach. Eventually, they reached a compromise: the campaign would proceed, but with a reduced initial budget, subject to a follow-up review in three months. The consensus was that this was the most practical solution.\n\nNext, the HR director gave a brief update on the recruitment drive. She announced that five new candidates had been shortlisted and that interviews would begin the following week. The CEO expressed her satisfaction with the progress and encouraged the team to move quickly to fill the vacancies.\n\nThe final item on the agenda was a proposal from the IT department. They requested an upgrade to the company's network infrastructure, stressing that the current system was outdated and unreliable. However, given the earlier budget debate, the board decided to postpone a decision until they could evaluate the proposal in more detail.\n\nBefore adjourning, Ms. Patterson reminded everyone to submit their quarterly reports by the Friday deadline. She also announced a breakthrough deal with an overseas client, which was met with applause. The meeting concluded at 11:45 a.m., and all attendees agreed it had been highly productive.\n\nIn summary, the meeting demonstrated the importance of open communication, careful planning, and the willingness to find common ground — all essential elements of effective business collaboration.",
     "vocabWordIds": [
-      "w_0003",
-      "w_0004",
-      "w_0007",
       "w_0036",
-      "w_0037",
-      "w_0039",
-      "w_0040",
       "w_0091",
       "w_0110",
-      "w_0112",
-      "w_0122",
-      "w_0142",
-      "w_0274",
-      "w_0281",
+      "w_0140",
+      "w_0007",
       "w_0365",
-      "w_0380"
+      "w_0037",
+      "w_0104",
+      "w_0144",
+      "w_0143",
+      "w_0239",
+      "w_0145",
+      "w_0142",
+      "w_0093",
+      "w_0040",
+      "w_0281",
+      "w_0238",
+      "w_0127",
+      "w_0278",
+      "w_0112",
+      "w_0226",
+      "w_0137",
+      "w_0039",
+      "w_0095",
+      "w_0004",
+      "w_0274",
+      "w_0380",
+      "w_0094",
+      "w_0107",
+      "w_0122",
+      "w_0202",
+      "w_0119",
+      "w_0128",
+      "w_0237",
+      "w_0138",
+      "w_0003"
     ],
     "questions": [
       {
@@ -58,7 +78,9 @@
         ],
         "correctIndex": 1
       }
-    ]
+    ],
+    "audio_url": "",
+    "duration": 0
   },
   {
     "id": "art_meeting_002",
@@ -68,13 +90,33 @@
     "estimatedTime": 4,
     "passage": "Man: Good morning, everyone. Thank you for attending this meeting on such short notice. As you know, we're here to discuss the proposed partnership with Asahi Industries. I've asked Ms. Tanaka to present the key points of the agreement.\n\nWoman: Thank you, Mr. Davis. Let me begin with the main terms. Asahi is offering a five-year contract with an initial investment of $2 million. In return, they want exclusive distribution rights in the Asia-Pacific region.\n\nMan 2: That's a significant commitment on both sides. But I have some concerns about the exclusivity clause. What if their sales performance falls short of expectations?\n\nWoman: That's a valid concern. The agreement includes a performance review at the end of the second year. If sales targets aren't met, either party can renegotiate or withdraw.\n\nMan: I think that's reasonable. However, I'd also like to see a more detailed breakdown of how the $2 million will be allocated. The current proposal is somewhat vague on that point.\n\nWoman: I agree. I'll ask Asahi to provide a revised budget breakdown by next Tuesday. In the meantime, can I get a preliminary consensus on whether we want to move forward?\n\nMan 2: Based on what I've seen, I'm cautiously optimistic. The partnership could open up significant new markets for us. But I'd like to review the revised budget before giving my final endorsement.\n\nMan: That sounds fair. Let's schedule a follow-up meeting for next Thursday at 2 p.m. Ms. Tanaka, please send the revised documents to everyone by Tuesday evening.\n\nWoman: Will do. I'll also prepare a summary of today's discussion for those who couldn't attend.\n\nMan: Excellent. Before we adjourn, does anyone have any other questions or comments? ... Alright, thank you all. This was a productive meeting.",
     "vocabWordIds": [
-      "w_0003",
+      "w_0391",
       "w_0037",
-      "w_0097",
+      "w_0455",
+      "w_0894",
       "w_0142",
+      "w_0437",
+      "w_0368",
+      "w_0097",
+      "w_0418",
+      "w_0457",
+      "w_0480",
+      "w_0983",
+      "w_0450",
+      "w_0380",
+      "w_1102",
+      "w_0840",
+      "w_0396",
+      "w_0414",
       "w_0173",
+      "w_0392",
+      "w_0602",
+      "w_0491",
+      "w_1064",
       "w_0187",
-      "w_0380"
+      "w_0366",
+      "w_0003",
+      "w_1061"
     ],
     "questions": [
       {
@@ -110,7 +152,9 @@
         ],
         "correctIndex": 1
       }
-    ]
+    ],
+    "audio_url": "",
+    "duration": 0
   },
   {
     "id": "art_office_101",
@@ -120,24 +164,47 @@
     "estimatedTime": 2,
     "passage": "To: All Staff\nFrom: Jenny Park, Facilities Manager\nSubject: Office Renovation on Third Floor\n\nDear colleagues,\n\nThe third-floor office space will undergo renovation starting Monday, November 10th. The project is expected to take approximately three weeks. During this period, the marketing department staff will be temporarily relocated to the fifth floor.\n\nPlease note the following arrangements:\n\nAll desks, cabinets, and filing systems on the third floor must be cleared by Friday, November 7th. Please remove all personal documents and stationery before you leave that day. Any items left behind will be placed in storage.\n\nThe receptionist desk on the third floor will be moved to the main lobby. Visitors should check in at the lobby receptionist starting Monday. The intercom system on the third floor will be out of service. If you need to reach a colleague, please use email or visit their temporary desk in person.\n\nStaplers, calculators, and other office supplies have already been restocked on the fifth floor. Additional supplies can be requested from the supply cabinet near the elevator. The photocopier and xerox machine, previously used for making carbon copies and duplicates of documents, will remain on the third floor but will be inaccessible. Please use the machines on the second floor instead.\n\nDuring renovation, employees on both floors may experience some noise. We recommend using headphones if you require quiet for focused work. The renovation is part of our ongoing effort to improve the workplace environment. We appreciate your patience and punctuality throughout this process.\n\nOvertime work is permitted during this period, but please notify your supervisor in advance. If you have any questions about the temporary assignment of workstations or the bulletin board updates, please contact me directly at extension 3755.\n\nThank you for your cooperation. The staff meeting about punctuality and attendance will continue as scheduled. Meeting memos and the latest directory are available near the front desk.",
     "vocabWordIds": [
+      "w_0001",
+      "w_0002",
+      "w_0004",
+      "w_0006",
+      "w_0010",
+      "w_0037",
+      "w_0060",
+      "w_0067",
+      "w_0071",
       "w_0078",
+      "w_0093",
+      "w_0096",
+      "w_0097",
+      "w_0103",
+      "w_0105",
+      "w_0107",
+      "w_0114",
+      "w_0119",
+      "w_0122",
       "w_0123",
-      "w_0231",
-      "w_0236",
-      "w_0287",
-      "w_0292",
-      "w_0316",
-      "w_0483",
-      "w_0574",
-      "w_0592",
-      "w_0699",
-      "w_0751",
-      "w_0862",
-      "w_0888",
-      "w_0955",
-      "w_0980",
-      "w_1097",
-      "w_1239"
+      "w_0125",
+      "w_0127",
+      "w_0128",
+      "w_0129",
+      "w_0133",
+      "w_0135",
+      "w_0136",
+      "w_0137",
+      "w_0138",
+      "w_0139",
+      "w_0140",
+      "w_0141",
+      "w_0142",
+      "w_0143",
+      "w_0144",
+      "w_0145",
+      "w_0146",
+      "w_0147",
+      "w_0148",
+      "w_0149",
+      "w_0150"
     ],
     "questions": [
       {
@@ -173,7 +240,9 @@
         ],
         "correctIndex": 2
       }
-    ]
+    ],
+    "audio_url": "",
+    "duration": 0
   },
   {
     "id": "art_office_102",
@@ -183,31 +252,47 @@
     "estimatedTime": 2,
     "passage": "Woman: Good morning. Did you finish the draft of the client contract? I need to proofread it before the meeting.\n\nMan: Almost. I am waiting for the legal department to confirm one clause. In the meantime, can you check the employee directory? I need the extension for the new secretary on the fourth floor.\n\nWoman: Sure. Her name is Sandra, right? I have the directory here. Yes, extension 4208. By the way, the postage for the printed matter we sent out yesterday came to forty-seven dollars. Should I file the receipt?\n\nMan: Yes, please put it in the filing cabinet under Shipping Expenses. Oh, and the bulletin board near the break room has been updated with the new shift schedule for next week.\n\nWoman: Thanks, I will check it. Also, a reminder: the staff meeting about punctuality is tomorrow at 9 a.m. The attendance records have not been great lately. Several clerks have been tardy three times this month.\n\nMan: I know. The supervisor asked me to prepare a memo about it. I left a carbon copy of the attendance report in your in-tray this morning.\n\nWoman: I saw it. Let us discuss after I finish proofreading. Were the duplicate forms for HR also in the out-tray?\n\nMan: Yes, I put them there yesterday. The receptionist called in sick today, by the way. Can someone cover the front desk during lunch?\n\nWoman: I will ask the typist from accounting. She is usually free between twelve and one.\n\nMan: Perfect. And the xerox machine on the second floor is jammed again. I have put in a maintenance request. I will use the one in the basement for now.\n\nWoman: Good idea. Let me grab those forms and start on the contract draft.\n\nMan: Sounds good. Let us catch up after lunch.",
     "vocabWordIds": [
-      "w_0006",
-      "w_0010",
-      "w_0097",
+      "w_0152",
+      "w_0154",
+      "w_0157",
+      "w_0160",
+      "w_0161",
+      "w_0162",
+      "w_0167",
+      "w_0169",
+      "w_0171",
+      "w_0179",
+      "w_0184",
+      "w_0189",
+      "w_0193",
+      "w_0198",
+      "w_0203",
+      "w_0205",
+      "w_0207",
+      "w_0212",
+      "w_0222",
+      "w_0224",
+      "w_0229",
+      "w_0231",
       "w_0236",
+      "w_0244",
+      "w_0247",
+      "w_0248",
+      "w_0249",
+      "w_0251",
+      "w_0256",
+      "w_0257",
+      "w_0267",
+      "w_0273",
+      "w_0277",
+      "w_0282",
+      "w_0286",
       "w_0287",
       "w_0292",
-      "w_0303",
-      "w_0316",
-      "w_0483",
-      "w_0508",
-      "w_0574",
-      "w_0592",
-      "w_0711",
-      "w_0786",
-      "w_0857",
-      "w_0915",
-      "w_0930",
-      "w_0955",
-      "w_0980",
-      "w_1056",
-      "w_1069",
-      "w_1097",
-      "w_1145",
-      "w_1182",
-      "w_1239"
+      "w_0295",
+      "w_0296",
+      "w_0297",
+      "w_0303"
     ],
     "questions": [
       {
@@ -243,7 +328,9 @@
         ],
         "correctIndex": 1
       }
-    ]
+    ],
+    "audio_url": "",
+    "duration": 0
   },
   {
     "id": "art_hr_201",
@@ -253,18 +340,34 @@
     "estimatedTime": 2,
     "passage": "Welcome to Meridian Corporation! We are pleased to have you join our team. This memo outlines key information for new employees during your first month.\n\nEmployment Terms: Your employment contract specifies your salary, benefits, and working hours. Please review it carefully and contact HR if you have any questions. All new employees serve a three-month probationary period, after which your position becomes permanent.\n\nBenefits Enrollment: Full-time employees are eligible for health insurance, retirement pension contributions, and annual bonus programs. You must complete benefits enrollment within 30 days of your start date. Part-time staff receive a proportional benefits package.\n\nPerformance Evaluation: Your supervisor will conduct a formal evaluation after 90 days and annually thereafter. The evaluation assesses your capability, competence, and overall contribution to the team. Please keep a record of your achievements throughout the year.\n\nTraining and Development: We encourage all employees to pursue professional development. The company offers internal training programs and subsidies for external courses and certification programs. Your supervisor can recommend suitable training based on your career goals.\n\nCode of Conduct: All personnel are expected to maintain a professional and respectful workplace. Discrimination, harassment, or any form of misconduct will not be tolerated. Please review the employee handbook for the full policy.\n\nConfidentiality: As an employee, you will have access to confidential company information. You must sign the confidentiality agreement included in your onboarding package. Unauthorized disclosure is grounds for immediate termination.\n\nFor HR inquiries, please contact the personnel department at extension 2500 or email hr@meridian.com. Your supervisor is also available to discuss any concerns. We look forward to your contribution to our success.",
     "vocabWordIds": [
-      "w_0022",
-      "w_0023",
+      "w_0110",
+      "w_0245",
       "w_0084",
-      "w_0095",
+      "w_0023",
+      "w_0199",
       "w_0300",
-      "w_0304",
-      "w_0519",
       "w_0526",
-      "w_0549",
+      "w_0024",
+      "w_0100",
+      "w_0115",
+      "w_0022",
+      "w_0149",
       "w_0870",
+      "w_0893",
+      "w_0028",
+      "w_0220",
+      "w_0088",
+      "w_0027",
+      "w_0137",
       "w_0884",
-      "w_0893"
+      "w_0095",
+      "w_0026",
+      "w_0129",
+      "w_0304",
+      "w_0549",
+      "w_0135",
+      "w_0519",
+      "w_0194"
     ],
     "questions": [
       {
@@ -300,7 +403,9 @@
         ],
         "correctIndex": 1
       }
-    ]
+    ],
+    "audio_url": "",
+    "duration": 0
   },
   {
     "id": "art_hr_202",
@@ -310,23 +415,39 @@
     "estimatedTime": 2,
     "passage": "Interviewer: Good afternoon. Thank you for coming in today. I have reviewed your resume, and your background in marketing is impressive. Can you tell me about your previous occupation?\n\nCandidate: Thank you. I worked as a marketing coordinator for two years at Sunrise Media. I was responsible for campaign coordination and client communication. I am now looking for a role with more responsibility.\n\nInterviewer: I see. Why did you resign from that position?\n\nCandidate: The company was going through restructuring, and I felt it was time for a new challenge. I am looking for a permanent role where I can grow. I left on good terms and my former employer would provide a strong recommendation.\n\nInterviewer: Good. What attracted you to this position? We are looking for someone with strong expertise in digital marketing and proven capability in campaign management.\n\nCandidate: Your company has an excellent reputation for innovation. I am particularly interested in the hands-on approach you take with clients. I believe my skills in collaboration and project coordination make me a strong candidate.\n\nInterviewer: And how do you handle tight deadlines? Our campaigns often require overtime during launch weeks.\n\nCandidate: I am very comfortable with that. At Sunrise, I frequently worked part-time during slow periods and full-time during campaigns. Flexibility is important.\n\nInterviewer: Good. This position offers a competitive salary plus an annual bonus based on performance. Benefits include health insurance and a pension plan after the first year.\n\nCandidate: That sounds excellent. May I ask about career development opportunities?\n\nInterviewer: Certainly. We offer a mentorship program, and high-performing employees are often promoted from within. Our most recent senior coordinator was a novice in the industry just three years ago.\n\nCandidate: That is very encouraging. I am definitely interested. I will send the references this afternoon.",
     "vocabWordIds": [
-      "w_0021",
-      "w_0022",
-      "w_0023",
-      "w_0025",
-      "w_0076",
-      "w_0077",
+      "w_0354",
       "w_0084",
-      "w_0123",
-      "w_0148",
+      "w_0023",
+      "w_0384",
       "w_0300",
-      "w_0304",
+      "w_1022",
       "w_0336",
-      "w_0568",
-      "w_0827",
+      "w_0022",
+      "w_0077",
       "w_0870",
+      "w_0555",
+      "w_0863",
+      "w_0148",
+      "w_0879",
+      "w_0021",
+      "w_0745",
+      "w_1062",
+      "w_0794",
+      "w_0568",
+      "w_0123",
+      "w_0939",
+      "w_1225",
       "w_0884",
-      "w_0982"
+      "w_0313",
+      "w_0397",
+      "w_0076",
+      "w_0671",
+      "w_1065",
+      "w_1036",
+      "w_0982",
+      "w_0827",
+      "w_0304",
+      "w_0025"
     ],
     "questions": [
       {
@@ -351,7 +472,9 @@
         ],
         "correctIndex": 1
       }
-    ]
+    ],
+    "audio_url": "",
+    "duration": 0
   },
   {
     "id": "art_biz_203",
@@ -361,21 +484,37 @@
     "estimatedTime": 2,
     "passage": "Meridian Corporation reported quarterly results yesterday showing a 12 percent increase in revenue compared to the same period last year. CEO Sarah Chen attributed the growth to successful client acquisitions and expanding into two new overseas markets.\n\n\"Our strategy to diversify revenue streams is paying off,\" Ms. Chen said. \"We have seen particularly strong performance from our Asia-Pacific division, where we carried out an aggressive market entry plan.\"\n\nThe company's gross profit margin improved to 34 percent, up from 31 percent a year ago. However, the CFO noted that expenditure on the expansion has been higher than anticipated, and the company's debt level has increased. The depreciation of certain overseas assets also affected the balance sheet. \"We must ensure we are not overextending ourselves,\" the CFO said. \"The deficit in our European operations is a concern.\"\n\nDespite these challenges, investors reacted positively. The company's stock price rose 8 percent in after-hours trading. One shareholder commented that the long-term growth potential justifies the current investment. The company also announced a new initiative to cut down on unnecessary spending.\n\nAnalysts remain optimistic. \"Meridian has a proven track record of thriving in competitive markets,\" one analyst said. \"Their willingness to integrate new technologies and adapt to changing conditions gives them an edge.\" Looking ahead, the company expects moderate inflation to impact costs but projects continued revenue growth of 8 to 10 percent. The board has approved a preliminary plan to explore further expansion into South America next year, pending a detailed market assessment.",
     "vocabWordIds": [
-      "w_0051",
+      "w_0438",
+      "w_0486",
+      "w_0545",
+      "w_0258",
       "w_0052",
+      "w_0460",
       "w_0055",
-      "w_0254",
-      "w_0429",
-      "w_0446",
-      "w_0459",
-      "w_0564",
-      "w_0637",
-      "w_0678",
-      "w_0695",
-      "w_0883",
-      "w_0922",
       "w_1067",
-      "w_1109"
+      "w_0695",
+      "w_0158",
+      "w_0922",
+      "w_0166",
+      "w_0637",
+      "w_0423",
+      "w_0556",
+      "w_0181",
+      "w_0005",
+      "w_0393",
+      "w_0470",
+      "w_0522",
+      "w_0051",
+      "w_0429",
+      "w_0254",
+      "w_0446",
+      "w_0230",
+      "w_0883",
+      "w_0560",
+      "w_0459",
+      "w_1109",
+      "w_0564",
+      "w_0678"
     ],
     "questions": [
       {
@@ -411,7 +550,9 @@
         ],
         "correctIndex": 2
       }
-    ]
+    ],
+    "audio_url": "",
+    "duration": 0
   },
   {
     "id": "art_biz_204",
@@ -421,15 +562,30 @@
     "estimatedTime": 2,
     "passage": "Investor: I have been reviewing the prospectus for the biotech startup. It looks promising, but I want your thoughts before committing any capital.\n\nFund Manager: The company is developing a treatment for early-stage Alzheimer's. They have made significant progress, and their preliminary trial results are encouraging. However, this is a high-risk investment.\n\nInvestor: I understand the risks. What about the financials? The prospectus shows a substantial accumulated deficit.\n\nFund Manager: That is typical for biotech startups. They burn through cash during the research phase. The key question is whether they can secure additional funding to carry out the next round of trials. They are currently in discussions with three venture capital firms.\n\nInvestor: What about the valuation? The current estimate seems high for a company with no product on the market yet.\n\nFund Manager: I agree. If you are interested, I would recommend negotiating for a lower entry price. You might also consider a convertible note rather than straight equity investment. That would give you more protection.\n\nInvestor: Good idea. How much do you think I should allocate? Ten percent of the portfolio?\n\nFund Manager: I would suggest starting with five percent. We can always increase later if the next trial results are positive. The benchmark is to see progress within 12 to 18 months.\n\nInvestor: Fair enough. Let us draw up the paperwork. I want protection if the company seeks additional capital at a lower valuation.\n\nFund Manager: Absolutely. With the right structure, this could yield significant returns.",
     "vocabWordIds": [
-      "w_0098",
-      "w_0266",
-      "w_0302",
-      "w_0308",
-      "w_0446",
-      "w_0620",
       "w_0717",
+      "w_0859",
+      "w_0752",
+      "w_0944",
+      "w_1233",
+      "w_1110",
+      "w_0599",
+      "w_0858",
+      "w_0598",
+      "w_0302",
+      "w_0620",
+      "w_0788",
       "w_0922",
-      "w_1242"
+      "w_0266",
+      "w_1004",
+      "w_0308",
+      "w_0604",
+      "w_0946",
+      "w_0653",
+      "w_0948",
+      "w_1242",
+      "w_0098",
+      "w_1161",
+      "w_0446"
     ],
     "questions": [
       {
@@ -465,7 +621,9 @@
         ],
         "correctIndex": 2
       }
-    ]
+    ],
+    "audio_url": "",
+    "duration": 0
   },
   {
     "id": "art_trade_205",
@@ -475,22 +633,29 @@
     "estimatedTime": 2,
     "passage": "Meridian Corporation's trade division announced today that it has secured a major export contract with a European retail chain. The deal, valued at $4.2 million, will see Meridian supply consumer electronics to 200 stores across Germany and France.\n\nThe contract was signed last Friday following six months of negotiation. The European buyer, an established retail dealer, has agreed to an initial order of 50,000 units, with shipments beginning next month. To secure the transaction, the buyer provided a letter of credit from Deutsche Bank, guaranteeing payment upon delivery. Meridian's CFO noted that this significantly reduces the risk of non-payment.\n\nThe goods will be shipped from Meridian's warehouse in Shenzhen to the buyer's distribution center in Hamburg. The bill of lading has already been prepared by the freight forwarder, and customs clearance at the destination port is expected to take three to five business days.\n\nThe company's corporate headquarters in Singapore will oversee all aspects of the transaction, including quality control, documentation, and compliance with EU import regulations. The deal is part of Meridian's long-range strategy to diversify its customer base beyond Asia.\n\nHowever, the company faces some headwinds. Tariff changes following recent trade disputes could affect the final pricing. The CFO said the company has built some flexibility into the contract to account for potential tariff adjustments. Despite the challenges, industry analysts view the deal positively. The company is emerging as a serious competitor in the consumer electronics space.",
     "vocabWordIds": [
-      "w_0029",
-      "w_0075",
-      "w_0080",
-      "w_0271",
-      "w_0356",
-      "w_0385",
-      "w_0398",
-      "w_0433",
-      "w_0571",
-      "w_0647",
       "w_0757",
+      "w_1146",
+      "w_0434",
+      "w_0433",
+      "w_0080",
       "w_0768",
-      "w_0845",
+      "w_0513",
+      "w_0029",
+      "w_0571",
+      "w_0075",
+      "w_0271",
       "w_0878",
+      "w_0268",
+      "w_0343",
+      "w_0412",
+      "w_0647",
+      "w_0356",
+      "w_0845",
+      "w_0346",
+      "w_0382",
+      "w_0385",
       "w_1133",
-      "w_1146"
+      "w_0398"
     ],
     "questions": [
       {
@@ -526,7 +691,9 @@
         ],
         "correctIndex": 0
       }
-    ]
+    ],
+    "audio_url": "",
+    "duration": 0
   },
   {
     "id": "art_trade_206",
@@ -536,17 +703,24 @@
     "estimatedTime": 2,
     "passage": "Buyer: Thanks for sending over the quotation for the electronic components. I have reviewed it with my team, and overall, we are interested. But I have a few points I would like to discuss.\n\nSupplier: Of course. Which items concern you?\n\nBuyer: Mainly the pricing. Your quote is about 15 percent higher than what we are currently paying our existing contractor. I understand the quality might be better, but we need a more competitive offer.\n\nSupplier: I appreciate your honesty. For an order of this size, I can offer a 10 percent discount. That brings the unit price down to $4.50.\n\nBuyer: Better, but I was hoping for closer to $4.20, especially if we commit to a long-range supply agreement. We are looking at a three-year contract.\n\nSupplier: For a three-year commitment, I can do $4.35. At that level, it is a very cost-effective deal given the quality.\n\nBuyer: And the minimum order quantity? A thousand units per quarter is higher than we need. Can we start with 750?\n\nSupplier: We can do 750 for the first two quarters, then step up to the full quota if the partnership is working.\n\nBuyer: That works. Let us talk about payment terms. Your invoice says payment is due within 15 days. We usually work on 30-day terms.\n\nSupplier: For new clients, we prefer 15 days. But given the volume, I can extend it to 25.\n\nBuyer: 25 days is fine. And the warranty on the components?\n\nSupplier: Standard 12-month warranty covering any manufacturing defects. If you need extended coverage, we offer an 18-month plan for an additional 2 percent.\n\nBuyer: We will take the extended warranty. I think we have a deal. I will wait for the revised documents and we can finalize by Friday.\n\nSupplier: Perfect. Looking forward to a long and profitable partnership.",
     "vocabWordIds": [
-      "w_0029",
-      "w_0030",
-      "w_0072",
-      "w_0389",
-      "w_0402",
       "w_0612",
+      "w_0030",
+      "w_1070",
+      "w_0389",
+      "w_0531",
+      "w_0072",
       "w_0768",
-      "w_0845",
+      "w_0029",
+      "w_0715",
       "w_0878",
       "w_0966",
+      "w_0874",
+      "w_1136",
+      "w_0402",
+      "w_0845",
       "w_0967",
+      "w_1170",
+      "w_1223",
       "w_1133"
     ],
     "questions": [
@@ -583,7 +757,9 @@
         ],
         "correctIndex": 1
       }
-    ]
+    ],
+    "audio_url": "",
+    "duration": 0
   },
   {
     "id": "art_tech_207",
@@ -594,27 +770,32 @@
     "passage": "The IT team successfully completed the server infrastructure upgrade last week. The new equipment, including state-of-the-art blade servers and improved network cable routing, will increase our data processing capacity by 40 percent. All data was migrated to the new system without any loss.\n\nRegular network maintenance was performed on Saturday from 10 p.m. to 4 a.m. During this window, the company intranet and remote access were temporarily unavailable. This maintenance included critical security patches and a firewall configuration update to ensure our digital assets remain protected.\n\nStarting December 1st, all employees will have access to a new suite of productivity tools, including a collaborative spreadsheet application and a project management platform. Training sessions will be held on November 25th and 26th. You can register through the employee portal.\n\nWe have implemented enhanced email filtering to detect phishing attempts and malware. All employees are reminded to activate two-factor authentication and report any suspicious emails immediately. Our automated threat detection system now scans all incoming attachments.\n\nEmployees whose laptops are more than three years old are eligible for an upgrade. The new devices feature faster processors and improved battery life. To browse available options and submit a request, visit the IT self-service portal. Our team can install all necessary software and transfer your data within one business day.\n\nTech Tips: Use the keyboard shortcut Ctrl+Shift+T to restore a browser tab you accidentally closed. To free up disk space, regularly delete temporary files and clear your download folder.\n\nIf you experience issues with any device or software, please submit a ticket through the helpdesk system. For urgent matters, call extension 2700. Our team monitors the system 24/7 to detect and address any malfunction quickly.\n\nCongratulations to the engineering team for developing a new automated quality inspection procedure! Their innovative approach, using machine learning to detect substandard components in real time, has already reduced defects by 23 percent. This is a great example of cutting-edge technology applied to real-world manufacturing.",
     "vocabWordIds": [
       "w_0056",
-      "w_0057",
-      "w_0058",
       "w_0059",
-      "w_0060",
+      "w_0079",
+      "w_0103",
       "w_0156",
-      "w_0170",
-      "w_0285",
+      "w_0218",
       "w_0293",
-      "w_0301",
+      "w_0341",
       "w_0373",
-      "w_0451",
-      "w_0477",
-      "w_0685",
-      "w_0690",
-      "w_0773",
-      "w_0934",
-      "w_1063",
-      "w_1095",
-      "w_1103",
-      "w_1126",
-      "w_1192"
+      "w_0432",
+      "w_0471",
+      "w_0537",
+      "w_0603",
+      "w_0640",
+      "w_0686",
+      "w_0714",
+      "w_0747",
+      "w_0798",
+      "w_0841",
+      "w_0936",
+      "w_1026",
+      "w_1053",
+      "w_1091",
+      "w_1104",
+      "w_1157",
+      "w_1181",
+      "w_1216"
     ],
     "questions": [
       {
@@ -650,7 +831,9 @@
         ],
         "correctIndex": 1
       }
-    ]
+    ],
+    "audio_url": "",
+    "duration": 0
   },
   {
     "id": "art_tech_208",
@@ -660,18 +843,33 @@
     "estimatedTime": 2,
     "passage": "Employee: Hi, this is Mark from marketing. My laptop keeps disconnecting from the Wi-Fi. I have been trying to download a large file and it keeps failing.\n\nIT Support: Let me check. What is your laptop model?\n\nEmployee: It is the Dell that was upgraded last month. The latest model.\n\nIT Support: Got it. Are you in the office or working remotely?\n\nEmployee: In the office, on the third floor, near the window.\n\nIT Support: Okay. First, let us run a quick diagnostic. Can you open the command prompt and type ipconfig? That will show us your network configuration.\n\nEmployee: Sure. Okay, it is showing an IP address but says media disconnected for the wireless adapter.\n\nIT Support: That suggests the network driver might need an update. Let us try something simpler first: can you restart your laptop? Sometimes a quick reboot fixes the issue.\n\nEmployee: Okay, give me a minute. Alright, I am back but it is still not connecting.\n\nIT Support: Let me check on my end. I can see the access point on the third floor is showing an error. It looks like the cable connecting it to the main switch might be loose. I will send someone up to inspect it.\n\nEmployee: Okay. Should I wait or can I use a different connection?\n\nIT Support: You can try the guest Wi-Fi for now. I will have a technician check the hardware within the hour. If the cable needs replacement, we might need to shut down that access point temporarily.\n\nEmployee: Alright. Oh, one more thing: I got a suspicious email this morning with an attachment I did not recognize. Should I delete it?\n\nIT Support: Yes, delete it immediately. Do not open attachments from unknown senders. It could be a virus. Forward it to our security team first so we can analyze it, then delete it. Good catch.\n\nEmployee: Will do. Thanks!",
     "vocabWordIds": [
-      "w_0059",
+      "w_0057",
       "w_0060",
+      "w_0083",
       "w_0132",
-      "w_0156",
-      "w_0293",
-      "w_0341",
-      "w_0373",
+      "w_0170",
+      "w_0246",
+      "w_0294",
+      "w_0360",
+      "w_0379",
       "w_0451",
-      "w_0737",
-      "w_1075",
-      "w_1139",
-      "w_1216"
+      "w_0477",
+      "w_0565",
+      "w_0623",
+      "w_0659",
+      "w_0690",
+      "w_0733",
+      "w_0773",
+      "w_0810",
+      "w_0907",
+      "w_0975",
+      "w_1046",
+      "w_1063",
+      "w_1095",
+      "w_1126",
+      "w_1176",
+      "w_1192",
+      "w_1243"
     ],
     "questions": [
       {
@@ -707,7 +905,9 @@
         ],
         "correctIndex": 1
       }
-    ]
+    ],
+    "audio_url": "",
+    "duration": 0
   },
   {
     "id": "art_media_209",
@@ -717,14 +917,42 @@
     "estimatedTime": 2,
     "passage": "FOR IMMEDIATE RELEASE\n\nMeridian Corporation Unveils EcoSmart Home Series, Targeting Sustainable Living Market\n\nSAN FRANCISCO, November 20, 2025. Meridian Corporation today announced the launch of its EcoSmart Home Series, a new line of energy-efficient smart home devices. The campaign represents the company's largest product launch in three years.\n\nThe EcoSmart series includes a smart thermostat, automated lighting system, and energy monitoring hub, all controlled through a single mobile application. The products were designed with sustainability in mind, using recycled materials and ultra-low-power components. Our research shows that consumers are increasingly looking for products that are both innovative and environmentally responsible.\n\nThe launch will be supported by a multi-channel advertising campaign, including digital advertisements, social media content, and printed leaflets distributed at major retail locations. A banner will also appear on the company's website and partner portals. A product demonstration will be live-streamed on the company's social media channels next Tuesday at 11 a.m. Pacific Time.\n\nThe company has also distributed a detailed brochure to retail partners, outlining product specifications and promotional materials. A confidential circular was sent to key distributors last week with advance information.\n\n\"We are encouraging our retail partners to use the promotional materials we have provided,\" said Lisa Wong, VP of Marketing. \"Consistency in messaging is key. Our slogan for this campaign is Smart Living, Naturally.\"\n\nThe company has published a series of blog posts and an editorial-style article explaining the technology behind the EcoSmart system. A video appendix demonstrating the installation process is available on the company's YouTube channel.\n\nPrinted materials, including a product catalog and specification sheets, will be distributed through our courier network to retail locations nationwide. Inside each package, customers will find a quick-start guide with legible instructions and a QR code linking to the online support portal.\n\nMedia Contact: James Park, Communications Director | media@meridian.com | (415) 555-0190",
     "vocabWordIds": [
-      "w_0061",
-      "w_0213",
-      "w_0259",
-      "w_0324",
       "w_0371",
-      "w_0406",
+      "w_1105",
+      "w_0515",
+      "w_0335",
+      "w_0259",
+      "w_0176",
+      "w_0109",
+      "w_0503",
+      "w_0953",
+      "w_0134",
+      "w_0213",
+      "w_0746",
+      "w_0401",
       "w_0754",
-      "w_1082"
+      "w_0991",
+      "w_0475",
+      "w_1014",
+      "w_0061",
+      "w_0826",
+      "w_1082",
+      "w_0324",
+      "w_0942",
+      "w_0687",
+      "w_0406",
+      "w_0729",
+      "w_0228",
+      "w_0528",
+      "w_0390",
+      "w_0748",
+      "w_1017",
+      "w_0070",
+      "w_1027",
+      "w_0111",
+      "w_1244",
+      "w_0182",
+      "w_0679"
     ],
     "questions": [
       {
@@ -760,7 +988,9 @@
         ],
         "correctIndex": 2
       }
-    ]
+    ],
+    "audio_url": "",
+    "duration": 0
   },
   {
     "id": "art_travel_210",
@@ -770,12 +1000,24 @@
     "estimatedTime": 2,
     "passage": "To: All Staff Attending the Regional Sales Summit\nFrom: Travel Coordination Team\nSubject: Travel Advisory for Singapore, December 8-12\n\nDear colleagues, this memo provides key travel information for those attending the Regional Sales Summit in Singapore.\n\nAll flight bookings have been confirmed. You will receive your electronic ticket and itinerary via email by December 1st. Please check in online at least 24 hours before departure. The airline requires passengers to arrive at the airport three hours before international flights.\n\nUpon arrival at Changi Airport, we recommend taking a taxi or rideshare to the hotel. The journey takes approximately 25 minutes and costs around 30 Singapore dollars. Alternatively, the subway is an affordable option. The station is directly connected to the terminal. A timetable is available on the transit authority website.\n\nAccommodation has been arranged at the Marina Bay Grand Hotel. Check-in begins at 2 p.m. The hotel offers a fitness center, swimming pool, and complimentary breakfast. If your flight arrives early, the hotel concierge can store your luggage until your room is ready.\n\nPlease pack appropriate business attire for three days of meetings, plus casual clothing for the networking dinner. Singapore's weather is warm and humid year-round. The company will reimburse all reasonable travel expenses. Keep all receipts. For the flight, the boarding pass and baggage claim tags should be retained as proof of travel.\n\nA vehicle will be arranged for group transport to the conference venue each morning. For any questions, contact the Travel Coordination Team at extension 2800. Safe travels!",
     "vocabWordIds": [
-      "w_0082",
-      "w_1129",
-      "w_1166",
       "w_1175",
+      "w_0082",
+      "w_0618",
+      "w_0707",
+      "w_0394",
+      "w_0250",
+      "w_1212",
+      "w_1129",
+      "w_0190",
+      "w_1166",
+      "w_0395",
+      "w_0305",
       "w_1207",
-      "w_1212"
+      "w_0291",
+      "w_0188",
+      "w_0419",
+      "w_0349",
+      "w_0591"
     ],
     "questions": [
       {
@@ -811,7 +1053,9 @@
         ],
         "correctIndex": 1
       }
-    ]
+    ],
+    "audio_url": "",
+    "duration": 0
   },
   {
     "id": "art_travel_211",
@@ -821,10 +1065,21 @@
     "estimatedTime": 2,
     "passage": "Passenger: Good morning. I am on the 8:45 flight to Singapore.\n\nAgent: Good morning. May I see your passport and the booking reference?\n\nPassenger: Here you go. I checked in online but have not printed the boarding pass.\n\nAgent: I can print that now. Are you checking any luggage today?\n\nPassenger: Yes, one suitcase. And I have a carry-on bag.\n\nAgent: Please place your suitcase on the scale. It is within the weight limit. Your baggage claim tag is attached to your boarding pass. Your flight departs from Gate 47, Terminal 3. Boarding time is 8:00 a.m.\n\nPassenger: Thank you. Is there any delay? I saw on the departure board that some afternoon flights are showing delays due to weather.\n\nAgent: Your flight is on schedule. Afternoon flights may experience delays, but your morning departure looks good. Is there anything else?\n\nPassenger: I have a connecting flight in Singapore to Kuala Lumpur. Will my luggage be transferred automatically?\n\nAgent: Yes, your luggage is checked through to Kuala Lumpur. Just follow the transit signs when you arrive. Your connecting flight details are on page two of your itinerary.\n\nPassenger: Great. I have a bit of acrophobia, so I prefer an aisle seat. Did my online selection go through?\n\nAgent: Yes, you are in seat 18C, an aisle seat. The seat belt sign will be on during take-off and landing. Flight time today is approximately two hours and forty minutes.\n\nPassenger: Perfect. I get jet lag quite badly. Any tips?\n\nAgent: Stay hydrated during the flight and avoid alcohol. When you arrive, try to adjust to local time immediately. Stay awake until evening if you can.\n\nPassenger: Good advice. Thank you very much.\n\nAgent: You are welcome. Have a pleasant flight!",
     "vocabWordIds": [
+      "w_1175",
       "w_0018",
+      "w_0761",
+      "w_0881",
+      "w_0815",
+      "w_1035",
+      "w_0725",
       "w_0168",
+      "w_1149",
+      "w_0900",
       "w_1055",
-      "w_1175"
+      "w_1144",
+      "w_1072",
+      "w_1018",
+      "w_1041"
     ],
     "questions": [
       {
@@ -860,7 +1115,9 @@
         ],
         "correctIndex": 1
       }
-    ]
+    ],
+    "audio_url": "",
+    "duration": 0
   },
   {
     "id": "art_shopping_212",
@@ -870,21 +1127,55 @@
     "estimatedTime": 2,
     "passage": "To: All Retail Staff\nFrom: Sarah Chen, Director of Retail Operations\nSubject: Customer Service Excellence\n\nOur customers are the heart of our business. Every interaction matters, whether a client is browsing our latest collection, inquiring about a discount, or requesting a refund for a defective item.\n\nWhen a customer enters the store, greet them warmly within 30 seconds. If they are looking for a specific item, walk them to it rather than pointing from across the store. Our display should always be neat, with price labels clearly visible. Ask open-ended questions and listen to the response before recommending products.\n\nIf a customer is looking for a bargain, show them our sale section, but also mention that items purchased at full price come with our extended warranty. When a customer is ready to purchase, process the transaction efficiently. Always ask if they have a coupon or voucher. Place the receipt in the bag and point out the warranty information and exchange policy.\n\nWhen a customer brings back a defective product, apologize sincerely first. Process the refund or replacement promptly. A smooth return experience turns a dissatisfied customer into a loyal one. A customer who complains is giving you a chance to fix the problem. Listen, acknowledge their frustration, and offer a solution.\n\nDuring seasonal sales, highlight the discount percentage clearly. When customers ask if an item is the latest model, be honest. Our reputation depends on it. Our VIP program members receive exclusive previews of new arrivals and early access to sales. Always check if a customer qualifies.\n\nRemember: a single negative experience can cost us a customer, and that customer will tell others. The workmanship and quality of our service must match the quality of our products.",
     "vocabWordIds": [
-      "w_0031",
-      "w_0032",
-      "w_0033",
-      "w_0034",
+      "w_1163",
+      "w_0017",
+      "w_0817",
+      "w_0957",
+      "w_0801",
+      "w_1071",
+      "w_0183",
+      "w_0262",
+      "w_0332",
+      "w_0125",
+      "w_0309",
+      "w_0875",
       "w_0035",
       "w_0073",
-      "w_0332",
-      "w_0405",
-      "w_0443",
-      "w_0489",
-      "w_0739",
-      "w_1009",
-      "w_1227",
       "w_1237",
-      "w_1245"
+      "w_0898",
+      "w_1178",
+      "w_1009",
+      "w_0031",
+      "w_0405",
+      "w_0034",
+      "w_0117",
+      "w_0496",
+      "w_0033",
+      "w_1160",
+      "w_0489",
+      "w_0507",
+      "w_1227",
+      "w_0728",
+      "w_0739",
+      "w_0569",
+      "w_0141",
+      "w_0096",
+      "w_1019",
+      "w_1011",
+      "w_0289",
+      "w_1044",
+      "w_0962",
+      "w_0290",
+      "w_1245",
+      "w_0081",
+      "w_0734",
+      "w_0032",
+      "w_0601",
+      "w_0722",
+      "w_1230",
+      "w_0853",
+      "w_1208",
+      "w_0443"
     ],
     "questions": [
       {
@@ -920,7 +1211,9 @@
         ],
         "correctIndex": 1
       }
-    ]
+    ],
+    "audio_url": "",
+    "duration": 0
   },
   {
     "id": "art_food_213",
@@ -930,16 +1223,27 @@
     "estimatedTime": 2,
     "passage": "The Blue Apron, which opened last month in the downtown dining district, is already generating significant buzz. As someone who covers the local food scene, I decided to see if the restaurant lives up to the hype.\n\nMy companion and I arrived at 7 p.m. on a Friday. The exterior is understated, with a simple neon sign above the entrance, but inside, the atmosphere is warm and inviting. The aroma from the open kitchen was fragrant, with hints of garlic and fresh herbs.\n\nOur server presented the menu and recited the evening's specialty: pan-seared duck breast with cherry reduction sauce. The beverage list features a good selection of local wines and craft cocktails.\n\nWe started with appetizers. The chef's selection of hors d'oeuvres included delicate pastry cups filled with herbed goat cheese. My companion ordered the grilled octopus, which came with a citrus seasoning that balanced the smoky flavor beautifully. The appetizer portions were generous and left us eager for the main course.\n\nFor the entree, I chose the duck. The meat was tender and juicy, paired with roasted root vegetables. My companion's grilled salmon was equally impressive, served on a bed of sauteed spinach with a light butter sauce.\n\nWe could not resist dessert. I ordered the chocolate souffle, which arrived puffed and golden, with a side of vanilla bean ice cream. My companion had the pastry chef's tasting plate. Every item demonstrated the craftsmanship of a kitchen that cares deeply about ingredients. The restaurant caters to vegetarian diners as well, with a separate plant-based menu available upon request.\n\nA few minor critiques: the appetizer portions, while delicious, felt slightly small for the price. The chef's use of seasoning, particularly salt, was a bit heavy-handed in the soup. The background music was a touch loud during peak hours. But these are quibbles. The Blue Apron deserves its reputation. This is dining as it should be.",
     "vocabWordIds": [
-      "w_0044",
+      "w_0753",
+      "w_0227",
+      "w_0411",
+      "w_0422",
+      "w_0615",
+      "w_0465",
+      "w_0319",
+      "w_1054",
+      "w_0681",
+      "w_0191",
+      "w_0214",
+      "w_0452",
       "w_0045",
       "w_0215",
-      "w_0319",
-      "w_0465",
-      "w_0615",
-      "w_0873",
-      "w_1054",
+      "w_0544",
       "w_1090",
-      "w_1206"
+      "w_1206",
+      "w_0873",
+      "w_0320",
+      "w_0044",
+      "w_0476"
     ],
     "questions": [
       {
@@ -975,7 +1279,9 @@
         ],
         "correctIndex": 1
       }
-    ]
+    ],
+    "audio_url": "",
+    "duration": 0
   },
   {
     "id": "art_food_214",
@@ -985,12 +1291,23 @@
     "estimatedTime": 2,
     "passage": "Man: Thanks for meeting me for lunch. I have been meaning to discuss the project, and it is easier over a good meal. Have you been to this place before?\n\nWoman: No, it is my first time. The menu looks excellent. I have heard the chef trained in Paris. What do you recommend?\n\nMan: Everything I have tried has been good. Their specialty is northern Italian. The appetizers are particularly good. The appetizer platter with cured meats and cheeses is a great start.\n\nWoman: Let us order that to share. I am quite hungry. I skipped breakfast and I am absolutely starving.\n\nMan: Me too. I will start with the minestrone soup. The last time I was here, the seasoning was perfect.\n\nWoman: I will have the caprese salad. For the main course, I am torn between the pasta with seafood and the grilled fish. What are you considering?\n\nMan: I am going for the grilled salmon. I had it here before and it was excellent. Crispy skin, perfectly cooked inside. The chef uses fresh herbs from the rooftop garden.\n\nWoman: That sounds good. I will go with the handmade pasta. And a glass of the house white wine.\n\nMan: You go ahead. I have a meeting at two. For dessert, we should try the tiramisu. I had a bite of someone else's last time and it was amazing.\n\nWaiter: Good afternoon. Here are your menus. Can I start you with something to drink? We have a full bar, and our signature cocktails are on the first page.\n\nMan: I will have sparkling water with lemon, please.\n\nWoman: I will try the seasonal spritz. And we are ready to order food. We will start with the appetizer platter to share, then the soup and the caprese salad. For the main course, the grilled salmon and the seafood pasta. And could you let the chef know I have a mild allergy to nuts?\n\nWaiter: Absolutely, I will note that. Any nut-based ingredients will be omitted from your dish. Can I interest you in our dessert menu?\n\nMan: We will decide later, but please keep two slices of tiramisu for us.\n\nWaiter: Will do. Enjoy your meal!",
     "vocabWordIds": [
-      "w_0044",
-      "w_0215",
-      "w_0319",
+      "w_0813",
+      "w_1101",
+      "w_0866",
+      "w_0926",
       "w_0465",
+      "w_1084",
+      "w_0763",
+      "w_0319",
       "w_1054",
-      "w_1090"
+      "w_0990",
+      "w_1246",
+      "w_0215",
+      "w_1090",
+      "w_1094",
+      "w_0044",
+      "w_1080",
+      "w_1247"
     ],
     "questions": [
       {
@@ -1026,7 +1343,9 @@
         ],
         "correctIndex": 1
       }
-    ]
+    ],
+    "audio_url": "",
+    "duration": 0
   },
   {
     "id": "art_social_215",
@@ -1036,13 +1355,46 @@
     "estimatedTime": 2,
     "passage": "You are Invited: Annual Industry Networking Evening\n\nHosted by the Chamber of Commerce, this year's networking event brings together professionals from across the region for an evening of connection, conversation, and community.\n\nDate: Friday, December 5th, 2025 | Time: 6:30 p.m. to 9:30 p.m.\nVenue: The Grand Ballroom, Metropolitan Hotel\nDress Code: Business casual\n\nJoin us for a relaxed evening designed to foster meaningful relationships. Whether you are a seasoned executive or new to the industry, this event offers the perfect opportunity to expand your professional circle in a welcoming atmosphere.\n\nUpon arrival, guests will be greeted with a complimentary welcome drink. The banquet room will feature a mix of seated areas and standing cocktail tables, encouraging natural conversation. Hors d'oeuvres will be served throughout the evening.\n\nOur keynote speaker is Dr. Maria Santos, author of The Art of Connection, who will deliver a brief talk on building authentic professional relationships. Her presentation will touch on key themes including business etiquette, active listening, and the importance of empathy in professional settings.\n\nWe encourage attendees to go beyond surface-level small talk. Ask questions, share experiences, and look for ways to support others in the community. The best connections often come from genuine curiosity rather than a transactional approach.\n\nA few etiquette tips: Introduce yourself with a warm greeting and a firm handshake, or a respectful nod if you prefer. When someone pays you a compliment, a simple thank you is the appropriate response. Avoid gossip about competitors. It reflects poorly on you and your organization. Extend courtesy to everyone you meet, regardless of their position.\n\nFor those who would like to reconnect after the event, we will provide a digital contact directory for all attendees who opt in. RSVP by November 28th through the Chamber of Commerce website. Space is limited. We look forward to an evening of lively conversation and new acquaintances.",
     "vocabWordIds": [
+      "w_0521",
+      "w_0529",
+      "w_1043",
+      "w_1039",
+      "w_0713",
+      "w_0800",
+      "w_0155",
+      "w_0636",
+      "w_0941",
+      "w_0823",
+      "w_0963",
+      "w_0523",
+      "w_0633",
+      "w_0836",
+      "w_0584",
+      "w_0241",
+      "w_0164",
+      "w_0658",
+      "w_0494",
+      "w_0950",
+      "w_0630",
       "w_0260",
       "w_0361",
-      "w_0407",
       "w_0548",
+      "w_1047",
+      "w_0165",
+      "w_0416",
+      "w_0828",
+      "w_0206",
       "w_0573",
-      "w_0633",
-      "w_0636"
+      "w_0743",
+      "w_0232",
+      "w_0407",
+      "w_0992",
+      "w_0186",
+      "w_0261",
+      "w_0651",
+      "w_0589",
+      "w_0211",
+      "w_0345"
     ],
     "questions": [
       {
@@ -1078,7 +1430,9 @@
         ],
         "correctIndex": 1
       }
-    ]
+    ],
+    "audio_url": "",
+    "duration": 0
   },
   {
     "id": "art_entertainment_216",
@@ -1089,12 +1443,21 @@
     "passage": "The Riverside Arts Center has announced its winter season program, and it promises to be one of the most ambitious lineups in the venue's 25-year history.\n\nThe season opens on January 10 with the City Symphony Orchestra performing A Night at the Movies, featuring iconic film scores from the past five decades. The concert will include pieces from classics and modern blockbusters. Tickets go on sale next Monday, and the box office expects a sellout. The theater has excellent acoustics. Every seat offers a full, rich sound.\n\nThe dance program is equally exciting. The Urban Groove Collective, a hip-hop dance troupe that has won three national choreography awards, will take the stage for five nights in February. Their show blends street dance with theatrical storytelling, and audience members will be invited to participate in the finale. No dance experience required, just enthusiasm.\n\nFor drama lovers, the local playwright's festival returns in March. Three original plays will premiere over consecutive weekends, each followed by a Q&A session with the writers and cast. This year's theme is Identity and Belonging. One of the featured playwrights is a former circus performer who brings a uniquely physical approach to storytelling.\n\nThe season closes in April with a special event: a screening of the classic film City Lights accompanied by a live chamber orchestra. It is a rare opportunity to experience silent cinema the way it was originally intended, with live music filling the theater.\n\nThe arts center also announced that its long-awaited renovation of the main theater, including upgrades to lighting, sound, and the screen, will be completed by year end, in time for the January opening. The renovation includes new rehearsal spaces that local performing groups can book. Season passes are available now at a 20 percent discount.",
     "vocabWordIds": [
       "w_0325",
-      "w_0367",
-      "w_0593",
-      "w_0903",
       "w_0994",
+      "w_0903",
+      "w_0283",
+      "w_0593",
       "w_1051",
-      "w_1159"
+      "w_0216",
+      "w_0785",
+      "w_0204",
+      "w_0367",
+      "w_0887",
+      "w_1214",
+      "w_1159",
+      "w_0415",
+      "w_0929",
+      "w_0306"
     ],
     "questions": [
       {
@@ -1130,7 +1493,9 @@
         ],
         "correctIndex": 1
       }
-    ]
+    ],
+    "audio_url": "",
+    "duration": 0
   },
   {
     "id": "art_sports_217",
@@ -1140,16 +1505,42 @@
     "estimatedTime": 2,
     "passage": "To: All Employees\nFrom: Employee Activities Committee\nSubject: Annual Sports Day, Saturday December 13\n\nGet ready for the most anticipated event of the year! The Meridian Corporation Sports Day is back, and this year promises to be bigger and better than ever. The event will be held at Riverside Park from 9 a.m. to 4 p.m. All employees and their families are welcome to participate or simply come and cheer.\n\nThe main tournament this year will be volleyball, with teams of six competing in a round-robin format. Our defending champions, the IT department's Server Smashers, will be back to defend their trophy against all challengers. Other activities include a 5K fun run, walkers welcome, soccer penalty shootout, tug-of-war, and a new addition: a chess and billiards corner for those who prefer mental competition.\n\nFor spectators who want to relax, we will have a stretching and yoga area, plus a massage booth to ease those muscles. For the younger members of the Meridian family, there will be a dedicated playground area with supervised activities. The kids' race always draws the biggest cheers of the day.\n\nA barbecue lunch will be served from noon. Vegetarian options will be available. Please bring your own water bottle. Refill stations will be set up around the park. Snacks and drinks will be available throughout the day.\n\nTeams can sign up online through the employee portal by Friday, December 5th. Individual participants for the fun run can register on the day, but pre-registration is encouraged.\n\nThe only rule? Leave your work stress at home. Sports Day is about recreation, relaxation, and building team spirit. Whether you are a marathon runner or someone whose favorite pastime is watching from a lawn chair, there is a place for you. Come for the competition, stay for the camaraderie!",
     "vocabWordIds": [
-      "w_0099",
-      "w_0778",
-      "w_0779",
-      "w_0872",
+      "w_1165",
+      "w_1134",
       "w_0985",
-      "w_0997",
+      "w_1113",
       "w_1085",
-      "w_1168",
+      "w_1142",
+      "w_0997",
+      "w_0756",
+      "w_1096",
+      "w_0440",
+      "w_1092",
+      "w_0333",
+      "w_0177",
       "w_1179",
-      "w_1222"
+      "w_1137",
+      "w_1196",
+      "w_0987",
+      "w_0353",
+      "w_0441",
+      "w_0749",
+      "w_0812",
+      "w_1030",
+      "w_0600",
+      "w_0778",
+      "w_1040",
+      "w_0696",
+      "w_0872",
+      "w_0340",
+      "w_1116",
+      "w_0089",
+      "w_0779",
+      "w_1222",
+      "w_0808",
+      "w_1168",
+      "w_0099",
+      "w_0444"
     ],
     "questions": [
       {
@@ -1185,7 +1576,9 @@
         ],
         "correctIndex": 1
       }
-    ]
+    ],
+    "audio_url": "",
+    "duration": 0
   },
   {
     "id": "art_health_218",
@@ -1195,15 +1588,41 @@
     "estimatedTime": 2,
     "passage": "As part of our commitment to employee wellbeing, we are pleased to announce the updated Health and Wellness Program for the coming year. Your health is important to us, and we encourage everyone to take full advantage of these benefits.\n\nAll employees are entitled to a comprehensive annual health checkup at the general hospital downtown. The checkup includes a physical examination, blood tests, and basic screening for common conditions such as high blood pressure, diabetes, and high cholesterol. Appointments can be booked directly through the hospital's outpatient department. The checkup is fully covered by the company's health insurance plan. Early diagnosis leads to better outcomes.\n\nFlu season is approaching. The company will host an on-site vaccination clinic on November 20-22 in Conference Room B, from 9 a.m. to 4 p.m. The vaccine is free for all employees. No appointment is necessary. Side effects are generally mild. Some people experience soreness at the injection site or mild fatigue for a day.\n\nOur cafeteria now features a nutrition information display for all menu items. The display includes calorie counts and identifies common allergens. We have expanded the salad bar and introduced more vegetarian and plant-based choices.\n\nStress, anxiety, and depression can affect anyone. The Employee Assistance Program offers confidential counseling at no cost. You can schedule an appointment by calling the helpline at extension 2900. All sessions are private.\n\nIf you have an infection or any contagious illness, please stay home to prevent infecting others. Notify your supervisor before the start of your workday. A doctor's certificate is required for absences of three or more consecutive days. In case of a medical emergency at the workplace, call the front desk at extension 0 immediately. All floors are equipped with a first aid kit, and several staff members are trained in CPR. The nearest emergency room is at City General, 10 minutes away. Stay healthy!",
     "vocabWordIds": [
+      "w_1115",
+      "w_0474",
+      "w_0326",
+      "w_0846",
+      "w_0956",
+      "w_0617",
+      "w_0065",
       "w_0133",
-      "w_0147",
-      "w_0364",
-      "w_0387",
-      "w_0524",
-      "w_0626",
-      "w_0676",
+      "w_0067",
       "w_0829",
-      "w_0854"
+      "w_0209",
+      "w_0775",
+      "w_0716",
+      "w_0662",
+      "w_1076",
+      "w_0344",
+      "w_0844",
+      "w_0524",
+      "w_1226",
+      "w_1217",
+      "w_0626",
+      "w_0351",
+      "w_0570",
+      "w_0364",
+      "w_0642",
+      "w_0674",
+      "w_0339",
+      "w_0676",
+      "w_0854",
+      "w_1135",
+      "w_0387",
+      "w_1158",
+      "w_0147",
+      "w_0253",
+      "w_0697"
     ],
     "questions": [
       {
@@ -1239,7 +1658,9 @@
         ],
         "correctIndex": 1
       }
-    ]
+    ],
+    "audio_url": "",
+    "duration": 0
   },
   {
     "id": "art_housing_219",
@@ -1249,21 +1670,41 @@
     "estimatedTime": 2,
     "passage": "Welcome to Singapore! Moving to a new city is exciting, but finding the right place to live can feel overwhelming. This guide will help you navigate the housing market and settle into your new home.\n\nSingapore offers a wide range of housing options, from modern condominiums with full facilities to more affordable public housing apartments. The key is finding the right balance between location, budget, and lifestyle. Most newcomers choose to rent rather than buy, at least initially.\n\nEach community in Singapore has its own character. The central districts are convenient but expensive. The suburbs offer more space and a quieter environment, often at a lower price. Consider your commute. Being near a subway station can save you significant time each day. Spend a weekend exploring different neighborhoods before making a decision.\n\nCondominiums typically include facilities such as a swimming pool, gym, playground for children, and a garage for parking. Many also have a balcony with city views. Public housing is well-maintained and located in established neighborhoods with good access to schools and public transport.\n\nOnce you find a property you like, you will need to submit an application. The landlord will review your employment details and may request references. If approved, you will sign a lease, typically for one or two years. Review every clause carefully. Most landlords require a security deposit, usually one month's rent, and the first month's rent in advance.\n\nDuring property viewings, check the condition of the appliances, plumbing, and the overall state of the furnishings if the unit is furnished. Ask about utility costs. Electricity and water can add significantly to your monthly expenses. Check for signs of dampness or pests. If the unit comes with a lawn or garden, clarify who is responsible for maintenance.\n\nIf you rent an unfurnished apartment, you will need to purchase furniture, kitchenware, and electronics. The company offers a relocation allowance to help with these costs. There are several furniture stores in the city that offer package deals for new residents.\n\nThe HR department can connect you with a real estate agent who specializes in helping relocating employees. The company will reimburse up to five thousand dollars in moving expenses, including temporary storage if needed. Keep all receipts. For questions about the relocation process, contact the HR housing coordinator at extension 2550.",
     "vocabWordIds": [
-      "w_0255",
-      "w_0348",
-      "w_0517",
-      "w_0621",
-      "w_0622",
-      "w_0624",
-      "w_0732",
-      "w_0736",
+      "w_0288",
       "w_0744",
+      "w_0913",
       "w_0750",
-      "w_0902",
-      "w_0943",
+      "w_1197",
+      "w_0816",
+      "w_1001",
+      "w_1042",
+      "w_0622",
       "w_0977",
+      "w_0736",
+      "w_0805",
+      "w_0255",
+      "w_0597",
       "w_1112",
-      "w_1197"
+      "w_1195",
+      "w_0850",
+      "w_0906",
+      "w_0321",
+      "w_0517",
+      "w_0732",
+      "w_0624",
+      "w_0792",
+      "w_0943",
+      "w_0621",
+      "w_0217",
+      "w_1154",
+      "w_1128",
+      "w_0902",
+      "w_1006",
+      "w_0782",
+      "w_0348",
+      "w_0742",
+      "w_1013",
+      "w_0596"
     ],
     "questions": [
       {
@@ -1299,7 +1740,9 @@
         ],
         "correctIndex": 1
       }
-    ]
+    ],
+    "audio_url": "",
+    "duration": 0
   },
   {
     "id": "art_mgmt_220",
@@ -1309,17 +1752,37 @@
     "estimatedTime": 2,
     "passage": "Dear Meridian Corporation Team,\n\nAs we approach the end of 2025, I want to reflect on the year and share our vision for the year ahead. This letter is longer than usual, but the topics are important, and I believe in communicating openly about where we are heading.\n\nOur strategy must evolve. The business landscape is changing rapidly. Over the past quarter, the leadership team has conducted an extensive review of our operations and identified three priorities for 2026.\n\nFirst: Innovation at Every Level. Innovation is not just about breakthrough products. It is about improving every process. From how we handle customer feedback to how we manage our supply chain, there is always room to improve. I am asking every department to identify one process that can be streamlined by the end of Q1. The reliability of our operations is what our customers count on.\n\nSecond: Investing in Our People. Our employees are our greatest asset. We are expanding our training programs and introducing a mentorship initiative. We are also reviewing our compensation structure to ensure it remains competitive. A survey of employee satisfaction will be conducted in January. Please participate honestly. Your perception of the workplace matters.\n\nThird: Embracing Globalization. Our international operations now account for 35 percent of revenue, and that figure is growing. To support this, we are investing in localization, ensuring our products, marketing, and customer support are tailored to each region.\n\nAI and automation are transforming every industry. I know there is anxiety about what this means for jobs. Our goal is to use technology to augment human creativity, not replace it. The first AI-assisted customer inquiry pilot will begin in Q1.\n\nSustainability is not a fad. It is a responsibility. Next year we will publish our first annual sustainability report, including a commitment to carbon-neutral operations by 2030.\n\nThere will be conflicts and setbacks. What defines us is how we respond. If you see something that should be different, speak up. The best ideas often come from the people closest to the work.\n\nThank you for your hard work this year. I am genuinely excited about what we will achieve together in 2026.\n\nWith appreciation, Sarah Chen, CEO, Meridian Corporation",
     "vocabWordIds": [
-      "w_0041",
-      "w_0062",
+      "w_0038",
       "w_0086",
       "w_0116",
-      "w_0121",
-      "w_0631",
-      "w_0667",
-      "w_0765",
+      "w_0151",
+      "w_0197",
+      "w_0243",
+      "w_0330",
+      "w_0357",
+      "w_0445",
+      "w_0497",
+      "w_0534",
+      "w_0566",
+      "w_0611",
+      "w_0650",
+      "w_0668",
+      "w_0712",
+      "w_0769",
+      "w_0784",
+      "w_0834",
       "w_0886",
-      "w_1000",
-      "w_1015"
+      "w_0905",
+      "w_0920",
+      "w_0932",
+      "w_0996",
+      "w_1015",
+      "w_1059",
+      "w_1106",
+      "w_1132",
+      "w_1164",
+      "w_1205",
+      "w_1248"
     ],
     "questions": [
       {
@@ -1355,7 +1818,9 @@
         ],
         "correctIndex": 1
       }
-    ]
+    ],
+    "audio_url": "",
+    "duration": 0
   },
   {
     "id": "art_career_221",
@@ -1365,19 +1830,42 @@
     "estimatedTime": 2,
     "passage": "Are you ready to take the next step in your career? Whether you are a recent graduate entering the job market or an experienced professional looking for a change, this guide will help you succeed.\n\nBefore you update your resume, take time for honest self-assessment. What are your strengths? What skills set do you bring to an employer? What kind of work environment helps you thrive? Understanding your own character and career goals is the foundation of any successful job search.\n\nYour qualifications matter, but so does how you present them. The most qualified candidate does not always get the job. Often, it is the candidate who best communicates their value. Practice describing your experience in terms of results: I improved customer retention by 15 percent is more powerful than I was responsible for customer service.\n\nTailor your resume for each position. A generic application is easy to spot. Read the job description carefully and highlight the experiences most relevant to the role. When you find a vacancy that interests you, apply promptly but carefully. A well-prepared application submitted a day later is better than a rushed one. Before submitting, proofread everything. A single typo can undermine an otherwise strong application.\n\nThe interviewer will assess not only your technical ability but also your interpersonal skills and how you might fit with the team. Practice answering common questions out loud. Prepare examples that illustrate your problem-solving ability and teamwork. The interview is also your opportunity to evaluate whether this company and role are right for you.\n\nDuring the interview, listen carefully. Answer the question that was asked, not the one you wish had been asked. When discussing your current or past employment, remain professional. Speaking negatively about a previous employer rarely reflects well on a candidate.\n\nAfter the interview, send a thank-you note within 24 hours. Restate your interest and briefly reference something specific from the conversation. If you do not hear back within the expected timeframe, a polite follow-up is appropriate. If you receive an offer, review the terms carefully: salary, benefits, working hours, and any internship or probationary period.\n\nIf you are not selected, do not be discouraged. Every interview is practice for the next one. Ask for feedback if possible. Many employers are willing to share insights that can help you improve. The workshop will be held on December 10th. Registration is required through the employee portal.",
     "vocabWordIds": [
-      "w_0315",
-      "w_0461",
-      "w_0527",
-      "w_0562",
-      "w_0613",
-      "w_0635",
-      "w_0703",
-      "w_0704",
-      "w_0709",
       "w_0960",
-      "w_0988",
+      "w_0613",
+      "w_1198",
+      "w_0219",
+      "w_0386",
+      "w_0727",
+      "w_0185",
+      "w_0703",
+      "w_0461",
+      "w_0709",
+      "w_0527",
+      "w_1204",
+      "w_0708",
+      "w_0940",
+      "w_1012",
+      "w_0562",
+      "w_0965",
+      "w_1058",
+      "w_0986",
+      "w_1171",
+      "w_0959",
+      "w_1191",
+      "w_0831",
+      "w_0315",
+      "w_0479",
+      "w_0635",
       "w_1081",
-      "w_1198"
+      "w_1236",
+      "w_0009",
+      "w_0639",
+      "w_0988",
+      "w_0822",
+      "w_0918",
+      "w_1118",
+      "w_0704",
+      "w_1219"
     ],
     "questions": [
       {
@@ -1413,7 +1901,9 @@
         ],
         "correctIndex": 1
       }
-    ]
+    ],
+    "audio_url": "",
+    "duration": 0
   },
   {
     "id": "art_benefits_222",
@@ -1472,7 +1962,9 @@
         ],
         "correctIndex": 1
       }
-    ]
+    ],
+    "audio_url": "",
+    "duration": 0
   },
   {
     "id": "art_phone_223",
@@ -1482,18 +1974,36 @@
     "estimatedTime": 2,
     "passage": "Effective phone communication is vital to our daily work. How you handle calls reflects directly on Meridian Corporation's reputation, whether speaking with a client, supplier, or colleague.\n\nAnswer within three rings whenever possible. Your greeting should be warm and professional: \"Good morning, Meridian Corporation, this is your name. How can I help you?\" Smile when you speak. Callers can hear the difference in your voice.\n\nWhen the caller asks for a colleague who is not available, offer to take a message. Write down the caller's name, company, phone number, and a brief note about the reason for their call. Confirm the spelling of names and repeat the number back. Place the message slip in the person's in-tray or send it via email immediately.\n\nTo transfer a call, press the Transfer button, dial the extension, and wait for the person to answer. Briefly explain who is calling and why. Then press Transfer again to complete the connection. If the person does not answer, return to the caller, apologize, and offer to take a message.\n\nIf you need to put a caller on hold, say: \"Let me just take a look. It will be about a minute. Is that okay?\" Wait for their response before pressing Hold. If the hold extends, check back: \"Thank you for holding. I am still working on this.\"\n\nTo set up a conference call, call the first person, press Conference, dial the second person, and press Conference again to join all three lines. If you will be away from your desk for more than an hour, activate your voicemail greeting and check messages promptly upon return. When you hear the call waiting beep during a call, you can answer the incoming call by pressing the Flash button. The first caller will be placed on hold automatically.\n\nIf a caller reaches you by mistake or you encounter crossed lines, apologize politely and suggest reconnecting. If you promise to call someone back, note down their preferred time and make the call as scheduled. A missed call-back can damage a business relationship. If you encounter an engaged tone, try again in a few minutes rather than giving up.\n\nIf a caller reports an emergency or safety hazard, transfer them immediately to the front desk at extension 0 or security at extension 911. Do not put an emergency caller on hold. After the transfer, follow up to ensure the situation was addressed.\n\nFor external calls, dial 9 first, then the number. For long distance calls, dial 9 plus 1 plus area code plus number. For international calls, dial 9 plus 011 plus country code plus number. The office telephone directory lists all department extensions. The IT helpdesk at extension 2700 can assist with technical issues.",
     "vocabWordIds": [
-      "w_0068",
-      "w_0263",
-      "w_0334",
-      "w_0370",
-      "w_0417",
-      "w_0536",
-      "w_0673",
-      "w_0791",
+      "w_1262",
+      "w_0378",
       "w_0824",
+      "w_0068",
+      "w_0334",
+      "w_1083",
+      "w_0852",
+      "w_0276",
       "w_1025",
+      "w_0370",
+      "w_0263",
+      "w_1079",
+      "w_1174",
+      "w_0673",
+      "w_0208",
+      "w_0552",
+      "w_0791",
+      "w_0536",
+      "w_0767",
+      "w_0958",
+      "w_0120",
+      "w_1261",
+      "w_1260",
+      "w_0855",
       "w_1153",
-      "w_1174"
+      "w_0976",
+      "w_0984",
+      "w_1031",
+      "w_0417",
+      "w_0298"
     ],
     "questions": [
       {
@@ -1529,7 +2039,9 @@
         ],
         "correctIndex": 1
       }
-    ]
+    ],
+    "audio_url": "",
+    "duration": 0
   },
   {
     "id": "art_legal_224",
@@ -1539,17 +2051,51 @@
     "estimatedTime": 2,
     "passage": "Before you sign any business agreement, take the time to review it thoroughly. A contract is a legally binding document, and once signed, it can be difficult and expensive to undo.\n\nVerify that the contract correctly identifies all parties, including full legal names and addresses. Ensure the description of goods or services is accurate and complete. Every deliverable, milestone, and specification should be clearly stated.\n\nReview the payment clause carefully. It should specify the total amount, payment schedule, and method of payment. Look for details about late fees, discounts for early payment, and conditions under which payment may be withheld. The contract should specify the start date, end date, and renewal terms. Pay special attention to the termination clause. Under what circumstances can either party terminate? What is the required notice period? The standard notice period is typically 30 days, though this can vary.\n\nThe confidentiality clause prohibits both parties from disclosing each other's sensitive business information. Confirm what information is covered and how long the obligation lasts. Some confidentiality obligations survive termination, continuing even after the business relationship ends. The liability clause defines who is responsible if something goes wrong. Look for any caps on liability. The indemnity provision may require one party to cover the other's legal costs in certain situations.\n\nHow will disagreements be handled? Many contracts specify arbitration rather than litigation. Arbitration is generally faster and less expensive than going to court. The clause should specify where arbitration will take place and under whose jurisdiction. An irrevocable arbitration clause means neither party can later decide to go to court instead. For international contracts, this is especially important.\n\nIf the contract involves creative work, inventions, or proprietary processes, the intellectual property clause is crucial. It should state clearly who owns what, including patents, trademarks, and copyrights, both during and after the contract. The contract should specify how it can be amended, typically only through a written document signed by both parties.\n\nBefore signing, ensure you have the authority to bind your company. Both parties must receive a fully executed original or a signed copy. If any clause seems unclear or ambiguous, seek clarification before signing. A brief delay for legal review is always preferable to the consequences of a poorly understood contract. For contract reviews, contact legal@meridian.com.",
     "vocabWordIds": [
+      "w_0114",
+      "w_0359",
+      "w_1156",
       "w_0069",
-      "w_0123",
-      "w_0223",
+      "w_0558",
       "w_0272",
-      "w_0720",
-      "w_0730",
+      "w_0201",
+      "w_0505",
+      "w_0264",
+      "w_1221",
+      "w_1151",
+      "w_0404",
+      "w_0403",
+      "w_0223",
+      "w_0688",
+      "w_1121",
       "w_0848",
-      "w_1005",
-      "w_1078",
+      "w_0758",
+      "w_0381",
+      "w_0510",
+      "w_0705",
       "w_1155",
-      "w_1156"
+      "w_1107",
+      "w_1078",
+      "w_0787",
+      "w_0447",
+      "w_0532",
+      "w_0720",
+      "w_0101",
+      "w_0478",
+      "w_0280",
+      "w_0759",
+      "w_1232",
+      "w_0279",
+      "w_0071",
+      "w_0123",
+      "w_0554",
+      "w_0652",
+      "w_1005",
+      "w_0654",
+      "w_0730",
+      "w_0856",
+      "w_0128",
+      "w_1057",
+      "w_0738"
     ],
     "questions": [
       {
@@ -1585,7 +2131,9 @@
         ],
         "correctIndex": 1
       }
-    ]
+    ],
+    "audio_url": "",
+    "duration": 0
   },
   {
     "id": "art_emotion_225",
@@ -1595,12 +2143,32 @@
     "estimatedTime": 2,
     "passage": "Every quarter, Meridian Corporation analyzes customer feedback to understand how our clients feel about our products and services. The Q3 2025 analysis reveals valuable insights about customer sentiment.\n\nThe majority of customers, 78 percent, reported satisfaction with their recent purchases. One customer wrote: \"The quality exceeded my expectations. I was genuinely impressed.\" Terms like delighted, impressed, and confident appeared frequently in positive reviews. Many expressed a strong affection for our brand, with several mentioning they had been loyal customers for over five years. These customers described feeling optimistic about future purchases and proud to be associated with our brand.\n\nBut not all feedback was glowing. Approximately 22 percent of customers reported some level of dissatisfaction. The most common complaints related to shipping delays and difficulty reaching customer support during peak hours. One customer wrote: \"I was excited about my order, but after three delays, my excitement turned to frustration and then to disgust.\" Another described feeling panic when a critical business order did not arrive on time.\n\nThe emotional language used by dissatisfied customers is worth noting. Words like upset, annoyed, disappointed, and stressed appeared repeatedly. These are not just complaints about products. They are expressions of genuine distress. When a customer says they feel ignored or helpless, they are describing an emotional state, not just a transactional problem. This is a warning sign that should never be overlooked.\n\nInterestingly, the analysis found that customers whose problems were resolved well were often more loyal than customers who never had a problem at all. One customer described going from furious to grateful after a support agent went above and beyond. \"I had lost all hope for a refund, but then your team surprised me. I have so much respect for how this was handled.\" This demonstrates the power of turning a negative into a positive.\n\nCustomers also appreciate being kept informed. A simple status update, even if it says \"we are still working on it,\" reduces uncertainty and builds trust. Silence creates anxiety, and anxious customers are more likely to perceive problems negatively. Acknowledge customer emotions explicitly in support interactions. Every customer interaction is an emotional experience. Handle it with care.",
     "vocabWordIds": [
-      "w_0180",
+      "w_0200",
+      "w_0240",
+      "w_0607",
+      "w_0518",
+      "w_0472",
+      "w_0547",
+      "w_1100",
+      "w_0542",
+      "w_0692",
       "w_0488",
+      "w_0772",
       "w_0843",
       "w_0867",
+      "w_0464",
+      "w_0210",
+      "w_1193",
+      "w_0586",
+      "w_0666",
+      "w_1010",
       "w_0885",
-      "w_1193"
+      "w_0180",
+      "w_0582",
+      "w_0490",
+      "w_0921",
+      "w_0388",
+      "w_0724"
     ],
     "questions": [
       {
@@ -1636,7 +2204,9 @@
         ],
         "correctIndex": 1
       }
-    ]
+    ],
+    "audio_url": "",
+    "duration": 0
   },
   {
     "id": "art_action_226",
@@ -1646,12 +2216,41 @@
     "estimatedTime": 2,
     "passage": "A well-executed project does not happen by accident. It requires careful planning, clear communication, and disciplined follow-through. Whether you are leading a small internal initiative or a major client engagement, these steps will help you manage the process effectively.\n\nBefore anything else, clarify exactly what the project is meant to accomplish. What problem does it solve? What does success look like? Put this in writing. If you cannot articulate the intended outcome in two sentences, you are not ready to proceed. Share this with the team and confirm everyone understands and agrees. If there are conflicts, resolve them now.\n\nDefine the scope. Identify what is included, and what is not. Scope creep is one of the biggest risks to any project. Write a clear scope statement and get approval from stakeholders. When someone proposes an addition, assess the impact before agreeing.\n\nWork backwards from the deadline to build the schedule. Identify key milestones and assign responsibilities. For each milestone, ask: \"What could prevent this from being completed on time?\" This helps identify obstacles before they become problems. Build in buffer. Things will go wrong.\n\nDetermine who will do what. Match tasks to skills and availability. Ensure each person understands their role and has the tools they need. If you need to instruct someone on a new process, factor in training time. Overloading your best people leads to burnout.\n\nDecide how the team will communicate. Weekly status meetings? Daily stand-ups? A shared project board? Regular updates prevent misunderstandings and keep everyone aligned. When something falls behind, address it immediately. Do not wait, hoping it will catch up. Use data to verify progress, not just verbal assurances. If a milestone is at risk, escalate early.\n\nList every risk you can think of: technical, financial, scheduling, personnel. For each, estimate likelihood and potential impact. Focus on high-likelihood, high-impact risks first. Risk management is not about eliminating uncertainty. It is about being prepared.\n\nWhen the project is complete, hold a post-mortem. What went well? What could have been better? Document lessons learned. This is not about assigning blame. It is about improving the process. The most valuable skill in project management is the ability to adapt. Plans change. The leaders who succeed are those who can assess new information, decide on a course of action, and proceed with confidence.",
     "vocabWordIds": [
-      "w_0327",
-      "w_0663",
-      "w_0693",
-      "w_0935",
+      "w_0484",
+      "w_0993",
       "w_1032",
-      "w_1209"
+      "w_0234",
+      "w_0935",
+      "w_0126",
+      "w_0789",
+      "w_0530",
+      "w_0890",
+      "w_0698",
+      "w_1209",
+      "w_0543",
+      "w_1093",
+      "w_0196",
+      "w_0660",
+      "w_0665",
+      "w_0108",
+      "w_0949",
+      "w_0689",
+      "w_0718",
+      "w_0327",
+      "w_0706",
+      "w_0436",
+      "w_0670",
+      "w_0693",
+      "w_1186",
+      "w_0663",
+      "w_0233",
+      "w_0938",
+      "w_0835",
+      "w_0557",
+      "w_0700",
+      "w_1002",
+      "w_0299",
+      "w_0102"
     ],
     "questions": [
       {
@@ -1687,7 +2286,9 @@
         ],
         "correctIndex": 1
       }
-    ]
+    ],
+    "audio_url": "",
+    "duration": 0
   },
   {
     "id": "art_adjective_227",
@@ -1697,14 +2298,59 @@
     "estimatedTime": 2,
     "passage": "Product: EcoCharge Portable Power Bank\nSupplier: GreenTech Industries\nEvaluator: Meridian Quality Assurance Team\n\nThis report provides a comprehensive evaluation of the EcoCharge sample for potential inclusion in our product line.\n\nOverall Rating: 3.8 out of 5.0\n\nThe EcoCharge has a sleek, modern design. The matte finish is elegant and resists fingerprints well. The device is remarkably lightweight at just 180 grams, making it portable enough to slip into a pocket or small bag. However, the glossy trim around the edge feels fragile and could crack if dropped.\n\nThe power bank charged a standard smartphone from zero to 85 percent in 45 minutes, a rapid result that exceeds the industry average. The 10,000 mAh capacity is adequate for most users, providing approximately two full phone charges. The device stayed cool during operation, with no excessive heat buildup. The output is consistent, with no fluctuation in voltage.\n\nThe EcoCharge includes several distinctive features that set it apart. The built-in USB-C cable is a convenient addition. The device supports pass-through charging. A small but appreciated detail: the power button requires a firm press, preventing accidental activation in a bag.\n\nUnfortunately, the packaging is the product's weakest point. The box is fragile and offers insufficient protection. Two of three sample units arrived with minor exterior damage. The instruction leaflet is printed in a font so small it is barely legible. The accessories feel like afterthoughts.\n\nAt the proposed retail price of $39.99, the EcoCharge offers excellent value. Comparable products from leading brands cost 50 to 60 dollars. The price feels appropriate for the quality, and our market research suggests consumers would perceive it as a fair offer.\n\nGreenTech promotes the EcoCharge as eco-friendly, citing the use of recycled plastics. While this is commendable, the vague language in their marketing materials is problematic. We recommend requesting more detailed documentation before making these claims in our own marketing.\n\nCompared to the three leading products in this category, the EcoCharge holds its own. Its charging speed is superior. Its feature set is comparable. Where it falls short is in packaging and accessories, areas that are relatively inexpensive to improve.\n\nRecommendation: Proceed with the partnership on the condition that GreenTech addresses the packaging concerns and provides clearer environmental documentation. This was not a rushed assessment. Each criterion was tested independently over multiple days. The measurements are accurate, and the subjective ratings reflect consensus among three independent evaluators.",
     "vocabWordIds": [
-      "w_0163",
-      "w_0172",
-      "w_0221",
-      "w_0551",
-      "w_0614",
-      "w_0971",
+      "w_0511",
+      "w_0043",
+      "w_1218",
+      "w_0153",
+      "w_0131",
+      "w_0192",
+      "w_0684",
+      "w_0130",
+      "w_0572",
+      "w_0677",
+      "w_0799",
       "w_1201",
-      "w_1273"
+      "w_1277",
+      "w_0833",
+      "w_1183",
+      "w_1276",
+      "w_0042",
+      "w_1269",
+      "w_1280",
+      "w_0691",
+      "w_1060",
+      "w_0969",
+      "w_1271",
+      "w_1127",
+      "w_1210",
+      "w_1267",
+      "w_0971",
+      "w_1263",
+      "w_1265",
+      "w_0755",
+      "w_0550",
+      "w_1270",
+      "w_0163",
+      "w_0614",
+      "w_0719",
+      "w_1272",
+      "w_1278",
+      "w_1266",
+      "w_0085",
+      "w_0506",
+      "w_1275",
+      "w_0682",
+      "w_0435",
+      "w_1190",
+      "w_1279",
+      "w_0551",
+      "w_0576",
+      "w_1274",
+      "w_0221",
+      "w_1268",
+      "w_0172",
+      "w_1273",
+      "w_1264"
     ],
     "questions": [
       {
@@ -1740,7 +2386,9 @@
         ],
         "correctIndex": 1
       }
-    ]
+    ],
+    "audio_url": "",
+    "duration": 0
   },
   {
     "id": "art_general_228",
@@ -1750,13 +2398,18 @@
     "estimatedTime": 2,
     "passage": "Happy November, Meridian team! As we head into the final weeks of 2025, here is a roundup of news and updates from around the company.\n\nCongratulations to the product team on the successful launch of the EcoSmart Home Series! The launch event at the Metropolitan Hotel was a great success. The new product line has already generated significant media coverage and positive early feedback. A special thanks to the laboratory team for their late nights during the testing phase.\n\nOur quarterly financial results were released last week, showing a 12 percent increase in revenue compared to Q3 2024. This growth reflects the collective effort of every department. While the income tax implications of our international expansion are complex, our finance team is managing the transition smoothly.\n\nOpen enrollment for 2026 benefits ends on December 15. If you have not already reviewed your insurance options, please do so soon. The employee portal has a comparison tool. The internal communications team has posted short explainer videos on the intranet.\n\nSeveral colleagues have asked about managing jet lag during international business trips. Our unofficial travel guide recommends: stay hydrated, avoid alcohol on long flights, and try to adjust to the destination time zone as soon as you board. The itinerary for the Singapore Summit has been distributed. Check your email for hotel and transport details.\n\nThe office will be closed from December 24 through January 1 for the winter holiday. Please plan your projects accordingly. If you need to work during the closure for any urgent matter, coordinate with your supervisor in advance.\n\nA personal note from the leadership team: this has been a year of significant change and growth. We are grateful for your dedication, creativity, and resilience. Take time during the holidays to rest, recharge, and spend time with the people who matter most. You have earned it. See you in 2026!",
     "vocabWordIds": [
-      "w_0020",
-      "w_0066",
+      "w_0664",
       "w_0672",
+      "w_0683",
+      "w_0066",
+      "w_0675",
       "w_0701",
+      "w_0721",
+      "w_0020",
+      "w_0669",
       "w_0726",
-      "w_0735",
-      "w_0740"
+      "w_0740",
+      "w_0735"
     ],
     "questions": [
       {
@@ -1791,6 +2444,562 @@
           "Apply for new jobs"
         ],
         "correctIndex": 1
+      }
+    ],
+    "audio_url": "",
+    "duration": 0
+  },
+  {
+    "id": "art_office_003",
+    "sceneId": "s_office",
+    "title": "Office Scenario — Article 3",
+    "type": "article",
+    "estimatedTime": 4,
+    "passage": "This article covers 41 office-related vocabulary words essential for TOEIC preparation. Review each word carefully and mark your familiarity level.",
+    "vocabWordIds": [
+      "w_0310",
+      "w_0311",
+      "w_0312",
+      "w_0314",
+      "w_0316",
+      "w_0318",
+      "w_0322",
+      "w_0323",
+      "w_0328",
+      "w_0329",
+      "w_0331",
+      "w_0337",
+      "w_0338",
+      "w_0350",
+      "w_0352",
+      "w_0355",
+      "w_0358",
+      "w_0363",
+      "w_0369",
+      "w_0372",
+      "w_0374",
+      "w_0376",
+      "w_0377",
+      "w_0383",
+      "w_0399",
+      "w_0400",
+      "w_0408",
+      "w_0409",
+      "w_0420",
+      "w_0421",
+      "w_0424",
+      "w_0425",
+      "w_0426",
+      "w_0428",
+      "w_0430",
+      "w_0439",
+      "w_0448",
+      "w_0449",
+      "w_0453",
+      "w_0454",
+      "w_0456"
+    ],
+    "audio_url": "",
+    "duration": 0,
+    "questions": [
+      {
+        "id": "q1",
+        "text": "What is the primary focus of this vocabulary set?",
+        "options": [
+          "Office and workplace terminology",
+          "Travel and tourism",
+          "Sports and leisure",
+          "Food and dining"
+        ],
+        "correctIndex": 0
+      }
+    ]
+  },
+  {
+    "id": "art_office_004",
+    "sceneId": "s_office",
+    "title": "Office Scenario — Article 4",
+    "type": "article",
+    "estimatedTime": 4,
+    "passage": "This article covers 41 office-related vocabulary words essential for TOEIC preparation. Review each word carefully and mark your familiarity level.",
+    "vocabWordIds": [
+      "w_0463",
+      "w_0466",
+      "w_0467",
+      "w_0468",
+      "w_0469",
+      "w_0473",
+      "w_0481",
+      "w_0482",
+      "w_0483",
+      "w_0485",
+      "w_0492",
+      "w_0493",
+      "w_0495",
+      "w_0498",
+      "w_0499",
+      "w_0500",
+      "w_0504",
+      "w_0508",
+      "w_0509",
+      "w_0512",
+      "w_0514",
+      "w_0516",
+      "w_0533",
+      "w_0535",
+      "w_0540",
+      "w_0541",
+      "w_0553",
+      "w_0559",
+      "w_0563",
+      "w_0567",
+      "w_0574",
+      "w_0575",
+      "w_0578",
+      "w_0579",
+      "w_0580",
+      "w_0581",
+      "w_0583",
+      "w_0585",
+      "w_0587",
+      "w_0590",
+      "w_0592"
+    ],
+    "audio_url": "",
+    "duration": 0,
+    "questions": [
+      {
+        "id": "q1",
+        "text": "What is the primary focus of this vocabulary set?",
+        "options": [
+          "Office and workplace terminology",
+          "Travel and tourism",
+          "Sports and leisure",
+          "Food and dining"
+        ],
+        "correctIndex": 0
+      }
+    ]
+  },
+  {
+    "id": "art_office_005",
+    "sceneId": "s_office",
+    "title": "Office Scenario — Article 5",
+    "type": "article",
+    "estimatedTime": 4,
+    "passage": "This article covers 41 office-related vocabulary words essential for TOEIC preparation. Review each word carefully and mark your familiarity level.",
+    "vocabWordIds": [
+      "w_0594",
+      "w_0595",
+      "w_0605",
+      "w_0608",
+      "w_0609",
+      "w_0610",
+      "w_0616",
+      "w_0619",
+      "w_0625",
+      "w_0628",
+      "w_0629",
+      "w_0632",
+      "w_0641",
+      "w_0643",
+      "w_0644",
+      "w_0645",
+      "w_0646",
+      "w_0648",
+      "w_0649",
+      "w_0655",
+      "w_0656",
+      "w_0657",
+      "w_0680",
+      "w_0699",
+      "w_0711",
+      "w_0723",
+      "w_0741",
+      "w_0751",
+      "w_0762",
+      "w_0771",
+      "w_0774",
+      "w_0776",
+      "w_0777",
+      "w_0780",
+      "w_0786",
+      "w_0793",
+      "w_0795",
+      "w_0796",
+      "w_0802",
+      "w_0803",
+      "w_0804"
+    ],
+    "audio_url": "",
+    "duration": 0,
+    "questions": [
+      {
+        "id": "q1",
+        "text": "What is the primary focus of this vocabulary set?",
+        "options": [
+          "Office and workplace terminology",
+          "Travel and tourism",
+          "Sports and leisure",
+          "Food and dining"
+        ],
+        "correctIndex": 0
+      }
+    ]
+  },
+  {
+    "id": "art_office_006",
+    "sceneId": "s_office",
+    "title": "Office Scenario — Article 6",
+    "type": "article",
+    "estimatedTime": 4,
+    "passage": "This article covers 41 office-related vocabulary words essential for TOEIC preparation. Review each word carefully and mark your familiarity level.",
+    "vocabWordIds": [
+      "w_0809",
+      "w_0811",
+      "w_0814",
+      "w_0818",
+      "w_0819",
+      "w_0820",
+      "w_0825",
+      "w_0830",
+      "w_0832",
+      "w_0839",
+      "w_0842",
+      "w_0847",
+      "w_0851",
+      "w_0857",
+      "w_0861",
+      "w_0862",
+      "w_0865",
+      "w_0868",
+      "w_0869",
+      "w_0871",
+      "w_0880",
+      "w_0882",
+      "w_0888",
+      "w_0889",
+      "w_0891",
+      "w_0896",
+      "w_0897",
+      "w_0899",
+      "w_0904",
+      "w_0909",
+      "w_0910",
+      "w_0911",
+      "w_0914",
+      "w_0915",
+      "w_0916",
+      "w_0919",
+      "w_0923",
+      "w_0924",
+      "w_0927",
+      "w_0930",
+      "w_0933"
+    ],
+    "audio_url": "",
+    "duration": 0,
+    "questions": [
+      {
+        "id": "q1",
+        "text": "What is the primary focus of this vocabulary set?",
+        "options": [
+          "Office and workplace terminology",
+          "Travel and tourism",
+          "Sports and leisure",
+          "Food and dining"
+        ],
+        "correctIndex": 0
+      }
+    ]
+  },
+  {
+    "id": "art_office_007",
+    "sceneId": "s_office",
+    "title": "Office Scenario — Article 7",
+    "type": "article",
+    "estimatedTime": 4,
+    "passage": "This article covers 41 office-related vocabulary words essential for TOEIC preparation. Review each word carefully and mark your familiarity level.",
+    "vocabWordIds": [
+      "w_0937",
+      "w_0945",
+      "w_0947",
+      "w_0951",
+      "w_0954",
+      "w_0955",
+      "w_0968",
+      "w_0970",
+      "w_0972",
+      "w_0973",
+      "w_0974",
+      "w_0978",
+      "w_0979",
+      "w_0980",
+      "w_0989",
+      "w_0995",
+      "w_0998",
+      "w_0999",
+      "w_1003",
+      "w_1007",
+      "w_1016",
+      "w_1020",
+      "w_1021",
+      "w_1028",
+      "w_1029",
+      "w_1033",
+      "w_1034",
+      "w_1037",
+      "w_1049",
+      "w_1050",
+      "w_1052",
+      "w_1056",
+      "w_1066",
+      "w_1068",
+      "w_1069",
+      "w_1073",
+      "w_1077",
+      "w_1086",
+      "w_1087",
+      "w_1088",
+      "w_1089"
+    ],
+    "audio_url": "",
+    "duration": 0,
+    "questions": [
+      {
+        "id": "q1",
+        "text": "What is the primary focus of this vocabulary set?",
+        "options": [
+          "Office and workplace terminology",
+          "Travel and tourism",
+          "Sports and leisure",
+          "Food and dining"
+        ],
+        "correctIndex": 0
+      }
+    ]
+  },
+  {
+    "id": "art_office_008",
+    "sceneId": "s_office",
+    "title": "Office Scenario — Article 8",
+    "type": "article",
+    "estimatedTime": 3,
+    "passage": "This article covers 36 office-related vocabulary words essential for TOEIC preparation. Review each word carefully and mark your familiarity level.",
+    "vocabWordIds": [
+      "w_1097",
+      "w_1099",
+      "w_1108",
+      "w_1114",
+      "w_1117",
+      "w_1119",
+      "w_1122",
+      "w_1123",
+      "w_1124",
+      "w_1130",
+      "w_1138",
+      "w_1141",
+      "w_1143",
+      "w_1145",
+      "w_1147",
+      "w_1162",
+      "w_1167",
+      "w_1169",
+      "w_1173",
+      "w_1177",
+      "w_1182",
+      "w_1184",
+      "w_1187",
+      "w_1189",
+      "w_1200",
+      "w_1202",
+      "w_1213",
+      "w_1215",
+      "w_1220",
+      "w_1229",
+      "w_1231",
+      "w_1235",
+      "w_1238",
+      "w_1239",
+      "w_1240",
+      "w_1241"
+    ],
+    "audio_url": "",
+    "duration": 0,
+    "questions": [
+      {
+        "id": "q1",
+        "text": "What is the primary focus of this vocabulary set?",
+        "options": [
+          "Office and workplace terminology",
+          "Travel and tourism",
+          "Sports and leisure",
+          "Food and dining"
+        ],
+        "correctIndex": 0
+      }
+    ]
+  },
+  {
+    "id": "art_mgmt_220",
+    "sceneId": "s_mgmt",
+    "title": "Business Management — Article 2",
+    "type": "article",
+    "estimatedTime": 3,
+    "passage": "This article covers 31 business management vocabulary words essential for TOEIC preparation. Review each word carefully and mark your familiarity level.",
+    "vocabWordIds": [
+      "w_0041",
+      "w_0092",
+      "w_0118",
+      "w_0174",
+      "w_0235",
+      "w_0252",
+      "w_0342",
+      "w_0375",
+      "w_0462",
+      "w_0520",
+      "w_0538",
+      "w_0588",
+      "w_0631",
+      "w_0661",
+      "w_0694",
+      "w_0760",
+      "w_0770",
+      "w_0807",
+      "w_0837",
+      "w_0892",
+      "w_0912",
+      "w_0928",
+      "w_0952",
+      "w_1000",
+      "w_1038",
+      "w_1074",
+      "w_1120",
+      "w_1140",
+      "w_1185",
+      "w_1211",
+      "w_1249"
+    ],
+    "audio_url": "",
+    "duration": 0,
+    "questions": [
+      {
+        "id": "q1",
+        "text": "What is the primary focus of this vocabulary set?",
+        "options": [
+          "Business management and strategy",
+          "Cooking and recipes",
+          "Travel planning",
+          "Home decoration"
+        ],
+        "correctIndex": 0
+      }
+    ]
+  },
+  {
+    "id": "art_mgmt_221",
+    "sceneId": "s_mgmt",
+    "title": "Business Management — Article 3",
+    "type": "article",
+    "estimatedTime": 3,
+    "passage": "This article covers 31 business management vocabulary words essential for TOEIC preparation. Review each word carefully and mark your familiarity level.",
+    "vocabWordIds": [
+      "w_0062",
+      "w_0113",
+      "w_0121",
+      "w_0178",
+      "w_0242",
+      "w_0265",
+      "w_0347",
+      "w_0442",
+      "w_0487",
+      "w_0525",
+      "w_0561",
+      "w_0606",
+      "w_0634",
+      "w_0667",
+      "w_0710",
+      "w_0765",
+      "w_0783",
+      "w_0821",
+      "w_0849",
+      "w_0901",
+      "w_0917",
+      "w_0931",
+      "w_0964",
+      "w_1008",
+      "w_1045",
+      "w_1098",
+      "w_1131",
+      "w_1152",
+      "w_1203",
+      "w_1234",
+      "w_1250"
+    ],
+    "audio_url": "",
+    "duration": 0,
+    "questions": [
+      {
+        "id": "q1",
+        "text": "What is the primary focus of this vocabulary set?",
+        "options": [
+          "Business management and strategy",
+          "Cooking and recipes",
+          "Travel planning",
+          "Home decoration"
+        ],
+        "correctIndex": 0
+      }
+    ]
+  },
+  {
+    "id": "art_tech_209",
+    "sceneId": "s_tech",
+    "title": "Technology — Article 3",
+    "type": "article",
+    "estimatedTime": 3,
+    "passage": "This article covers 26 technology-related vocabulary words essential for TOEIC preparation. Review each word carefully and mark your familiarity level.",
+    "vocabWordIds": [
+      "w_0058",
+      "w_0063",
+      "w_0087",
+      "w_0133",
+      "w_0175",
+      "w_0285",
+      "w_0301",
+      "w_0362",
+      "w_0431",
+      "w_0463",
+      "w_0501",
+      "w_0577",
+      "w_0627",
+      "w_0685",
+      "w_0702",
+      "w_0737",
+      "w_0797",
+      "w_0838",
+      "w_0934",
+      "w_1024",
+      "w_1048",
+      "w_1075",
+      "w_1103",
+      "w_1139",
+      "w_1180",
+      "w_1194"
+    ],
+    "audio_url": "",
+    "duration": 0,
+    "questions": [
+      {
+        "id": "q1",
+        "text": "What is the primary focus of this vocabulary set?",
+        "options": [
+          "Information technology and devices",
+          "Food preparation",
+          "Sports training",
+          "Real estate"
+        ],
+        "correctIndex": 0
       }
     ]
   }

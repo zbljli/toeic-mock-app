@@ -72,3 +72,28 @@ const root = path.join(__dirname, '..');
     }
   }
 }
+
+// ── 4. Copy article audio files ───────────────────────────
+{
+  const srcDir = path.join(root, 'web', 'audio-articles');
+  const destDir = path.join(root, 'dist', 'audio-articles');
+
+  if (!fs.existsSync(srcDir)) {
+    console.log('ℹ️  No web/audio-articles/ directory — skipping article audio copy.');
+    console.log('   Run `npm run generate-article-audio` to build article audio.');
+  } else {
+    const files = fs.readdirSync(srcDir).filter((f) => f.endsWith('.mp3'));
+    if (files.length === 0) {
+      console.log('ℹ️  web/audio-articles/ is empty — skipping.');
+    } else {
+      fs.mkdirSync(destDir, { recursive: true });
+      let totalSize = 0;
+      for (const file of files) {
+        fs.copyFileSync(path.join(srcDir, file), path.join(destDir, file));
+        totalSize += fs.statSync(path.join(destDir, file)).size;
+      }
+      console.log(`  ✅ dist/audio-articles/  ${files.length} files  (${(totalSize / 1024 / 1024).toFixed(1)} MB)`);
+      console.log(`✅ Copied ${files.length} article audio files to dist/audio-articles/`);
+    }
+  }
+}

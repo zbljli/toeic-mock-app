@@ -32,7 +32,8 @@
     "build:web": "npx expo export --platform web && node scripts/copy-data.cjs && node scripts/patch-html.cjs",
     "deploy": "npx expo export --platform web && node scripts/copy-data.cjs && node scripts/patch-html.cjs && npx netlify-cli deploy --dir=dist --prod",
     "generate-audio": "node scripts/generate-audio.cjs",
-    "generate-tts-audio": "node scripts/generate-tts-audio.cjs"
+    "generate-tts-audio": "node scripts/generate-tts-audio.cjs",
+    "generate-article-audio": "node scripts/generate-article-audio.cjs"
   },
   "private": true
 }
