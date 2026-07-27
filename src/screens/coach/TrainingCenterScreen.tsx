@@ -8,14 +8,17 @@ export default function TrainingCenterScreen({ navigation }: any) {
   const rec = recommendation;
 
   const startMockTest = () => {
-    navigation.navigate('Test', {
-      config: {
-        mode: 'part-practice',
-        label: 'Mock Test',
-        description: 'Full Listening Test · Part 1-4 · 45 min',
-        totalQuestions: 100,
-        totalTimeMinutes: 45,
-        parts: [1, 2, 3, 4] as ToeicPart[],
+    navigation.navigate('Home', {
+      screen: 'Test',
+      params: {
+        config: {
+          mode: 'part-practice',
+          label: 'Mock Test',
+          description: 'Full Listening Test · Part 1-4 · 45 min',
+          totalQuestions: 100,
+          totalTimeMinutes: 45,
+          parts: [1, 2, 3, 4] as ToeicPart[],
+        },
       },
     });
   };
@@ -26,14 +29,17 @@ export default function TrainingCenterScreen({ navigation }: any) {
       3: { total: 12, time: 12 }, 4: { total: 10, time: 10 },
     };
     const c = counts[part] ?? { total: 10, time: 10 };
-    navigation.navigate('Test', {
-      config: {
-        mode: 'part-practice',
-        label: `Part ${part} Training`,
-        description: `Part ${part} Focused Practice`,
-        totalQuestions: c.total,
-        totalTimeMinutes: c.time,
-        parts: [part],
+    navigation.navigate('Home', {
+      screen: 'Test',
+      params: {
+        config: {
+          mode: 'part-practice',
+          label: `Part ${part} Training`,
+          description: `Part ${part} Focused Practice`,
+          totalQuestions: c.total,
+          totalTimeMinutes: c.time,
+          parts: [part],
+        },
       },
     });
   };
