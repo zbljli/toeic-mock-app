@@ -58,6 +58,7 @@ export function isAudioUnlocked(): boolean {
 
 // ── Playback state ────────────────────────────────────────
 let currentAudio: HTMLAudioElement | null = null;
+let audioGeneration = 0;
 
 /**
  * Play an audio URL via HTML5 <audio>.
@@ -71,19 +72,26 @@ export function playAudioUrl(
   stopAll();
 
   if (Platform.OS === 'web' && typeof window !== 'undefined') {
+    const gen = ++audioGeneration;
     const audio = new window.Audio(url);
     audio.preload = 'auto';
-    audio.onplay = () => callbacks?.onPlay?.();
+    audio.onplay = () => {
+      if (audioGeneration !== gen) return;
+      callbacks?.onPlay?.();
+    };
     audio.onended = () => {
+      if (audioGeneration !== gen) return;
       currentAudio = null;
       callbacks?.onEnded?.();
     };
     audio.onerror = () => {
+      if (audioGeneration !== gen) return;
       currentAudio = null;
       callbacks?.onError?.();
     };
     currentAudio = audio;
     audio.play().catch((err: DOMException) => {
+      if (audioGeneration !== gen) return;
       currentAudio = null;
       if (err.name === 'NotAllowedError') {
         console.warn(
@@ -105,12 +113,18 @@ export function isAudioPlaying(): boolean {
   return currentAudio !== null && !currentAudio.paused;
 }
 
-/** Stop any currently playing HTML5 audio. */
+/** Stop any currently playing HTML5 audio and release resources. */
 export function stopAll(): void {
   if (currentAudio) {
+    audioGeneration += 1; // Invalidate all pending callbacks from this audio
     try {
+      currentAudio.onplay = null;
+      currentAudio.onended = null;
+      currentAudio.onerror = null;
       currentAudio.pause();
       currentAudio.currentTime = 0;
+      currentAudio.src = '';
+      currentAudio.load();
     } catch {
       // ignore
     }

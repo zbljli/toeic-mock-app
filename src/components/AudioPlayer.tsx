@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useCallback, useRef } from 'react';
 import { View, Text, TouchableOpacity, StyleSheet, Platform } from 'react-native';
 import * as Speech from 'expo-speech';
-import { playText, stopAll, speakWithExpo, stopExpo } from '../utils/audio';
+import { playText, stopAll, unlockAudio, speakWithExpo, stopExpo } from '../utils/audio';
 import type { AudioScript } from '../types';
 
 interface Props {
@@ -80,35 +80,29 @@ export default function AudioPlayer({
   const [isLoading, setIsLoading] = useState(false);
   const [hasError, setHasError] = useState(false);
   const [voicesReady, setVoicesReady] = useState(false);
-  const stoppedRef = useRef(false);
+  const generationRef = useRef(0);
   const playLimitReached = maxPlays != null && playCount >= maxPlays;
 
   useEffect(() => { getSpeakerVoices().then(v => { setVoices(v); setVoicesReady(true); }); }, []);
 
   useEffect(() => {
+    generationRef.current += 1;
     stopExpo();
+    stopAll();
     setIsPlaying(false);
     setHasPlayed(false);
     setPlayCount(0);
-    stoppedRef.current = false;
   }, [audioScript, speechText]);
-
-  useEffect(() => {
-    if (autoPlay && !hasPlayed && (audioScript || speechText)) {
-      const timer = setTimeout(() => handlePlay(), 600);
-      return () => clearTimeout(timer);
-    }
-  }, [autoPlay, audioScript, speechText, hasPlayed]);
 
   // ── Structured playback ──
   const speakScript = useCallback(async (script: AudioScript) => {
-    stoppedRef.current = false;
+    const gen = generationRef.current;
     setIsPlaying(true);
     const speakerMap = new Map(script.speakers.map((s) => [s.id, s]));
     const LINE_TIMEOUT_MS = 30000;
 
     for (let i = 0; i < script.segments.length; i++) {
-      if (stoppedRef.current) break;
+      if (generationRef.current !== gen) break;
       const seg = script.segments[i];
       if (!seg?.text) continue;
 
@@ -119,7 +113,7 @@ export default function AudioPlayer({
       if (seg.pauseBefore > 0) {
         await new Promise((r) => setTimeout(r, seg.pauseBefore * 1000));
       }
-      if (stoppedRef.current) break;
+      if (generationRef.current !== gen) break;
 
       let resolved = false;
       await Promise.race<void>([
@@ -139,19 +133,20 @@ export default function AudioPlayer({
         }),
       ]);
     }
-    if (!stoppedRef.current) setIsPlaying(false);
+    if (generationRef.current !== gen) return;
+    setIsPlaying(false);
   }, [voices]);
 
   // ── Legacy playback ──
   const speakLegacy = useCallback(async (text: string) => {
     const lines = parseDialogue(text);
     if (lines.length === 0) return;
-    stoppedRef.current = false;
+    const gen = generationRef.current;
     setIsPlaying(true);
     const LINE_TIMEOUT_MS = 30000;
 
     for (let i = 0; i < lines.length; i++) {
-      if (stoppedRef.current) break;
+      if (generationRef.current !== gen) break;
       const line = lines[i];
       if (!line?.text) continue;
 
@@ -162,7 +157,7 @@ export default function AudioPlayer({
         const prevRole = lines[i - 1]?.role;
         await new Promise((r) => setTimeout(r, prevRole !== line.role && line.role !== 'neutral' ? 400 : 200));
       }
-      if (stoppedRef.current) break;
+      if (generationRef.current !== gen) break;
 
       let resolved = false;
       await Promise.race<void>([
@@ -182,54 +177,43 @@ export default function AudioPlayer({
         }),
       ]);
     }
-    if (!stoppedRef.current) setIsPlaying(false);
+    if (generationRef.current !== gen) return;
+    setIsPlaying(false);
   }, [voices]);
 
-  const handlePlay = useCallback(async () => {
+  const handlePlay = useCallback(() => {
     if (playLimitReached) return;
     if (isPlaying) {
-      stoppedRef.current = true;
+      generationRef.current += 1;
       stopExpo();
       stopAll();
       setIsPlaying(false);
       return;
     }
 
+    // Unlock audio subsystem during user gesture (critical for iOS/WeChat WKWebView)
+    unlockAudio();
+
     setHasError(false);
-    setIsLoading(true);
 
     if (!hasPlayed) { setHasPlayed(true); setPlayCount(1); }
     else { setPlayCount((c) => c + 1); }
 
-    try {
-      // Try expo-speech first; fall back to Google TTS on web
-      if (audioScript) {
-        const voicesAvailable = (await Speech.getAvailableVoicesAsync()).length > 0;
-        setIsLoading(false);
-        if (voicesAvailable) {
-          speakScript(audioScript);
-        } else {
-          // Fallback: speak the combined text as one utterance
-          const fullText = audioScript.segments.map(s => s.text).join('. ');
-          playText(fullText);
-        }
-      } else if (speechText) {
-        const voicesAvailable = (await Speech.getAvailableVoicesAsync()).length > 0;
-        setIsLoading(false);
-        if (voicesAvailable) {
-          speakLegacy(speechText);
-        } else {
-          playText(speechText);
-        }
+    if (audioScript) {
+      if (voicesReady && (voices.male || voices.female)) {
+        speakScript(audioScript);
       } else {
-        setIsLoading(false);
+        const fullText = audioScript.segments.map(s => s.text).join('. ');
+        playText(fullText);
       }
-    } catch (e) {
-      console.warn('[AudioPlayer] Playback error:', e);
-      setIsLoading(false);
-      setHasError(true);
+    } else if (speechText) {
+      if (voicesReady && (voices.male || voices.female)) {
+        speakLegacy(speechText);
+      } else {
+        playText(speechText);
+      }
     }
-  }, [audioScript, speechText, isPlaying, hasPlayed, playLimitReached, speakScript, speakLegacy]);
+  }, [audioScript, speechText, isPlaying, hasPlayed, playLimitReached, speakScript, speakLegacy, voicesReady, voices]);
 
   const hasContent = !!audioScript || !!speechText;
   if (!hasContent) return null;
@@ -266,7 +250,9 @@ export default function AudioPlayer({
                   ? 'Playing...'
                   : hasPlayed
                     ? `Replay (${playCount})`
-                    : 'Play'}
+                    : autoPlay
+                      ? '点击播放'
+                      : 'Play'}
         </Text>
       </TouchableOpacity>
     </View>
