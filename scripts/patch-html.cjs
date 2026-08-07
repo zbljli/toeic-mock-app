@@ -59,5 +59,82 @@ const NEW_STYLE = `<style id="expo-reset">
 
 html = html.replace(OLD_STYLE, NEW_STYLE);
 
+// ── Inject Android WebView polyfills (before main bundle) ──
+// vivo / Honor phones often ship with older Chrome WebView (< 97)
+// that lack .findLast / .findLastIndex (used by react-navigation).
+const POLYFILL_SCRIPT = `<script>
+// Polyfills for older Android WebViews (vivo, Honor, etc.)
+// Array.prototype.findLast — Chrome 97+
+if (!Array.prototype.findLast) {
+  Array.prototype.findLast = function(callback, thisArg) {
+    if (this == null) throw new TypeError('Array.prototype.findLast called on null or undefined');
+    if (typeof callback !== 'function') throw new TypeError('callback must be a function');
+    var O = Object(this);
+    var len = O.length >>> 0;
+    var k = len - 1;
+    while (k >= 0) {
+      var kValue = O[k];
+      if (callback.call(thisArg, kValue, k, O)) return kValue;
+      k--;
+    }
+    return undefined;
+  };
+}
+// Array.prototype.findLastIndex — Chrome 97+
+if (!Array.prototype.findLastIndex) {
+  Array.prototype.findLastIndex = function(callback, thisArg) {
+    if (this == null) throw new TypeError('Array.prototype.findLastIndex called on null or undefined');
+    if (typeof callback !== 'function') throw new TypeError('callback must be a function');
+    var O = Object(this);
+    var len = O.length >>> 0;
+    var k = len - 1;
+    while (k >= 0) {
+      if (callback.call(thisArg, O[k], k, O)) return k;
+      k--;
+    }
+    return -1;
+  };
+}
+// Object.hasOwn — Chrome 93+
+if (!Object.hasOwn) {
+  Object.hasOwn = function(obj, prop) {
+    return Object.prototype.hasOwnProperty.call(obj, prop);
+  };
+}
+// Object.fromEntries — Chrome 73+
+if (!Object.fromEntries) {
+  Object.fromEntries = function(entries) {
+    var obj = {};
+    for (var i = 0; i < entries.length; i++) {
+      obj[entries[i][0]] = entries[i][1];
+    }
+    return obj;
+  };
+}
+// Array.prototype.flat — Chrome 69+
+if (!Array.prototype.flat) {
+  Array.prototype.flat = function(depth) {
+    var d = depth === undefined ? 1 : depth;
+    return d > 0
+      ? this.reduce(function(acc, val) {
+          return acc.concat(Array.isArray(val) && d > 1 ? val.flat(d - 1) : val);
+        }, [])
+      : this.slice();
+  };
+}
+// Array.prototype.flatMap — Chrome 69+
+if (!Array.prototype.flatMap) {
+  Array.prototype.flatMap = function(callback, thisArg) {
+    return this.map(callback, thisArg).flat(1);
+  };
+}
+</script>`;
+
+// Inject polyfills right before the main bundle script:
+html = html.replace(
+  /(<script src="\/_expo\/static\/js\/web\/[^"]*\.js" defer><\/script>)/,
+  POLYFILL_SCRIPT + '\n  $1'
+);
+
 fs.writeFileSync(htmlPath, html, 'utf-8');
-console.log('✅ Patched dist/index.html for mobile / WeChat compatibility');
+console.log('✅ Patched dist/index.html for mobile / WeChat / Android WebView compatibility');

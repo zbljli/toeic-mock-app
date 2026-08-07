@@ -1,0 +1,403 @@
+[
+  {
+    "article_id": "art_meeting_001",
+    "title": "Quarterly Strategy Review at Meridian Corp",
+    "type": "article",
+    "voice": "en-US-ChristopherNeural",
+    "status": "success",
+    "time": "2026-08-04T18:16:29.855743",
+    "output_file": "01 Business Meetings（1）.mp3"
+  },
+  {
+    "article_id": "art_meeting_002",
+    "title": "Negotiating the Partnership Agreement",
+    "type": "dialogue",
+    "voice": "multi",
+    "voice_map": {
+      "Man": "en-US-ChristopherNeural",
+      "Woman": "en-US-AriaNeural",
+      "Man 2": "en-GB-RyanNeural"
+    },
+    "status": "success",
+    "time": "2026-08-04T18:16:47.542841",
+    "output_file": "01 Business Meetings（2）.mp3"
+  },
+  {
+    "article_id": "art_office_101",
+    "title": "Office Renovation Announcement",
+    "type": "article",
+    "voice": "en-US-AriaNeural",
+    "status": "success",
+    "time": "2026-08-04T18:16:51.074086",
+    "output_file": "02 Office（1）.mp3"
+  },
+  {
+    "article_id": "art_office_102",
+    "title": "Daily Office Conversation",
+    "type": "dialogue",
+    "voice": "multi",
+    "voice_map": {
+      "Woman": "en-US-AriaNeural",
+      "Man": "en-US-ChristopherNeural"
+    },
+    "status": "success",
+    "time": "2026-08-04T18:17:11.877680",
+    "output_file": "02 Office（2）.mp3"
+  },
+  {
+    "article_id": "art_hr_201",
+    "title": "New Employee Orientation Memo",
+    "type": "article",
+    "voice": "en-GB-RyanNeural",
+    "status": "success",
+    "time": "2026-08-04T18:17:17.901767",
+    "output_file": "03 HR & Management（1）.mp3"
+  },
+  {
+    "article_id": "art_hr_202",
+    "title": "Job Interview Dialogue",
+    "type": "dialogue",
+    "voice": "multi",
+    "voice_map": {
+      "Interviewer": "en-US-ChristopherNeural",
+      "Candidate": "en-US-AriaNeural"
+    },
+    "status": "success",
+    "time": "2026-08-04T18:17:38.614905",
+    "output_file": "03 HR & Management（2）.mp3"
+  },
+  {
+    "article_id": "art_biz_203",
+    "title": "Quarterly Business Review",
+    "type": "article",
+    "voice": "en-US-ChristopherNeural",
+    "status": "success",
+    "time": "2026-08-04T18:17:43.879582",
+    "output_file": "04 Business Development（1）.mp3"
+  },
+  {
+    "article_id": "art_biz_204",
+    "title": "Investment Discussion",
+    "type": "dialogue",
+    "voice": "multi",
+    "voice_map": {
+      "Investor": "en-US-ChristopherNeural"
+    },
+    "status": "success",
+    "time": "2026-08-04T18:17:55.330208",
+    "output_file": "04 Business Development（2）.mp3"
+  },
+  {
+    "article_id": "art_trade_205",
+    "title": "International Trade Order",
+    "type": "article",
+    "voice": "en-US-AriaNeural",
+    "status": "success",
+    "time": "2026-08-04T18:17:59.316116",
+    "output_file": "05 Trade & Commerce（1）.mp3"
+  },
+  {
+    "article_id": "art_trade_206",
+    "title": "Supplier Negotiation Dialogue",
+    "type": "dialogue",
+    "voice": "multi",
+    "voice_map": {
+      "Buyer": "en-US-AriaNeural",
+      "Supplier": "en-US-ChristopherNeural"
+    },
+    "status": "success",
+    "time": "2026-08-04T18:18:21.348468",
+    "output_file": "05 Trade & Commerce（2）.mp3"
+  },
+  {
+    "article_id": "art_tech_207",
+    "title": "IT Department Newsletter",
+    "type": "article",
+    "voice": "en-GB-RyanNeural",
+    "status": "success",
+    "time": "2026-08-04T18:18:28.598102",
+    "output_file": "06 Technology（1）.mp3"
+  },
+  {
+    "article_id": "art_tech_208",
+    "title": "IT Support Call",
+    "type": "dialogue",
+    "voice": "multi",
+    "voice_map": {
+      "Employee": "en-US-ChristopherNeural"
+    },
+    "status": "success",
+    "time": "2026-08-04T18:18:46.233523",
+    "output_file": "06 Technology（2）.mp3"
+  },
+  {
+    "article_id": "art_media_209",
+    "title": "Press Release: New Product Launch",
+    "type": "article",
+    "voice": "en-US-ChristopherNeural",
+    "status": "success",
+    "time": "2026-08-04T18:18:56.080080",
+    "output_file": "07 Media & Communication.mp3"
+  },
+  {
+    "article_id": "art_travel_210",
+    "title": "Travel Advisory for Business Trip",
+    "type": "article",
+    "voice": "en-US-AriaNeural",
+    "status": "success",
+    "time": "2026-08-04T18:18:59.685713",
+    "output_file": "08 Travel & Transport（1）.mp3"
+  },
+  {
+    "article_id": "art_travel_211",
+    "title": "At the Airport Check-In",
+    "type": "dialogue",
+    "voice": "multi",
+    "voice_map": {
+      "Passenger": "en-US-AriaNeural",
+      "Agent": "en-GB-SoniaNeural"
+    },
+    "status": "success",
+    "time": "2026-08-04T18:19:34.266963",
+    "output_file": "08 Travel & Transport（2）.mp3"
+  },
+  {
+    "article_id": "art_shopping_212",
+    "title": "Customer Service Training Memo",
+    "type": "article",
+    "voice": "en-GB-RyanNeural",
+    "status": "success",
+    "time": "2026-08-04T18:19:42.547663",
+    "output_file": "09 Shopping & Consumption.mp3"
+  },
+  {
+    "article_id": "art_food_213",
+    "title": "Restaurant Review: The Blue Apron",
+    "type": "article",
+    "voice": "en-US-ChristopherNeural",
+    "status": "success",
+    "time": "2026-08-04T18:19:54.976338",
+    "output_file": "10 Food & Dining（1）.mp3"
+  },
+  {
+    "article_id": "art_food_214",
+    "title": "Business Lunch Conversation",
+    "type": "dialogue",
+    "voice": "multi",
+    "voice_map": {
+      "Man": "en-US-ChristopherNeural",
+      "Woman": "en-US-AriaNeural",
+      "Waiter": "en-GB-RyanNeural"
+    },
+    "status": "success",
+    "time": "2026-08-04T18:20:20.060456",
+    "output_file": "10 Food & Dining（2）.mp3"
+  },
+  {
+    "article_id": "art_social_215",
+    "title": "Networking Event Invitation",
+    "type": "article",
+    "voice": "en-US-AriaNeural",
+    "status": "success",
+    "time": "2026-08-04T18:20:24.994915",
+    "output_file": "11 Social & Relationships.mp3"
+  },
+  {
+    "article_id": "art_entertainment_216",
+    "title": "Arts Center Season Preview",
+    "type": "article",
+    "voice": "en-GB-RyanNeural",
+    "status": "success",
+    "time": "2026-08-04T18:20:30.495533",
+    "output_file": "12 Entertainment & Arts.mp3"
+  },
+  {
+    "article_id": "art_sports_217",
+    "title": "Company Sports Day Announcement",
+    "type": "article",
+    "voice": "en-US-ChristopherNeural",
+    "status": "success",
+    "time": "2026-08-04T18:20:41.547832",
+    "output_file": "13 Sports & Leisure.mp3"
+  },
+  {
+    "article_id": "art_health_218",
+    "title": "Health and Wellness Program Update",
+    "type": "article",
+    "voice": "en-US-AriaNeural",
+    "status": "success",
+    "time": "2026-08-04T18:20:46.600321",
+    "output_file": "14 Health & Medical.mp3"
+  },
+  {
+    "article_id": "art_housing_219",
+    "title": "Relocation Guide for New Employees",
+    "type": "article",
+    "voice": "en-GB-RyanNeural",
+    "status": "success",
+    "time": "2026-08-04T18:20:57.545871",
+    "output_file": "15 Housing & Living.mp3"
+  },
+  {
+    "article_id": "art_career_221",
+    "title": "Career Development Workshop Guide",
+    "type": "article",
+    "voice": "en-US-AriaNeural",
+    "status": "success",
+    "time": "2026-08-04T18:21:10.185166",
+    "output_file": "17 Career & Recruitment.mp3"
+  },
+  {
+    "article_id": "art_benefits_222",
+    "title": "Employee Benefits Guide 2026",
+    "type": "article",
+    "voice": "en-GB-RyanNeural",
+    "status": "success",
+    "time": "2026-08-04T18:21:26.834008",
+    "output_file": "18 Employee Benefits.mp3"
+  },
+  {
+    "article_id": "art_phone_223",
+    "title": "Office Phone System Training Guide",
+    "type": "article",
+    "voice": "en-US-ChristopherNeural",
+    "status": "success",
+    "time": "2026-08-04T18:21:37.062409",
+    "output_file": "19 Phone Communication.mp3"
+  },
+  {
+    "article_id": "art_legal_224",
+    "title": "Contract Review Checklist",
+    "type": "article",
+    "voice": "en-US-AriaNeural",
+    "status": "success",
+    "time": "2026-08-04T18:21:42.194612",
+    "output_file": "20 Contracts & Legal.mp3"
+  },
+  {
+    "article_id": "art_emotion_225",
+    "title": "Customer Feedback Analysis Report",
+    "type": "article",
+    "voice": "en-GB-RyanNeural",
+    "status": "success",
+    "time": "2026-08-04T18:21:54.366591",
+    "output_file": "21 Emotions & Attitudes.mp3"
+  },
+  {
+    "article_id": "art_action_226",
+    "title": "Project Kickoff Meeting Guide",
+    "type": "article",
+    "voice": "en-US-ChristopherNeural",
+    "status": "success",
+    "time": "2026-08-04T18:22:04.932996",
+    "output_file": "22 Actions & Behaviors.mp3"
+  },
+  {
+    "article_id": "art_adjective_227",
+    "title": "Product Evaluation Report",
+    "type": "article",
+    "voice": "en-US-AriaNeural",
+    "status": "success",
+    "time": "2026-08-04T18:22:11.883773",
+    "output_file": "23 Adjectives.mp3"
+  },
+  {
+    "article_id": "art_general_228",
+    "title": "Company Newsletter: November Roundup",
+    "type": "article",
+    "voice": "en-GB-RyanNeural",
+    "status": "success",
+    "time": "2026-08-04T18:22:18.317160",
+    "output_file": "24 General.mp3"
+  },
+  {
+    "article_id": "art_office_003",
+    "title": "Office Scenario — Article 3",
+    "type": "article",
+    "voice": "en-US-ChristopherNeural",
+    "status": "success",
+    "time": "2026-08-04T18:22:19.819745",
+    "output_file": "02 Office（3）.mp3"
+  },
+  {
+    "article_id": "art_office_004",
+    "title": "Office Scenario — Article 4",
+    "type": "article",
+    "voice": "en-US-AriaNeural",
+    "status": "success",
+    "time": "2026-08-04T18:22:21.231170",
+    "output_file": "02 Office（4）.mp3"
+  },
+  {
+    "article_id": "art_office_005",
+    "title": "Office Scenario — Article 5",
+    "type": "article",
+    "voice": "en-GB-RyanNeural",
+    "status": "success",
+    "time": "2026-08-04T18:22:22.970196",
+    "output_file": "02 Office（5）.mp3"
+  },
+  {
+    "article_id": "art_office_006",
+    "title": "Office Scenario — Article 6",
+    "type": "article",
+    "voice": "en-US-ChristopherNeural",
+    "status": "success",
+    "time": "2026-08-04T18:22:24.169728",
+    "output_file": "02 Office（6）.mp3"
+  },
+  {
+    "article_id": "art_office_007",
+    "title": "Office Scenario — Article 7",
+    "type": "article",
+    "voice": "en-US-AriaNeural",
+    "status": "success",
+    "time": "2026-08-04T18:22:25.355652",
+    "output_file": "02 Office（7）.mp3"
+  },
+  {
+    "article_id": "art_office_008",
+    "title": "Office Scenario — Article 8",
+    "type": "article",
+    "voice": "en-GB-RyanNeural",
+    "status": "success",
+    "time": "2026-08-04T18:22:27.018347",
+    "output_file": "02 Office（8）.mp3"
+  },
+  {
+    "article_id": "art_tech_209",
+    "title": "Technology — Article 3",
+    "type": "article",
+    "voice": "en-US-AriaNeural",
+    "status": "success",
+    "time": "2026-08-04T18:22:30.292296",
+    "output_file": "06 Technology（3）.mp3"
+  },
+  {
+    "article_id": "art_mgmt_220",
+    "title": "CEO Letter: Annual Strategy Update",
+    "type": "article",
+    "voice": "en-US-ChristopherNeural",
+    "status": "success",
+    "time": "2026-08-04T18:27:25.907243",
+    "output_file": "16 Business Management（1）.mp3"
+  },
+  {
+    "article_id": "art_mgmt_220_v2",
+    "title": "Business Management — Article 2",
+    "type": "article",
+    "voice": "en-US-AriaNeural",
+    "status": "success",
+    "time": "2026-08-04T18:27:27.311116",
+    "output_file": "16 Business Management（2）.mp3"
+  },
+  {
+    "article_id": "art_mgmt_221",
+    "title": "Business Management — Article 3",
+    "type": "article",
+    "voice": "en-GB-RyanNeural",
+    "status": "success",
+    "time": "2026-08-04T18:27:28.927785",
+    "output_file": "16 Business Management（3）.mp3"
+  }
+]

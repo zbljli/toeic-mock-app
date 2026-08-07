@@ -1,13 +1,10 @@
 import React from 'react';
 import { ActivityIndicator, View, Text } from 'react-native';
-import { NavigationContainer, useNavigation, NavigatorScreenParams } from '@react-navigation/native';
+import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { useCoach } from '../context/CoachContext';
 import type { TestModeConfig } from '../types';
-
-// ── Onboarding ──
-import OnboardingFlow from '../screens/onboarding/OnboardingFlow';
 
 // ── Main tab screens ──
 import CoachHomeScreen from '../screens/coach/CoachHomeScreen';
@@ -65,12 +62,8 @@ export type MeTabParamList = {
 // ═══════════════════════════════════════════════════════
 
 export type RootStackParamList = {
-  Onboarding: undefined;
   MainTabs: undefined;
-  // Onboarding-only test flow (no tab bar yet)
-  OnboardingTest: { config: TestModeConfig };
-  OnboardingResult: undefined;
-  Result: undefined; // fallback — used by TestScreen navigation.replace
+  Result: undefined;
 };
 
 // ═══════════════════════════════════════════════════════
@@ -164,6 +157,16 @@ function MainTabs() {
       }}
     >
       <Tab.Screen
+        name="Vocab"
+        component={VocabTab}
+        options={{ tabBarLabel: 'Vocab', tabBarIcon: () => <TabIcon emoji="📚" /> }}
+      />
+      <Tab.Screen
+        name="Scenarios"
+        component={ScenariosTab}
+        options={{ tabBarLabel: 'Scenarios', tabBarIcon: () => <TabIcon emoji="🌍" /> }}
+      />
+      <Tab.Screen
         name="Home"
         component={HomeTab}
         options={{ tabBarLabel: 'Home', tabBarIcon: () => <TabIcon emoji="🏠" /> }}
@@ -172,16 +175,6 @@ function MainTabs() {
         name="Training"
         component={TrainingTab}
         options={{ tabBarLabel: 'Training', tabBarIcon: () => <TabIcon emoji="🎧" /> }}
-      />
-      <Tab.Screen
-        name="Scenarios"
-        component={ScenariosTab}
-        options={{ tabBarLabel: 'Scenarios', tabBarIcon: () => <TabIcon emoji="🌍" /> }}
-      />
-      <Tab.Screen
-        name="Vocab"
-        component={VocabTab}
-        options={{ tabBarLabel: 'Vocab', tabBarIcon: () => <TabIcon emoji="📚" /> }}
       />
       <Tab.Screen
         name="Me"
@@ -199,7 +192,7 @@ function MainTabs() {
 const RootStack = createStackNavigator<RootStackParamList>();
 
 export default function AppNavigator() {
-  const { isOnboarded, loading } = useCoach();
+  const { loading } = useCoach();
 
   if (loading) {
     return (
@@ -212,17 +205,7 @@ export default function AppNavigator() {
   return (
     <NavigationContainer>
       <RootStack.Navigator screenOptions={{ headerShown: false }}>
-        {!isOnboarded ? (
-          // ── Onboarding Flow (no tab bar) ──
-          <>
-            <RootStack.Screen name="Onboarding" component={OnboardingFlow} />
-            <RootStack.Screen name="OnboardingTest" component={TestScreen} options={{ gestureEnabled: false }} />
-            <RootStack.Screen name="OnboardingResult" component={ResultScreen} options={{ gestureEnabled: false }} />
-          </>
-        ) : (
-          // ── Main App (tab bar ALWAYS visible) ──
-          <RootStack.Screen name="MainTabs" component={MainTabs} />
-        )}
+        <RootStack.Screen name="MainTabs" component={MainTabs} />
       </RootStack.Navigator>
     </NavigationContainer>
   );

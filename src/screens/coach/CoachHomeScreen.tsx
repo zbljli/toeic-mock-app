@@ -1,7 +1,7 @@
 import React, { useState, useMemo } from 'react';
 import {
   View, Text, StyleSheet, ScrollView, TouchableOpacity, SafeAreaView,
-  Modal, TextInput,
+  Modal, TextInput, Alert,
 } from 'react-native';
 import { useCoach } from '../../context/CoachContext';
 import type { GrowthDiary, DiaryMood } from '../../types/coach';
@@ -378,16 +378,7 @@ export default function CoachHomeScreen({ navigation }: { navigation: any }) {
           <TouchableOpacity
             style={hs.quickBtn}
             activeOpacity={0.8}
-            onPress={() => navigation.navigate('Test', {
-              config: {
-                mode: 'part-practice',
-                label: 'Quick Practice',
-                description: '10 min · Part 3 Focus',
-                totalQuestions: 10,
-                totalTimeMinutes: 10,
-                parts: recommendation ? [recommendation.targetPart] : [3],
-              },
-            })}
+            onPress={() => Alert.alert('功能开发中', '敬请期待！')}
           >
             <Text style={hs.quickBtnIcon}>⚡</Text>
             <View>
@@ -401,16 +392,7 @@ export default function CoachHomeScreen({ navigation }: { navigation: any }) {
             <TouchableOpacity
               style={hs.quickBtn}
               activeOpacity={0.8}
-              onPress={() => navigation.navigate('Test', {
-                config: {
-                  mode: 'listening-only',
-                  label: 'Full Listening Test',
-                  description: 'Part 1–4 · 45 min · 100 questions',
-                  totalQuestions: 100,
-                  totalTimeMinutes: 45,
-                  parts: [1, 2, 3, 4] as number[],
-                },
-              })}
+              onPress={() => Alert.alert('功能开发中', '敬请期待！')}
             >
               <Text style={hs.quickBtnIcon}>🎧</Text>
               <View>
@@ -422,7 +404,7 @@ export default function CoachHomeScreen({ navigation }: { navigation: any }) {
             <TouchableOpacity
               style={[hs.quickBtn, hs.assessBtn]}
               activeOpacity={0.8}
-              onPress={() => navigation.navigate('Onboarding')}
+              onPress={() => Alert.alert('功能开发中', '敬请期待！')}
             >
               <Text style={hs.quickBtnIcon}>🔍</Text>
               <View>

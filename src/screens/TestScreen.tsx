@@ -12,7 +12,7 @@ import {
 import { useNavigation, useRoute, RouteProp } from '@react-navigation/native';
 import type { StackNavigationProp } from '@react-navigation/stack';
 import { useTestContext, getCurrentQuestion, getAnswerForQuestion, getAnsweredCount } from '../context/TestContext';
-import { useCoach } from '../context/CoachContext';
+
 import QuestionCard from '../components/QuestionCard';
 import OptionButton from '../components/OptionButton';
 import Timer from '../components/Timer';
@@ -35,7 +35,6 @@ export default function TestScreen() {
   const route = useRoute<TestRoute>();
   const { config } = route.params;
   const { state, dispatch } = useTestContext();
-  const { isOnboarded } = useCoach();
 
   const [isTimerRunning, setIsTimerRunning] = useState(true);
   const [totalSeconds, setTotalSeconds] = useState(config.totalTimeMinutes * 60);
@@ -289,8 +288,7 @@ export default function TestScreen() {
       appendHistoryEntry(entry);
     }
 
-    // Navigate to the correct result route based on whether we're in onboarding or main app
-    (navigation as any).replace(isOnboarded ? 'Result' : 'OnboardingResult');
+    (navigation as any).replace('Result');
   };
 
   const handleTimeUp = () => {
